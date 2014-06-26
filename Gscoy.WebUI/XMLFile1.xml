@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DBConnection>
+  <MSSQL>
+    <User_R></User_R>
+    <User_W></User_W>
+  </MSSQL>
+  <MYSQL>
+    <User_R></User_R>
+    <User_W></User_W>
+  </MYSQL>
+  <ACCESS>
+    <User_R></User_R>
+    <User_W></User_W>
+  </ACCESS>
+  <SQLITE>
+    <User_R></User_R>
+    <User_W></User_W>
+  </SQLITE>
+</DBConnection>

@@ -1,0 +1,4 @@
+D:\own\Gscoy\Gscoy.Biz\bin\Debug\Gscoy.Biz.dll
+D:\own\Gscoy\Gscoy.Biz\bin\Debug\Gscoy.Biz.pdb
+D:\own\Gscoy\Gscoy.Biz\obj\Debug\Gscoy.Biz.dll
+D:\own\Gscoy\Gscoy.Biz\obj\Debug\Gscoy.Biz.pdb

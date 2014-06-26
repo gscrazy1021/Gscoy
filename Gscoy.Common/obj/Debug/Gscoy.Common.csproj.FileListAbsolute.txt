@@ -1,0 +1,14 @@
+D:\own\Gscoy\Gscoy.Common\bin\Debug\Gscoy.Common.dll
+D:\own\Gscoy\Gscoy.Common\bin\Debug\Gscoy.Common.pdb
+D:\own\Gscoy\Gscoy.Common\bin\Debug\HtmlSanitizationLibrary.dll
+D:\own\Gscoy\Gscoy.Common\obj\Debug\Gscoy.Common.dll
+D:\own\Gscoy\Gscoy.Common\obj\Debug\Gscoy.Common.pdb
+D:\own\Gscoy\Gscoy.Common\obj\Debug\Gscoy.Common.csprojResolveAssemblyReference.cache
+E:\CodeSpace\Gscoy\Gscoy.Common\obj\Debug\Gscoy.Common.csprojResolveAssemblyReference.cache
+E:\CodeSpace\Gscoy\Gscoy.Common\obj\Debug\Gscoy.Common.dll
+E:\CodeSpace\Gscoy\Gscoy.Common\obj\Debug\Gscoy.Common.pdb
+E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\Gscoy.Common.dll
+E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\Gscoy.Common.pdb
+E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\HtmlSanitizationLibrary.dll
+E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\Newtonsoft.Json.dll
+E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\Newtonsoft.Json.xml

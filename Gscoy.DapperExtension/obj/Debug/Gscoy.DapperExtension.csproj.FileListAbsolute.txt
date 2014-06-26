@@ -1,0 +1,7 @@
+D:\own\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.csprojResolveAssemblyReference.cache
+D:\own\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.DapperExtension.dll
+D:\own\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.DapperExtension.pdb
+D:\own\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.Dapper.dll
+D:\own\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.Dapper.pdb
+D:\own\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.dll
+D:\own\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.pdb

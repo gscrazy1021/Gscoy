@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F144647B-9CC4-48B8-BD1F-09A99491DA83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gscoy.Common.Web</RootNamespace>
+    <AssemblyName>Gscoy.Common.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NPOI">
+      <HintPath>..\Gscoy.Document\DLLImport\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.DDF">
+      <HintPath>..\Gscoy.Document\DLLImport\NPOI.DDF.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.HPSF">
+      <HintPath>..\Gscoy.Document\DLLImport\NPOI.HPSF.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.HSSF">
+      <HintPath>..\Gscoy.Document\DLLImport\NPOI.HSSF.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.POIFS">
+      <HintPath>..\Gscoy.Document\DLLImport\NPOI.POIFS.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Util">
+      <HintPath>..\Gscoy.Document\DLLImport\NPOI.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExcelHelper.cs" />
+    <Compile Include="IPHelper.cs" />
+    <Compile Include="JsHelper.cs" />
+    <Compile Include="MessageFilterHelper.cs" />
+    <Compile Include="PermissionAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
+      <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
+      <Name>Gscoy.Common %28Gscoy.Common\Gscoy.Common%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

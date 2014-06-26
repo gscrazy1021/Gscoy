@@ -1,0 +1,4 @@
+D:\own\Gscoy\Gscoy.DataModel\bin\Debug\Gscoy.DataModel.dll
+D:\own\Gscoy\Gscoy.DataModel\bin\Debug\Gscoy.DataModel.pdb
+D:\own\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.dll
+D:\own\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.pdb
