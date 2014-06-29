@@ -8,3 +8,13 @@ D:\own\Gscoy\Gscoy.Document\bin\Debug\NPOI.POIFS.dll
 D:\own\Gscoy\Gscoy.Document\bin\Debug\NPOI.HPSF.dll
 D:\own\Gscoy\Gscoy.Document\bin\Debug\NPOI.Util.dll
 D:\own\Gscoy\Gscoy.Document\obj\Debug\Gscoy.Document.csprojResolveAssemblyReference.cache
+E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\Gscoy.Document.dll
+E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\Gscoy.Document.pdb
+E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\NPOI.dll
+E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\NPOI.POIFS.dll
+E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\NPOI.HPSF.dll
+E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\NPOI.Util.dll
+E:\CodeSpace\Gscoy\Gscoy.Document\obj\Debug\Gscoy.Document.csprojResolveAssemblyReference.cache
+E:\CodeSpace\Gscoy\Gscoy.Document\obj\Debug\Gscoy.Document.dll
+E:\CodeSpace\Gscoy\Gscoy.Document\obj\Debug\Gscoy.Document.pdb
