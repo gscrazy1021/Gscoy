@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Gscoy.WeChat.Model.ResultModel
 {
-    public class AccessTokenEntity : BaseEntity
+    public class AccessTokenEntity 
     {
         /// <summary>
         /// accessToken

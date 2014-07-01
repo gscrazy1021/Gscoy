@@ -49,3 +49,9 @@ D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.dll
 D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Biz.pdb
 D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Biz.pdb
 D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.pdb
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.Biz.dll
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Biz.dll
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.dll
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.Biz.pdb
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Biz.pdb
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.pdb

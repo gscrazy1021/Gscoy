@@ -43,16 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseEntity.cs" />
-    <Compile Include="BaseMessage.cs" />
+    <Compile Include="RequestModel\BaseRequestMsg.cs" />
+    <Compile Include="RequestModel\RequestText.cs" />
+    <Compile Include="ResponseModel\ResponseMsgType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReceiveModel\BaseEntity.cs" />
+    <Compile Include="ResponseModel\BaseEventEntity.cs" />
+    <Compile Include="ResponseModel\BaseMsgEntity.cs" />
+    <Compile Include="ResponseModel\ResponseMsg.cs" />
     <Compile Include="ResultModel\AccessTokenEntity.cs" />
     <Compile Include="WeChatRetInfo.cs" />
     <Compile Include="WeChatUserInfoModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
+      <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
+      <Name>Gscoy.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

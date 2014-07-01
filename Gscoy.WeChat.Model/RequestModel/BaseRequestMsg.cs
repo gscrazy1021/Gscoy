@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gscoy.WeChat.Model.ReceiveModel
+namespace Gscoy.WeChat.Model.RequestModel
 {
-    [Serializable]
-    public class BaseEntity
+    public class BaseRequestMsg
     {
         /// <summary>
         /// 开发者微信号
@@ -21,13 +20,7 @@ namespace Gscoy.WeChat.Model.ReceiveModel
         /// <summary>
         ///  	消息创建时间 （整型） 
         /// </summary>
-        public int CreateTime
-        {
-            get
-            {
-                return int.Parse(DateTime.Now.ToString("yyyyMMddHHmmss"));
-            }
-        }
+        public int CreateTime { get; set; }
 
         /// <summary>
         ///  	消息类型

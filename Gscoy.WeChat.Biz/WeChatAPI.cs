@@ -30,7 +30,8 @@ namespace Gscoy.WeChat.Biz
 
                 if (!string.IsNullOrEmpty(postString))
                 {
-                    Execute(postString);
+                    var handler = Handler.HandlerFactory.CreateHandler(postString);
+                    handler.HandleRequest();
                 }
             }
             else
@@ -57,49 +58,6 @@ namespace Gscoy.WeChat.Biz
                     HttpContext.Current.Response.Write(echoString);
                     HttpContext.Current.Response.End();
                 }
-            }
-        }
-
-        /// <summary>
-        /// 处理各种请求信息并应答（通过POST的请求）
-        /// </summary>
-        /// <param name="postString"></param>
-        public void Execute(string postString)
-        {
-            postString = postString.Replace("<![CDATA[", "").Replace("]]>", "");
-            var xmlElement = XElement.Parse(postString);
-            var msgType = xmlElement.Element("MsgType").Value;
-            switch (msgType)
-            {
-                case "text":
-                    break;
-                case "image":
-                    break;
-                case "voice":
-                    break;
-                case "video":
-                    break;
-                case "location":
-                    break;
-                case "link":
-                    break;
-                case "event":
-                    var eventStr = xmlElement.Element("EVENT").Value;
-                    switch (eventStr)
-                    {
-                        case "subscribe":
-                            break;
-                        case "SCAN":
-                            break;
-                        case "LOCATION":
-                            break;
-                        case "CLICK":
-                            break;
-                        case "VIEW":
-                            break;
-                    }
-                    break;
-              
             }
         }
 

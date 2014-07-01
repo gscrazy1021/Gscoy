@@ -23,7 +23,7 @@ namespace Gscoy.WeChat.Biz.Tests
 <MsgId>1234567890123456</MsgId>
 </xml> ";
             WeChatAPI api = new WeChatAPI();
-            api.Execute(str);
+            //api.Execute(str);
             Assert.Fail();
         }
     }
