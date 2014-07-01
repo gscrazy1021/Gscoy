@@ -44,3 +44,15 @@ E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\System.Data.SQLite.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\System.Data.SQLite.xml
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Cache.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Cache.pdb
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\x64\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\x86\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Dapper.Data.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.DapperExtension.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\System.Data.SQLite.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Dapper.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Cache.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Dapper.Data.pdb
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.DapperExtension.pdb
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\System.Data.SQLite.xml
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Dapper.pdb
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Cache.pdb

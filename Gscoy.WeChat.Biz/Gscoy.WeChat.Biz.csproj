@@ -46,7 +46,9 @@
     <Compile Include="BaseAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeChat.cs" />
-    <Compile Include="WeChatAPI.cs" />
+    <Compile Include="WeChatAPI.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="WeChatLogin.cs" />
     <Compile Include="WeChatTool.cs" />
   </ItemGroup>

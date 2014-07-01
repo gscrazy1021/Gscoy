@@ -41,3 +41,11 @@ E:\CodeSpace\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.pdb
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Newtonsoft.Json.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Newtonsoft.Json.xml
+D:\own\Gscoy\Gscoy.WebUI\bin\Newtonsoft.Json.dll
+D:\own\Gscoy\Gscoy.WebUI\bin\Newtonsoft.Json.xml
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Biz.dll
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Biz.dll
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.dll
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Biz.pdb
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Biz.pdb
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.pdb

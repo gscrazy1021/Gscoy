@@ -5,13 +5,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Xml.Linq;
 
 namespace Gscoy.WeChat.Biz
 {
     /// <summary>
     /// 微信api
     /// </summary>
-    public class WeChatAPI : IHttpHandler
+    public class WeChatAPI : BasePage, IHttpHandler
     {
         BaseAPI baseApi = new BaseAPI();
 
@@ -44,10 +45,10 @@ namespace Gscoy.WeChat.Biz
         private void Auth()
         {
             var token = ConfigHelper.GetConfig("WeChatTooken");
-            var echoString = ConfigHelper.GetConfig("echoStr");
-            var signature = ConfigHelper.GetConfig("signature");
-            var timestamp = ConfigHelper.GetConfig("timestamp");
-            var nonce = ConfigHelper.GetConfig("nonce");
+            var echoString = GetRequestString("echoStr");
+            var signature = GetRequestString("signature");
+            var timestamp = GetRequestString("timestamp");
+            var nonce = GetRequestString("nonce");
 
             if (baseApi.CheckSignture(token, signature, timestamp, nonce))
             {
@@ -63,9 +64,43 @@ namespace Gscoy.WeChat.Biz
         /// 处理各种请求信息并应答（通过POST的请求）
         /// </summary>
         /// <param name="postString"></param>
-        private void Execute(string postString)
+        public void Execute(string postString)
         {
-
+            postString = postString.Replace("<![CDATA[", "").Replace("]]>", "");
+            var xmlElement = XElement.Parse(postString);
+            var msgType = xmlElement.Element("MsgType").Value;
+            switch (msgType)
+            {
+                case "text":
+                    break;
+                case "image":
+                    break;
+                case "voice":
+                    break;
+                case "video":
+                    break;
+                case "location":
+                    break;
+                case "link":
+                    break;
+                case "event":
+                    var eventStr = xmlElement.Element("EVENT").Value;
+                    switch (eventStr)
+                    {
+                        case "subscribe":
+                            break;
+                        case "SCAN":
+                            break;
+                        case "LOCATION":
+                            break;
+                        case "CLICK":
+                            break;
+                        case "VIEW":
+                            break;
+                    }
+                    break;
+              
+            }
         }
 
         public bool IsReusable
