@@ -56,7 +56,5 @@ namespace Gscoy.WeChat.Biz.Handler
         }
 
         #endregion
-
-
     }
 }
