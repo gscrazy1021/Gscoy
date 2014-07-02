@@ -12,3 +12,11 @@ E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\obj\Debug\Gscoy.WeChat.Model.pdb
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\bin\Debug\Gscoy.Common.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\bin\Debug\HtmlSanitizationLibrary.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\bin\Debug\Gscoy.Common.pdb
+D:\own\Gscoy\Gscoy.WeChat.Model\bin\Debug\Gscoy.Common.dll
+D:\own\Gscoy\Gscoy.WeChat.Model\bin\Debug\Newtonsoft.Json.dll
+D:\own\Gscoy\Gscoy.WeChat.Model\bin\Debug\log4net.dll
+D:\own\Gscoy\Gscoy.WeChat.Model\bin\Debug\HtmlSanitizationLibrary.dll
+D:\own\Gscoy\Gscoy.WeChat.Model\bin\Debug\Gscoy.Common.pdb
+D:\own\Gscoy\Gscoy.WeChat.Model\bin\Debug\Newtonsoft.Json.xml
+D:\own\Gscoy\Gscoy.WeChat.Model\bin\Debug\log4net.xml
+D:\own\Gscoy\Gscoy.WeChat.Model\obj\Debug\Gscoy.WeChat.Model.csprojResolveAssemblyReference.cache

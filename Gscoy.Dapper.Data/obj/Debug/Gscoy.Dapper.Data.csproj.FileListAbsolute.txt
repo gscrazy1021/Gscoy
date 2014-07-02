@@ -56,3 +56,5 @@ D:\own\Gscoy\Gscoy.Dapper.Data\bin\Debug\EntityFramework.xml
 D:\own\Gscoy\Gscoy.Dapper.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\own\Gscoy\Gscoy.Dapper.Data\bin\Debug\System.Data.SQLite.xml
 D:\own\Gscoy\Gscoy.Dapper.Data\bin\Debug\Newtonsoft.Json.xml
+D:\own\Gscoy\Gscoy.Dapper.Data\bin\Debug\log4net.dll
+D:\own\Gscoy\Gscoy.Dapper.Data\bin\Debug\log4net.xml

@@ -30,3 +30,5 @@ E:\CodeSpace\Gscoy\Gscoy.Common.Web\bin\Debug\Newtonsoft.Json.dll
 E:\CodeSpace\Gscoy\Gscoy.Common.Web\bin\Debug\Newtonsoft.Json.xml
 D:\own\Gscoy\Gscoy.Common.Web\bin\Debug\Newtonsoft.Json.dll
 D:\own\Gscoy\Gscoy.Common.Web\bin\Debug\Newtonsoft.Json.xml
+D:\own\Gscoy\Gscoy.Common.Web\bin\Debug\log4net.dll
+D:\own\Gscoy\Gscoy.Common.Web\bin\Debug\log4net.xml

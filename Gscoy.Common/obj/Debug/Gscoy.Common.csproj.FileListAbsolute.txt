@@ -14,3 +14,5 @@ E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\Newtonsoft.Json.dll
 E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\Newtonsoft.Json.xml
 D:\own\Gscoy\Gscoy.Common\bin\Debug\Newtonsoft.Json.dll
 D:\own\Gscoy\Gscoy.Common\bin\Debug\Newtonsoft.Json.xml
+D:\own\Gscoy\Gscoy.Common\bin\Debug\log4net.dll
+D:\own\Gscoy\Gscoy.Common\bin\Debug\log4net.xml

@@ -55,6 +55,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ConfigHelperTests.cs" />
+    <Compile Include="LogNetHelperTests.cs" />
     <Compile Include="MailHelperTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="log4net.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

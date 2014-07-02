@@ -34,3 +34,5 @@ D:\own\Gscoy\Gscoy.Data\bin\Debug\Gscoy.Common.Web.pdb
 D:\own\Gscoy\Gscoy.Data\bin\Debug\Gscoy.Common.pdb
 D:\own\Gscoy\Gscoy.Data\bin\Debug\Newtonsoft.Json.xml
 D:\own\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.csprojResolveAssemblyReference.cache
+D:\own\Gscoy\Gscoy.Data\bin\Debug\log4net.dll
+D:\own\Gscoy\Gscoy.Data\bin\Debug\log4net.xml

@@ -26,3 +26,5 @@ E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Cache.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Cache.pdb
 D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Cache.dll
 D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Cache.pdb
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\log4net.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\log4net.xml

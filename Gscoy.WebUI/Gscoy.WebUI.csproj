@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
     <Content Include="UserControl\PageControl.ascx" />
     <Content Include="Web.config">
@@ -66,6 +67,9 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Handler1.ashx.cs">
       <DependentUpon>Handler1.ashx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -95,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Handler1.ashx" />
+    <Content Include="log4net.config" />
     <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

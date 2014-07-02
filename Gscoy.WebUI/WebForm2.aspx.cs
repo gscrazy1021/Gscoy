@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gscoy.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,9 @@ namespace Gscoy.WebUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var msg = "message";
+            LogNetHelper.Write(msg, LogNetHelper.LogMessageType.Warn);
+            Response.Write(msg);
         }
     }
 }
