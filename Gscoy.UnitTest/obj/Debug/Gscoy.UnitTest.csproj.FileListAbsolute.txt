@@ -58,3 +58,5 @@ D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Dapper.pdb
 D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Cache.pdb
 D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\log4net.dll
 D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\log4net.xml
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Data.dll
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Data.pdb

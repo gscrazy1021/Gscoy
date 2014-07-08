@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace Gscoy.WeChat.Model.RequestModel
 {
     public class BaseRequestMsg
@@ -26,5 +22,10 @@ namespace Gscoy.WeChat.Model.RequestModel
         ///  	消息类型
         /// </summary>
         public string MsgType { get; set; }
+
+        /// <summary>
+        /// 消息id，64位整型 
+        /// </summary>
+        public string MsgId { get; set; }
     }
 }

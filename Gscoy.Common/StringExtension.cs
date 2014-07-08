@@ -603,6 +603,114 @@ namespace Gscoy.Common
                 throw new TryParseException();
             }
         }
+
+        /// <summary>
+        /// 得到short整形
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static short ToShort(this string value)
+        {
+            short temp = 0;
+            short.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到int整形
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static int ToInt(this string value)
+        {
+            var temp = 0;
+            int.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到long整形
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static long ToLong(this string value)
+        {
+            long temp = 0;
+            long.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到decimal浮点型
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static decimal ToDecimal(this string value)
+        {
+            decimal temp = 0;
+            decimal.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到DateTime
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static DateTime ToDateTime(this string value)
+        {
+            DateTime temp = DateTime.Now;
+            DateTime.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到Float
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static float ToFloat(this string value)
+        {
+            float temp = 0;
+            float.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到Double
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static double ToDouble(this string value)
+        {
+            double temp = 0;
+            double.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到Byte
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static byte ToByte(this string value)
+        {
+            byte temp = 0;
+            byte.TryParse(value, out temp);
+            return temp;
+        }
+
+        /// <summary>
+        /// 得到Byte
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static char ToChar(this string value)
+        {
+            char temp = new char();
+            char.TryParse(value, out temp);
+            return temp;
+        }
     }
     public class TryParseException : Exception
     {

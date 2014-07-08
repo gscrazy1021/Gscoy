@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\DataBase.xml" />
+    <Content Include="DataBase.xml" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
     <Content Include="UserControl\PageControl.ascx" />

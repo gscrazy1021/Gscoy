@@ -32,20 +32,25 @@ namespace Gscoy.WeChat.Biz.Handler
                     {
                         string msgType = section.Value;
 
-                        switch (msgType)
+                        switch (msgType.ToLower())
                         {
                             case "text":
                                 handler = new TextHandler(requestXml);
                                 break;
                             case "image":
+                                handler = new ImageHandler(requestXml);
                                 break;
                             case "voice":
+                                handler = new VoiceHandler(requestXml);
                                 break;
                             case "video":
+                                handler = new VideoHandler(requestXml);
                                 break;
                             case "location":
+                                handler = new LocationHandler(requestXml);
                                 break;
                             case "link":
+                                handler = new LinkHandler(requestXml);
                                 break;
                             case "event":
                                 var eventStr = doc.SelectSingleNode("/xml/EVENT");
@@ -53,14 +58,19 @@ namespace Gscoy.WeChat.Biz.Handler
                                 switch (eventStr.Value)
                                 {
                                     case "subscribe":
+                                        handler = new SubscribeEventHandler(requestXml);
                                         break;
-                                    case "SCAN":
+                                    case "scan":
+                                        handler = new ScanEventHandler(requestXml);
                                         break;
-                                    case "LOCATION":
+                                    case "location":
+                                        handler = new LocationEventHandler(requestXml);
                                         break;
-                                    case "CLICK":
+                                    case "click":
+                                        handler = new ClickEventHandler(requestXml);
                                         break;
-                                    case "VIEW":
+                                    case "view":
+                                        handler = new ViewEventHandler(requestXml);
                                         break;
                                 }
                                 break;

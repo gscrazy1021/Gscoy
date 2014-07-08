@@ -31,7 +31,8 @@ namespace Gscoy.WeChat.Biz
                 if (!string.IsNullOrEmpty(postString))
                 {
                     var handler = Handler.HandlerFactory.CreateHandler(postString);
-                    handler.HandleRequest();
+                    var response = handler.HandleRequest();
+                    Response.Write(response);
                 }
             }
             else

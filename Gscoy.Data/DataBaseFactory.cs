@@ -2,8 +2,8 @@
 using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Data.OleDb;
-using System.Data.OracleClient; //需要添加引用
-//using MySql.Data.MySqlClient;   //请自行安装MySQLConnector/Net后添加引用
+using System.Data.OracleClient;
+using System.Data.SQLite;
 
 namespace Gscoy.Data
 {
@@ -19,7 +19,7 @@ namespace Gscoy.Data
             IDbConnection iDbConnection;
             switch (providerType)
             {
-                case DataProvider.SqlServer:
+                case DataProvider.MSSQL:
                     iDbConnection = new SqlConnection();
                     break;
                 case DataProvider.OleDb:
@@ -28,14 +28,12 @@ namespace Gscoy.Data
                 case DataProvider.Odbc:
                     iDbConnection = new OdbcConnection();
                     break;
-                case DataProvider.Oracle:
-                    iDbConnection = new OracleConnection();
-                    break;
-                    //case DataProvider.MySql:
-                    //    iDbConnection = new MySqlConnection();
+                case DataProvider.Sqlite:
+                    iDbConnection = new SQLiteConnection();
                     break;
                 default:
-                    return null;
+                    iDbConnection = new SqlConnection();
+                    break;
             }
             return iDbConnection;
         }
@@ -44,18 +42,16 @@ namespace Gscoy.Data
         {
             switch (providerType)
             {
-                case DataProvider.SqlServer:
+                case DataProvider.MSSQL:
                     return new SqlCommand();
                 case DataProvider.OleDb:
                     return new OleDbCommand();
                 case DataProvider.Odbc:
                     return new OdbcCommand();
-                case DataProvider.Oracle:
-                    return new OracleCommand();
-                //case DataProvider.MySql:
-                //    return new MySqlCommand();
+                case DataProvider.Sqlite:
+                    return new SQLiteCommand();
                 default:
-                    return null;
+                    return new SqlCommand();
             }
         }
 
@@ -63,16 +59,14 @@ namespace Gscoy.Data
         {
             switch (providerType)
             {
-                case DataProvider.SqlServer:
+                case DataProvider.MSSQL:
                     return new SqlDataAdapter();
                 case DataProvider.OleDb:
                     return new OleDbDataAdapter();
                 case DataProvider.Odbc:
                     return new OdbcDataAdapter();
-                case DataProvider.Oracle:
-                    return new OracleDataAdapter();
-                //case DataProvider.MySql:
-                //    return new MySqlDataAdapter();
+                case DataProvider.Sqlite:
+                    return new SQLiteDataAdapter();
                 default:
                     return null;
             }
@@ -90,7 +84,7 @@ namespace Gscoy.Data
             IDbDataParameter[] idbParams = new IDbDataParameter[paramsCount];
             switch (providerType)
             {
-                case DataProvider.SqlServer:
+                case DataProvider.MSSQL:
                     for (int i = 0; i < paramsCount; i++)
                     {
                         idbParams[i] = new SqlParameter();
@@ -108,20 +102,17 @@ namespace Gscoy.Data
                         idbParams[i] = new OdbcParameter();
                     }
                     break;
-                case DataProvider.Oracle:
-                    for (int i = 0; i < paramsCount; i++)
+                case DataProvider.Sqlite:
+                       for (int i = 0; i < paramsCount; i++)
                     {
-                        idbParams[i] = new OracleParameter();
+                        idbParams[i] = new SQLiteParameter();
                     }
                     break;
-                //case DataProvider.MySql:
-                //    for (int i = 0; i < paramsCount; i++)
-                //    {
-                //        idbParams[i] = new MySqlParameter();
-                //    }
-                //    break;
                 default:
-                    idbParams = null;
+                    for (int i = 0; i < paramsCount; i++)
+                    {
+                        idbParams[i] = new SqlParameter();
+                    }
                     break;
             }
             return idbParams;

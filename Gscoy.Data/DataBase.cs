@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gscoy.Common.Enums;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace Gscoy.Data
 {
-    public sealed class DataBase : IDataBase, IDisposable
+    public class DataBase : IDataBase, IDisposable
     {
         #region 字段
 

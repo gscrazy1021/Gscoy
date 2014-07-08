@@ -57,3 +57,7 @@ E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Biz.pdb
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.pdb
 D:\own\Gscoy\Gscoy.WebUI\bin\log4net.dll
 D:\own\Gscoy\Gscoy.WebUI\bin\log4net.xml
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Data.dll
+D:\own\Gscoy\Gscoy.WebUI\bin\System.Data.SQLite.dll
+D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Data.pdb
+D:\own\Gscoy\Gscoy.WebUI\bin\System.Data.SQLite.xml

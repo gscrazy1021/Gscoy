@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DBConnection>
+  <MSSQL>
+    <User_R>Password=$a&amp;ha_837;User ID=agtmgrbj_rsf;Initial Catalog=Agtmgr_BJ;Data Source=123.103.35.3</User_R>
+    <User_W>W</User_W>
+  </MSSQL>
+  <MYSQL>
+    <User_R>R</User_R>
+    <User_W>W</User_W>
+  </MYSQL>
+  <SQLITE>
+    <User_R>R</User_R>
+    <User_W>W</User_W>
+  </SQLITE>
+  <ACCESS>
+    <User_R>R</User_R>
+    <User_W>W</User_W>
+  </ACCESS>
+  <ORCALE>
+    <User_R>R</User_R>
+    <User_W>W</User_W>
+  </ORCALE>
+</DBConnection>

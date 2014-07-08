@@ -7,10 +7,9 @@ namespace Gscoy.Data
 {
     public enum DataProvider
     {
-        Oracle,
-        SqlServer,
+        MSSQL,
+        Sqlite,
         OleDb,
         Odbc,
-        MySql
     }
 }

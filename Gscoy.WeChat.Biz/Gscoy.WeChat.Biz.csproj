@@ -44,9 +44,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseAPI.cs" />
+    <Compile Include="Handler\ClickEventHandler.cs" />
     <Compile Include="Handler\HandlerFactory.cs" />
     <Compile Include="Handler\IHandler.cs" />
+    <Compile Include="Handler\ImageHandler.cs" />
+    <Compile Include="Handler\LinkHandler.cs" />
+    <Compile Include="Handler\LocationEventHandler.cs" />
+    <Compile Include="Handler\LocationHandler.cs" />
+    <Compile Include="Handler\ScanEventHandler.cs" />
+    <Compile Include="Handler\SubscribeEventHandler.cs" />
     <Compile Include="Handler\TextHandler.cs" />
+    <Compile Include="Handler\VideoHandler.cs" />
+    <Compile Include="Handler\ViewEventHandler.cs" />
+    <Compile Include="Handler\VoiceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeChat.cs" />
     <Compile Include="WeChatAPI.cs">
