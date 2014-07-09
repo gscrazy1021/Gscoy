@@ -175,7 +175,7 @@ namespace Gscoy.Common
                 httpWebRequest.UserAgent = userAgent;
                 httpWebRequest.Method = "GET";
 
-                httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+              httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 Stream responseStream = httpWebResponse.GetResponseStream();
                 StreamReader streamReader = new StreamReader(responseStream, encoding);
                 string html = streamReader.ReadToEnd();

@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Baidu\oauth_redirect.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
     <Content Include="UserControl\PageControl.ascx" />
@@ -67,6 +68,13 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baidu\oauth_redirect.aspx.cs">
+      <DependentUpon>oauth_redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Baidu\oauth_redirect.aspx.designer.cs">
+      <DependentUpon>oauth_redirect.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -111,7 +119,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Gscoy.Biz\Gscoy.Biz.csproj">
       <Project>{742cca35-2578-4dad-9eda-a275560973ff}</Project>
-      <Name>Gscoy.Biz %28Gscoy.Biz\Gscoy.Biz%29</Name>
+      <Name>Gscoy.Biz</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Cache\Gscoy.Cache.csproj">
       <Project>{c05b28ad-e83c-4213-9367-37fa0d0c0af9}</Project>
@@ -123,7 +131,11 @@
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
       <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
-      <Name>Gscoy.Common %28Gscoy.Common\Gscoy.Common%29</Name>
+      <Name>Gscoy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.DataModel\Gscoy.DataModel.csproj">
+      <Project>{43b1fd6d-9d96-4f78-bb19-63bb9534df9b}</Project>
+      <Name>Gscoy.DataModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Service\Gscoy.Service.csproj">
       <Project>{409cff35-7e3f-4d3e-8513-becaf284128c}</Project>

@@ -69,7 +69,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
       <Project>{267B9F2E-4510-4F62-9291-7173D1ED62CA}</Project>
-      <Name>Gscoy.Common %28Gscoy.Common\Gscoy.Common%29</Name>
+      <Name>Gscoy.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Dapper.Data\Gscoy.Dapper.Data.csproj">
       <Project>{E694A871-7E8A-4074-A725-FD35B6CFA8D1}</Project>

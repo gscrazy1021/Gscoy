@@ -72,7 +72,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
       <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
-      <Name>Gscoy.Common %28Gscoy.Common\Gscoy.Common%29</Name>
+      <Name>Gscoy.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
