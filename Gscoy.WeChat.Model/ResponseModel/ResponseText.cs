@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gscoy.WeChat.Model.ResonseModel
+namespace Gscoy.WeChat.Model.ResponseModel
 {
     /// <summary>
     /// 接收文本消息
@@ -17,7 +17,7 @@ namespace Gscoy.WeChat.Model.ResonseModel
 
         public ResponseText()
         {
-            this.MsgType = ResponseMsgType.Text.ToString().ToLower();
+            this.MsgType = "text";
         }
 
         public ResponseText(BaseMsgEntity info)

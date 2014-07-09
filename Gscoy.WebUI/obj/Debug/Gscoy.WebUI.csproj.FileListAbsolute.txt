@@ -61,3 +61,5 @@ D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Data.dll
 D:\own\Gscoy\Gscoy.WebUI\bin\System.Data.SQLite.dll
 D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Data.pdb
 D:\own\Gscoy\Gscoy.WebUI\bin\System.Data.SQLite.xml
+D:\own\Gscoy\Gscoy.WebUI\bin\x64\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.WebUI\bin\x86\SQLite.Interop.dll

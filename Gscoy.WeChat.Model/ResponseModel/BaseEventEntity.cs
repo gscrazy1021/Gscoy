@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gscoy.WeChat.Model.ResonseModel
+namespace Gscoy.WeChat.Model.ResponseModel
 {
     /// <summary>
     /// 接收事件基类
