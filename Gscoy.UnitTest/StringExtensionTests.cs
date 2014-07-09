@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Gscoy.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace Gscoy.Common.Tests
 {
     [TestClass()]

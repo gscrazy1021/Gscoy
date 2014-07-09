@@ -5,3 +5,10 @@ D:\own\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.Dapper.dll
 D:\own\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.Dapper.pdb
 D:\own\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.dll
 D:\own\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.pdb
+E:\CodeSpace\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.DapperExtension.dll
+E:\CodeSpace\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.DapperExtension.pdb
+E:\CodeSpace\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.Dapper.dll
+E:\CodeSpace\Gscoy\Gscoy.DapperExtension\bin\Debug\Gscoy.Dapper.pdb
+E:\CodeSpace\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.csprojResolveAssemblyReference.cache
+E:\CodeSpace\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.dll
+E:\CodeSpace\Gscoy\Gscoy.DapperExtension\obj\Debug\Gscoy.DapperExtension.pdb

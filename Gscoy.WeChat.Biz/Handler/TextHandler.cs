@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Gscoy.Biz;
 using Gscoy.Common;
 using Gscoy.WeChat.Model.RequestModel;
-using Gscoy.WeChat.Model.ResonseModel;
+using Gscoy.WeChat.Model.ResponseModel;
 
 namespace Gscoy.WeChat.Biz.Handler
 {
@@ -40,7 +41,7 @@ namespace Gscoy.WeChat.Biz.Handler
                 switch (msgType.ToLower())
                 {
                     case "tq":
-                        response = "tq";
+                        response = WeatherHelper.GetWeatherInfoByCity("101010100");
                         break;
                     default:
                         response = "输入的类型不对撒~";

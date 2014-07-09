@@ -65,11 +65,16 @@
     <Compile Include="StringExtensionTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeatherHelperTests.cs" />
     <Compile Include="WebService\WebServiceHelperTests.cs" />
     <Compile Include="WeChatAPITests.cs" />
     <Compile Include="WeChatTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gscoy.Biz\Gscoy.Biz.csproj">
+      <Project>{742CCA35-2578-4DAD-9EDA-A275560973FF}</Project>
+      <Name>Gscoy.Biz</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
       <Project>{267B9F2E-4510-4F62-9291-7173D1ED62CA}</Project>
       <Name>Gscoy.Common</Name>

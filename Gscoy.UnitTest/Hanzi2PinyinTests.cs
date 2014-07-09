@@ -18,7 +18,7 @@ namespace Gscoy.Common.Tests
         [TestMethod()]
         public void GetFirstPinyinTest()
         {
-            var r = Hanzi2Pinyin.convert("高爽");
+            //var r = Hanzi2Pinyin.convert("高爽");
             
             Assert.Fail();
         }

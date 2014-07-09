@@ -41,9 +41,9 @@
   <ItemGroup>
     <Compile Include="SFB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WeatherHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Baidu\" />
     <ProjectReference Include="..\Gscoy.Cache\Gscoy.Cache.csproj">
       <Project>{c05b28ad-e83c-4213-9367-37fa0d0c0af9}</Project>
       <Name>Gscoy.Cache</Name>
@@ -76,6 +76,9 @@
       <Project>{409cff35-7e3f-4d3e-8513-becaf284128c}</Project>
       <Name>Gscoy.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Baidu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

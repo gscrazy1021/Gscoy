@@ -2,3 +2,7 @@ D:\own\Gscoy\Gscoy.WeChat.Data\bin\Debug\Gscoy.WeChat.Data.dll
 D:\own\Gscoy\Gscoy.WeChat.Data\bin\Debug\Gscoy.WeChat.Data.pdb
 D:\own\Gscoy\Gscoy.WeChat.Data\obj\Debug\Gscoy.WeChat.Data.dll
 D:\own\Gscoy\Gscoy.WeChat.Data\obj\Debug\Gscoy.WeChat.Data.pdb
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Data\bin\Debug\Gscoy.WeChat.Data.dll
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Data\bin\Debug\Gscoy.WeChat.Data.pdb
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Data\obj\Debug\Gscoy.WeChat.Data.dll
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Data\obj\Debug\Gscoy.WeChat.Data.pdb

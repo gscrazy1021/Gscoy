@@ -6,6 +6,6 @@ E:\CodeSpace\Gscoy\Gscoy.DataModel\bin\Debug\Gscoy.DataModel.dll
 E:\CodeSpace\Gscoy\Gscoy.DataModel\bin\Debug\Gscoy.DataModel.pdb
 E:\CodeSpace\Gscoy\Gscoy.DataModel\bin\Debug\Newtonsoft.Json.dll
 E:\CodeSpace\Gscoy\Gscoy.DataModel\bin\Debug\Newtonsoft.Json.xml
-E:\CodeSpace\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.dll
 E:\CodeSpace\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.pdb
+E:\CodeSpace\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.csprojResolveAssemblyReference.cache

@@ -30,3 +30,13 @@ D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\log4net.dll
 D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\log4net.xml
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\log4net.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\log4net.xml
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Biz.dll
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Data.dll
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.DataModel.dll
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\System.Data.SQLite.dll
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Biz.pdb
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Data.pdb
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.DataModel.pdb
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\System.Data.SQLite.xml
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x86\SQLite.Interop.dll

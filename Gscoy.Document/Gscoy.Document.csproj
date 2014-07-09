@@ -57,6 +57,7 @@
     <Content Include="DLLImport\NPOI.HSSF.dll" />
     <Content Include="DLLImport\NPOI.POIFS.dll" />
     <Content Include="DLLImport\NPOI.Util.dll" />
+    <Content Include="weather.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

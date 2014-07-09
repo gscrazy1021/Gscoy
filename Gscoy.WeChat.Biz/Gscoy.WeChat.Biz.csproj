@@ -66,6 +66,10 @@
     <Compile Include="WeChatTool.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Gscoy.Biz\Gscoy.Biz.csproj">
+      <Project>{742cca35-2578-4dad-9eda-a275560973ff}</Project>
+      <Name>Gscoy.Biz</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gscoy.Cache\Gscoy.Cache.csproj">
       <Project>{c05b28ad-e83c-4213-9367-37fa0d0c0af9}</Project>
       <Name>Gscoy.Cache</Name>
