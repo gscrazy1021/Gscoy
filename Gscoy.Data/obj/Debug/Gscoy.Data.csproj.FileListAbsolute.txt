@@ -36,5 +36,12 @@ D:\own\Gscoy\Gscoy.Data\bin\Debug\Newtonsoft.Json.xml
 D:\own\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.csprojResolveAssemblyReference.cache
 D:\own\Gscoy\Gscoy.Data\bin\Debug\log4net.dll
 D:\own\Gscoy\Gscoy.Data\bin\Debug\log4net.xml
+<<<<<<< HEAD
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\log4net.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\log4net.xml
+=======
+D:\own\Gscoy\Gscoy.Data\bin\Debug\x64\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.Data\bin\Debug\x86\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.Data\bin\Debug\System.Data.SQLite.dll
+D:\own\Gscoy\Gscoy.Data\bin\Debug\System.Data.SQLite.xml
+>>>>>>> origin/master

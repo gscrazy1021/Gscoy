@@ -57,9 +57,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ConfigHelperTests.cs" />
+    <Compile Include="DataBaseHelperTests.cs" />
+    <Compile Include="Hanzi2PinyinTests.cs" />
     <Compile Include="JsonHelperTests.cs" />
     <Compile Include="LogNetHelperTests.cs" />
     <Compile Include="MailHelperTests.cs" />
+    <Compile Include="StringExtensionTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebService\WebServiceHelperTests.cs" />
@@ -75,6 +78,10 @@
       <Project>{E694A871-7E8A-4074-A725-FD35B6CFA8D1}</Project>
       <Name>Gscoy.Dapper.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gscoy.Data\Gscoy.Data.csproj">
+      <Project>{ED66258C-9A53-4A31-BC6A-72D8A2B858B9}</Project>
+      <Name>Gscoy.Data %28Gscoy.Data\Gscoy.Data%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gscoy.Service\Gscoy.Service.csproj">
       <Project>{409CFF35-7E3F-4D3E-8513-BECAF284128C}</Project>
       <Name>Gscoy.Service</Name>
@@ -89,6 +96,9 @@
     <None Include="log4net.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DataBase.xml" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

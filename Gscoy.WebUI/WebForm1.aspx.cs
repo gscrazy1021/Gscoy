@@ -15,7 +15,7 @@ namespace Gscoy.WebUI
             pc.CurPage = 2;
             pc.AllCount = 20;
 
-            var val = Gscoy.Common.ConfigHelper.GetConfig<string>("version");
+            var val = Gscoy.Common.ConfigHelper.GetConfig("version");
             Response.Write(val);
         }
     }

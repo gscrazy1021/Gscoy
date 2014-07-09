@@ -244,7 +244,7 @@ namespace Gscoy.Common
             int year = currentDate.Year;
             int month = currentDate.Month;
             //年/月
-            string subdir = string.Concat(year, '\\', month);
+            string subdir = string.Concat(year, '_', month);
             string path = Path.Combine(log_root_directory, subdir);
             if (!Directory.Exists(path))
             {

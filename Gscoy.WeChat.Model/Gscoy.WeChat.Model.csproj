@@ -44,12 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="RequestModel\BaseRequestMsg.cs" />
+    <Compile Include="RequestModel\RequestImage.cs" />
+    <Compile Include="RequestModel\RequestLink.cs" />
+    <Compile Include="RequestModel\RequestLocation.cs" />
     <Compile Include="RequestModel\RequestText.cs" />
-    <Compile Include="ResponseModel\ResponseMsgType.cs" />
+    <Compile Include="RequestModel\RequestVideo.cs" />
+    <Compile Include="RequestModel\RequestVoice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponseModel\BaseEventEntity.cs" />
     <Compile Include="ResponseModel\BaseMsgEntity.cs" />
-    <Compile Include="ResponseModel\ResponseMsg.cs" />
+    <Compile Include="ResponseModel\ResponseImage.cs" />
+    <Compile Include="ResponseModel\ResponseMusic.cs" />
+    <Compile Include="ResponseModel\ResponseText.cs" />
+    <Compile Include="ResponseModel\ResponseVideo.cs" />
+    <Compile Include="ResponseModel\ResponseVoice.cs" />
     <Compile Include="ResultModel\AccessTokenEntity.cs" />
     <Compile Include="WeChatRetInfo.cs" />
     <Compile Include="WeChatUserInfoModel.cs" />

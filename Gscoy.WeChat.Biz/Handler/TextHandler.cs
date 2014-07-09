@@ -36,14 +36,15 @@ namespace Gscoy.WeChat.Biz.Handler
             }
             else
             {
-                if (content.StartsWith("tq", StringComparison.OrdinalIgnoreCase))
+                var msgType = content.Split('@')[0];
+                switch (msgType.ToLower())
                 {
-                    string cityName = content.Substring(2).Trim();
-                    response = cityName + "";
-                }
-                else
-                {
-                    response = "sfsfsfsfsd";
+                    case "tq":
+                        response = "tq";
+                        break;
+                    default:
+                        response = "输入的类型不对撒~";
+                        break;
                 }
             }
             ResponseText rt = new ResponseText();

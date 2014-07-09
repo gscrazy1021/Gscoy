@@ -28,6 +28,8 @@ namespace Gscoy.WeChat.Biz
             tmpStr = FormsAuthentication.HashPasswordForStoringInConfigFile(tmpStr, "SHA1");
             tmpStr = tmpStr.ToLower();
 
+            LogHelper.Trace(tmpStr + "|||||||" + signature);
+
             return tmpStr == signature;
         }
 

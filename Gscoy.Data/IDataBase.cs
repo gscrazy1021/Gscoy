@@ -4,47 +4,19 @@ namespace Gscoy.Data
 {
     public interface IDataBase
     {
-        DataProvider ProviderType
-        {
-            get;
-            set;
-        }
+        DataProvider ProviderType { get; set; }
 
-        IDbConnection Connection
-        {
-            get;
-            set;
-        }
+        IDbConnection Connection { get; set; }
 
-        IDataReader DataReader
-        {
-            get;
-            set;
-        }
+        IDataReader DataReader { get; set; }
 
-        IDbCommand Command
-        {
-            get;
-            set;
-        }
+        IDbCommand Command { get; set; }
 
-        IDbTransaction Transaction
-        {
-            get;
-            set;
-        }
+        IDbTransaction Transaction { get; set; }
 
-        IDbDataParameter[] Parameters
-        {
-            get;
-            set;
-        }
+        IDbDataParameter[] Parameters { get; set; }
 
-        string ConnectionString
-        {
-            get;
-            set;
-        }
+        string ConnectionString { get; set; }
 
         void Open();
         void Close();

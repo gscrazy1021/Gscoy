@@ -31,7 +31,8 @@ namespace Gscoy.WeChat.Biz
                 if (!string.IsNullOrEmpty(postString))
                 {
                     var handler = Handler.HandlerFactory.CreateHandler(postString);
-                    handler.HandleRequest();
+                    var response = handler.HandleRequest();
+                    HttpContext.Current.Response.Write(response);
                 }
             }
             else
@@ -45,7 +46,7 @@ namespace Gscoy.WeChat.Biz
         /// </summary>
         private void Auth()
         {
-            var token = ConfigHelper.GetConfig("WeChatTooken");
+            var token = ConfigHelper.GetConfig("WeChatToken");
             var echoString = GetRequestString("echoStr");
             var signature = GetRequestString("signature");
             var timestamp = GetRequestString("timestamp");

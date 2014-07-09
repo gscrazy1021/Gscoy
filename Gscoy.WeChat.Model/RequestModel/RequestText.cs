@@ -9,11 +9,6 @@ namespace Gscoy.WeChat.Model.RequestModel
     public class RequestText : BaseRequestMsg
     {
         /// <summary>
-        ///  	消息id，64位整型 
-        /// </summary>
-        public int MsgID { get; set; }
-
-        /// <summary>
         ///  	文本消息内容 
         /// </summary>
         public string Content { get; set; }
@@ -26,7 +21,7 @@ namespace Gscoy.WeChat.Model.RequestModel
             txt.FromUserName = xml.Element("FromUserName").Value;
             txt.CreateTime = int.Parse(xml.Element("CreateTime").Value);
             txt.Content = xml.Element("Content").Value;
-            txt.MsgID = int.Parse(xml.Element("").Value);
+            txt.MsgId = xml.Element("MsgId").Value;
             txt.MsgType = xml.Element("MsgType").Value;
             return txt;
         }
