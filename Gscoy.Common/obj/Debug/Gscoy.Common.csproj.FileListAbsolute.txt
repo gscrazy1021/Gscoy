@@ -17,3 +17,4 @@ D:\own\Gscoy\Gscoy.Common\bin\Debug\log4net.dll
 D:\own\Gscoy\Gscoy.Common\bin\Debug\log4net.xml
 E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\log4net.dll
 E:\CodeSpace\Gscoy\Gscoy.Common\bin\Debug\log4net.xml
+E:\CodeSpace\Gscoy\Gscoy.Common\obj\Debug\Gscoy.Common.csprojResolveAssemblyReference.cache

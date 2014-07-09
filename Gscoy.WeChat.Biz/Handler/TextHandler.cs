@@ -37,11 +37,19 @@ namespace Gscoy.WeChat.Biz.Handler
             }
             else
             {
-                var msgType = content.Split('@')[0];
+                var inputStr = content.Split('@');
+                var msgType = inputStr[0];
                 switch (msgType.ToLower())
                 {
                     case "tq":
-                        response = WeatherHelper.GetWeatherInfoByCity("101010100");
+                        if (string.IsNullOrEmpty(inputStr[1]))
+                        {
+                            response = WeatherHelper.GetWeatherInfo("101010100");
+                        }
+                        else
+                        {
+                            response = WeatherHelper.GetWeatherInfoByCity(inputStr[1]);
+                        }
                         break;
                     default:
                         response = "输入的类型不对撒~";

@@ -41,20 +41,14 @@ namespace Gscoy.Biz
             var weatherPath = ConfigHelper.GetConfig("weatherPath");
             try
             {
-                using (FileStream file = File.OpenRead(weatherPath))
+                var lineList = FileHelper.ReadFileLines(weatherPath);
+                foreach (var item in lineList)
                 {
-                    using (StreamReader sr = new StreamReader(file))
+                    if (!string.IsNullOrEmpty(item))
                     {
-                        while (sr.Peek() > 0)
-                        {
-                            var line = sr.ReadLine();
-                            if (!string.IsNullOrEmpty(line))
-                            {
-                                var parms = line.Split('=');
-                                if (!cityList.ContainsKey(parms[1]))
-                                    cityList.Add(parms[1], parms[0]);
-                            }
-                        }
+                        var pars = item.Split('=');
+                        if (!cityList.ContainsKey(pars[1]))
+                            cityList.Add(pars[1], pars[0]);
                     }
                 }
             }
@@ -68,9 +62,16 @@ namespace Gscoy.Biz
 
         public static string GetWeatherInfoByCity(string city)
         {
-            var cityid = cityList[city];
-            var url = string.Format("http://www.weather.com.cn/data/sk/{0}.html", cityid);
-            return GetWeather(url);
+            if (cityList.ContainsKey(city))
+            {
+                var cityid = cityList[city];
+                var url = string.Format("http://www.weather.com.cn/data/sk/{0}.html", cityid);
+                return GetWeather(url);
+            }
+            else
+            {
+                return string.Format("抱歉，没有找到您输入的城市，请重新输入试试。");
+            }
         }
     }
 }
