@@ -10,9 +10,14 @@ namespace Gscoy.WebUI
 {
     public class Global : System.Web.HttpApplication
     {
+        /// <summary>
+        /// 应用程序根目录
+        /// </summary>
+        public static string AppDomainPath = string.Empty;
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            AppDomainPath = AppDomain.CurrentDomain.BaseDirectory;
             LogNetHelper.Init();
             LogNetHelper.Write("[web站点运行...]", LogNetHelper.LogMessageType.Info);
         }
