@@ -38,7 +38,7 @@ namespace Gscoy.Biz
         static WeatherHelper()
         {
             cityList = new Dictionary<string, string>();
-            var weatherPath = ConfigHelper.GetConfig("weatherPath");
+            var weatherPath = AppDomain.CurrentDomain.BaseDirectory + ConfigHelper.GetConfig("weatherPath");
             try
             {
                 var lineList = FileHelper.ReadFileLines(weatherPath);

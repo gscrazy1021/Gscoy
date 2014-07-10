@@ -27,7 +27,8 @@ namespace Gscoy.WeChat.Biz.Handler
 
         public string HandleRequest()
         {
-            throw new NotImplementedException();
+            //var request=Request
+            return null;
         }
     }
 }

@@ -39,7 +39,6 @@ namespace Gscoy.WeChat.Biz.Handler
             {
                 try
                 {
-                    content = "tq";
                     var inputStr = content.Split('@');
                     var msgType = inputStr[0];
                     switch (msgType.ToLower())
