@@ -37,23 +37,31 @@ namespace Gscoy.WeChat.Biz.Handler
             }
             else
             {
-                var inputStr = content.Split('@');
-                var msgType = inputStr[0];
-                switch (msgType.ToLower())
+                try
                 {
-                    case "tq":
-                        if (string.IsNullOrEmpty(inputStr[1]))
-                        {
-                            response = WeatherHelper.GetWeatherInfo("101010100");
-                        }
-                        else
-                        {
-                            response = WeatherHelper.GetWeatherInfoByCity(inputStr[1]);
-                        }
-                        break;
-                    default:
-                        response = "输入的类型不对撒~";
-                        break;
+                    content = "tq";
+                    var inputStr = content.Split('@');
+                    var msgType = inputStr[0];
+                    switch (msgType.ToLower())
+                    {
+                        case "tq":
+                            if (inputStr.Length == 1 || string.IsNullOrEmpty(inputStr[1]))
+                            {
+                                response = WeatherHelper.GetWeatherInfo("101010100");
+                            }
+                            else
+                            {
+                                response = WeatherHelper.GetWeatherInfoByCity(inputStr[1]);
+                            }
+                            break;
+                        default:
+                            response = "输入的类型不对撒~";
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LogHelper.Trace(ex);
                 }
             }
             ResponseText rt = new ResponseText();

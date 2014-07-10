@@ -40,3 +40,11 @@ E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.DataModel.pdb
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\System.Data.SQLite.xml
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x64\SQLite.Interop.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x86\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Biz.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Data.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.DataModel.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\System.Data.SQLite.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Biz.pdb
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Data.pdb
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.DataModel.pdb
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\System.Data.SQLite.xml

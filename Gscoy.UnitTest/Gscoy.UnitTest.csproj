@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="ConfigHelperTests.cs" />
     <Compile Include="DataBaseHelperTests.cs" />
+    <Compile Include="Handler\TextHandlerTests.cs" />
     <Compile Include="Hanzi2PinyinTests.cs" />
     <Compile Include="JsonHelperTests.cs" />
     <Compile Include="LogNetHelperTests.cs" />
