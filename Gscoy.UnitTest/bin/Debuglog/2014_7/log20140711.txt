@@ -1,0 +1,60 @@
+
+***********************TRACE_MEMO 2014/7/11 15:19:57***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 15:29:46***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 15:32:59***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 15:33:35***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 15:33:47***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 15:34:22***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 15:34:48***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 15:37:07***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:31:45***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:31:48***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:31:50***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:33:55***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:33:57***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:34:00***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:45:45***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:45:46***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:48:00***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:48:00***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:50:35***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:50:35***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml

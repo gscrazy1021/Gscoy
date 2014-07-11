@@ -56,6 +56,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConfigHelper.cs" />
+    <Compile Include="ConvertJine.cs" />
     <Compile Include="DataBaseTypeHelper.cs" />
     <Compile Include="DataTableHelper.cs" />
     <Compile Include="Enums\DataBaseType.cs" />

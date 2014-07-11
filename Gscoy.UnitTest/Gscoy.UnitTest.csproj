@@ -57,12 +57,15 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ConfigHelperTests.cs" />
+    <Compile Include="ConventJineTests.cs" />
     <Compile Include="DataBaseHelperTests.cs" />
+    <Compile Include="Handler\LocationHandlerTests.cs" />
     <Compile Include="Handler\TextHandlerTests.cs" />
     <Compile Include="Hanzi2PinyinTests.cs" />
     <Compile Include="JsonHelperTests.cs" />
     <Compile Include="LogNetHelperTests.cs" />
     <Compile Include="MailHelperTests.cs" />
+    <Compile Include="SFBTests.cs" />
     <Compile Include="StringExtensionTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="WebService\WebServiceHelperTests.cs" />
     <Compile Include="WeChatAPITests.cs" />
     <Compile Include="WeChatTests.cs" />
+    <Compile Include="XMLHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gscoy.Biz\Gscoy.Biz.csproj">

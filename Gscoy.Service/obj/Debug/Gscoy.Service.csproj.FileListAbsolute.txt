@@ -1,6 +1,5 @@
 D:\own\Gscoy\Gscoy.Service\bin\Debug\Gscoy.Service.dll
 D:\own\Gscoy\Gscoy.Service\bin\Debug\Gscoy.Service.pdb
-D:\own\Gscoy\Gscoy.Service\obj\Debug\Gscoy.Service.csprojResolveAssemblyReference.cache
 D:\own\Gscoy\Gscoy.Service\obj\Debug\Gscoy.Service.dll
 D:\own\Gscoy\Gscoy.Service\obj\Debug\Gscoy.Service.pdb
 E:\CodeSpace\Gscoy\Gscoy.Service\bin\Debug\Gscoy.Service.dll

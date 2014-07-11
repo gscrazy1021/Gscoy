@@ -11,7 +11,7 @@ namespace Gscoy.Biz
         public string GetHouse()
         {
             DataBaseHelper helper = DataBaseHelper.GetInstance(Common.Enums.DBUserType.User_R);
-            var result = helper.ExecuteNonQuery("select count(1) from agentinfo with(nolock)");
+            var result = helper.ExecuteScalar("select getdate()");
             return result.ToString();
         }
     }

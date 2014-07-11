@@ -46,7 +46,10 @@ namespace Gscoy.WeChat.Biz.Handler
                         case "tq":
                             if (inputStr.Length == 1 || string.IsNullOrEmpty(inputStr[1]))
                             {
-                                response = WeatherHelper.GetWeatherInfo("101010100");
+                                //response = WeatherHelper.GetWeatherInfo("101010100");
+                                //SFB sf = new SFB();
+                                //var s = sf.GetHouse();
+                                //response += s;
                             }
                             else
                             {
@@ -60,6 +63,7 @@ namespace Gscoy.WeChat.Biz.Handler
                 }
                 catch (Exception ex)
                 {
+                    response = string.Format(ex.Message);
                     LogHelper.Trace(ex);
                 }
             }

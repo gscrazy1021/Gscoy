@@ -27,8 +27,16 @@ namespace Gscoy.WeChat.Biz.Handler
 
         public string HandleRequest()
         {
-            //var request=Request
-            return null;
+            var val = string.Empty;
+            try
+            {
+                val = "location11111";
+            }
+            catch (Exception ex)
+            {
+                val = ex.Message;
+            }
+            return string.Format(@"<xml><ToUserName><![CDATA[oQqXfjmUcuw2YnM-ccc2f1Le9SrI]]></ToUserName><FromUserName><![CDATA[gh_e5df289c1d17]]></FromUserName><CreateTime>1405072000</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[{0}]]></Content></xml>", val);
         }
     }
 }

@@ -32,15 +32,17 @@ namespace Gscoy.Data
             ProviderType = providerType;
         }
 
-        public DataBase(DataProvider providerType, string connectionString)
+        public DataBase(DataProvider providerType, string connectionString, DBUserType userType)
         {
             ProviderType = providerType;
             ConnectionString = connectionString;
+            UserType = userType;
         }
 
         #endregion
 
         #region 属性
+        public DBUserType UserType { get; set; }
 
         public DataProvider ProviderType
         {
@@ -90,7 +92,7 @@ namespace Gscoy.Data
 
         public void Open()
         {
-            Connection = DataBaseFactory.GetConnection(ProviderType);
+            Connection = DataBaseFactory.GetConnection(UserType);
             Connection.ConnectionString = ConnectionString;
             if (Connection.State != ConnectionState.Open)
             {
@@ -138,6 +140,15 @@ namespace Gscoy.Data
                 Transaction = DataBaseFactory.GetTransaction(ProviderType);
             }
             Command.Transaction = Transaction;
+        }
+
+        public void RollBackTranscation()
+        {
+            if (Transaction != null)
+            {
+                Transaction.Rollback();
+            }
+            Transaction = null;
         }
 
         public void CommitTransaction()

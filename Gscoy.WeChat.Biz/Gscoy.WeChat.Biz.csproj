@@ -78,6 +78,10 @@
       <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
       <Name>Gscoy.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gscoy.DataModel\Gscoy.DataModel.csproj">
+      <Project>{43b1fd6d-9d96-4f78-bb19-63bb9534df9b}</Project>
+      <Name>Gscoy.DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gscoy.WeChat.Model\Gscoy.WeChat.Model.csproj">
       <Project>{844ef35e-2e68-4b2d-b4c3-dc47159ccbea}</Project>
       <Name>Gscoy.WeChat.Model</Name>

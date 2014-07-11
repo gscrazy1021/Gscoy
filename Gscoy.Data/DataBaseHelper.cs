@@ -13,65 +13,8 @@ namespace Gscoy.Data
 {
     public sealed class DataBaseHelper
     {
-        #region 私有方法及变量
+        #region 私有变量
         private static DataBase db = null;//new DataBase(GetDataProvider(), GetConnectionString());
-
-        private static readonly string dbType = ConfigHelper.GetConfig("DataProvider", "MSSQL");
-
-        /// <summary>
-        /// 从配置文件中选择数据库类型
-        /// </summary>
-        /// <returns>DataProvider枚举值</returns>
-        private static DataProvider GetDataProvider()
-        {
-            string providerType = dbType;
-            DataProvider dataProvider;
-            switch (providerType.ToLower())
-            {
-                case "mssql":
-                    dataProvider = DataProvider.MSSQL;
-                    break;
-                case "oledb":
-                    dataProvider = DataProvider.OleDb;
-                    break;
-                case "odbc":
-                    dataProvider = DataProvider.Odbc;
-                    break;
-                case "sqlite":
-                    dataProvider = DataProvider.Sqlite;
-                    break;
-                default:
-                    return DataProvider.MSSQL;
-            }
-            return dataProvider;
-        }
-
-        /// <summary>
-        /// 从配置文件获取连接字符串
-        /// </summary>
-        /// <returns>连接字符串</returns>
-        private static string GetConnectionString(DBUserType userType)
-        {
-            var xmlPath = AppDomain.CurrentDomain.BaseDirectory + ConfigHelper.GetConfig("DBConnectionPath");
-            LogHelper.Trace(xmlPath);
-            var xml = XElement.Load(xmlPath);
-            var key = dbType.ToUpper();
-            var user = string.Empty;
-            switch (userType)
-            {
-                //读写账号
-                case DBUserType.User_W:
-                    user = "User_W";
-                    break;
-                //只读账号
-                case DBUserType.User_R:
-                default:
-                    user = "User_R";
-                    break;
-            }
-            var connStr = xml.Element(key).Element(user).Value;
-            return connStr;
-        }
         #endregion
 
         #region 隐藏构造方法
@@ -93,8 +36,9 @@ namespace Gscoy.Data
                 {
                     if (helper == null)
                     {
-                        var connStr = GetConnectionString(userType);
-                        db = new DataBase(GetDataProvider(), connStr);
+                        var connStr = DataBaseFactory.GetConnectionString(userType);
+                        var provider = DataBaseFactory.providerType;
+                        db = new DataBase(provider, connStr, userType);
                         helper = new DataBaseHelper();
                     }
                 }
@@ -147,12 +91,13 @@ namespace Gscoy.Data
             }
             catch (Exception e)
             {
-                db.Transaction.Rollback();
+                db.RollBackTranscation();
                 throw new Exception(e.Message);
             }
             finally
             {
-                db.Transaction.Commit();
+                db.CommitTransaction();
+                db.Close();
                 db.Dispose();
             }
         }
@@ -172,12 +117,13 @@ namespace Gscoy.Data
             }
             catch (Exception e)
             {
-                db.Transaction.Rollback();
+                db.RollBackTranscation();
                 throw new Exception(e.Message);
             }
             finally
             {
-                db.Transaction.Commit();
+                db.CommitTransaction();
+                db.Close();
                 db.Dispose();
             }
         }
@@ -200,6 +146,31 @@ namespace Gscoy.Data
             }
             finally
             {
+                db.Close();
+                db.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// 执行查询
+        /// </summary>
+        /// <param name="sql">安全的sql语句string.Format()</param>
+        /// <returns>返回DataTable</returns>
+        public object ExecuteScalar(string sql)
+        {
+            try
+            {
+                db.Open();
+                var obj = db.ExecuteScalar(CommandType.Text, sql);
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
                 db.Dispose();
             }
         }

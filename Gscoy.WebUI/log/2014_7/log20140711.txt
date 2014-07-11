@@ -1,0 +1,69 @@
+
+***********************TRACE_MEMO 2014/7/11 16:56:10***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 16:56:10***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:16:36***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:16:36***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:16:42***********************
+<xml><ToUserName><![CDATA[gh_e5df289c1d17]]></ToUserName>
+<FromUserName><![CDATA[oQqXfjmUcuw2YnM-ccc2f1Le9SrI]]></FromUserName>
+<CreateTime>1404964131</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq]]></Content>
+<MsgId>6034274994898509029</MsgId>
+</xml>
+
+***********************TRACE_EXCEPTION 2014/7/11 17:16:44***********************
+2014/7/11 17:16:44 TypeInitializationException
+“Gscoy.Biz.WeatherHelper”的类型初始值设定项引发异常。
+Source:   在 Gscoy.Biz.WeatherHelper.GetWeatherInfo(String cityid)
+   在 Gscoy.WeChat.Biz.Handler.TextHandler.HandleRequest() 位置 d:\own\Gscoy\Gscoy.WeChat.Biz\Handler\TextHandler.cs:行号 49
+2014/7/11 17:17:08 DirectoryNotFoundException
+未能找到路径“D:\own\Gscoy\Gscoy.WebUI\Files\weather.txt”的一部分。
+Source:   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding)
+   在 Gscoy.Common.FileHelper.ReadFileLines(String filePath) 位置 d:\own\Gscoy\Gscoy.Common\FileHelper.cs:行号 118
+   在 Gscoy.Biz.WeatherHelper..cctor() 位置 d:\own\Gscoy\Gscoy.Biz\WeatherHelper.cs:行号 58
+
+***********************TRACE_MEMO 2014/7/11 17:17:37***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:17:37***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:17:40***********************
+<xml><ToUserName><![CDATA[gh_e5df289c1d17]]></ToUserName>
+<FromUserName><![CDATA[oQqXfjmUcuw2YnM-ccc2f1Le9SrI]]></FromUserName>
+<CreateTime>1404964131</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq]]></Content>
+<MsgId>6034274994898509029</MsgId>
+</xml>
+
+***********************TRACE_MEMO 2014/7/11 17:17:52***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:46:26***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:46:26***********************
+D:\own\Gscoy\Gscoy.WebUI\\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/11 17:46:28***********************
+<xml><ToUserName><![CDATA[gh_e5df289c1d17]]></ToUserName>
+<FromUserName><![CDATA[oQqXfjmUcuw2YnM-ccc2f1Le9SrI]]></FromUserName>
+<CreateTime>1404964131</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[tq]]></Content>
+<MsgId>6034274994898509029</MsgId>
+</xml>

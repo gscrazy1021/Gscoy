@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Gscoy.Common
 {
@@ -358,6 +359,15 @@ namespace Gscoy.Common
                 throw ex; //这里可以定义你自己的异常处理
             }
             return isSuccess;
+        }
+        #endregion
+
+        #region linq to xml
+        public static string GetElementValue(string xml)
+        {
+            XElement ele = XElement.Parse(xml);
+            var val = ele.Element("date").Value;
+            return val;
         }
         #endregion
     }

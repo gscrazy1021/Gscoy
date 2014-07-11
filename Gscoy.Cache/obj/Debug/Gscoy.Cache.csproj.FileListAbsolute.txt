@@ -1,4 +1,3 @@
-D:\own\Gscoy\Gscoy.Cache\obj\Debug\Gscoy.Cache.csprojResolveAssemblyReference.cache
 D:\own\Gscoy\Gscoy.Cache\bin\Debug\Gscoy.Cache.dll
 D:\own\Gscoy\Gscoy.Cache\bin\Debug\Gscoy.Cache.pdb
 D:\own\Gscoy\Gscoy.Cache\obj\Debug\Gscoy.Cache.dll
