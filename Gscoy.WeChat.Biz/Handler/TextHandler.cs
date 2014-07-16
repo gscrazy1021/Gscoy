@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Gscoy.Biz;
+using Gscoy.Biz.Baidu;
 using Gscoy.Common;
 using Gscoy.WeChat.Model.RequestModel;
 using Gscoy.WeChat.Model.ResponseModel;
@@ -46,10 +47,7 @@ namespace Gscoy.WeChat.Biz.Handler
                         case "tq":
                             if (inputStr.Length == 1 || string.IsNullOrEmpty(inputStr[1]))
                             {
-                                //response = WeatherHelper.GetWeatherInfo("101010100");
-                                //SFB sf = new SFB();
-                                //var s = sf.GetHouse();
-                                //response += s;
+                                response = WeatherHelper.GetWeatherInfo("101010100");
                             }
                             else
                             {
@@ -57,7 +55,19 @@ namespace Gscoy.WeChat.Biz.Handler
                             }
                             break;
                         default:
-                            response = "输入的类型不对撒~";
+                            var cities = new[] { "北京", "天津", "蓟县", "邦均" };
+                            if (cities.Contains(msgType))
+                            {
+                                response = LBSHelper.GetWeather(city: msgType);
+                                if (string.IsNullOrEmpty(response))
+                                {
+                                    response = "没有找到对应城市的天气";
+                                }
+                            }
+                            else
+                            {
+                                response = "输入的类型不对撒~";
+                            }
                             break;
                     }
                 }

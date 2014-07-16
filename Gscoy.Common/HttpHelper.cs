@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
+using System.Web;
 
 namespace Gscoy.Common
 {
@@ -175,7 +176,7 @@ namespace Gscoy.Common
                 httpWebRequest.UserAgent = userAgent;
                 httpWebRequest.Method = "GET";
 
-              httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 Stream responseStream = httpWebResponse.GetResponseStream();
                 StreamReader streamReader = new StreamReader(responseStream, encoding);
                 string html = streamReader.ReadToEnd();
@@ -290,6 +291,30 @@ namespace Gscoy.Common
                 return null;
             }
         }
+        #endregion
+
+        #region 编码与解码
+        /// <summary>
+        /// http    url编码
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string Encode(string value)
+        {
+            var result = HttpUtility.UrlEncode(value, Encoding);
+            return result;
+        }
+        /// <summary>
+        /// http    url解码
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string Dencode(string value)
+        {
+            var result = HttpUtility.UrlDecode(value, Encoding);
+            return result;
+        }
+
         #endregion
     }
 

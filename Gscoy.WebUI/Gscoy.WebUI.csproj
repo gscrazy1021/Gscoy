@@ -63,6 +63,7 @@
     <Content Include="Global.asax" />
     <Content Include="ErrorPage.html" />
     <Content Include="UserControl\PageControl.ascx" />
+    <Content Include="Wap\WapIndex.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="UserControl\PageControl.ascx.designer.cs">
       <DependentUpon>PageControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Wap\WapIndex.aspx.cs">
+      <DependentUpon>WapIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wap\WapIndex.aspx.designer.cs">
+      <DependentUpon>WapIndex.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

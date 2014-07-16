@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baidu\LBS\BaiduHotMovieEntity.cs" />
+    <Compile Include="Baidu\LBS\BaiduLoactionEntity.cs" />
+    <Compile Include="Baidu\LBS\BaiduWeatherEntity.cs" />
     <Compile Include="Baidu\LBS\EnGeocodingEntity.cs" />
     <Compile Include="Baidu\TokenEntity.cs" />
     <Compile Include="Class1.cs" />
