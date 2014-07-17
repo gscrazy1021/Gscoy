@@ -11,7 +11,7 @@ using Gscoy.Common.Enums;
 
 namespace Gscoy.Data
 {
-    public sealed class DataBaseHelper
+    public partial class DataBaseHelper
     {
         #region 私有变量
         private static DataBase db = null;//new DataBase(GetDataProvider(), GetConnectionString());

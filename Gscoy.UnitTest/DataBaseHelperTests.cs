@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Gscoy.Data;
+using Gscoy.Data.DapperExtension.Attributes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Gscoy.Data.Tests
 {
@@ -53,5 +54,24 @@ namespace Gscoy.Data.Tests
         {
             Assert.Fail();
         }
+
+        [TestMethod()]
+        public void GetInsertSqlTest()
+        {
+            var u = new UserInfoEntity() { UserID = 1, UserName = "s" };
+            var db = DataBaseHelper.GetInstance(Common.Enums.DBUserType.User_R);
+            db.GetInsertSql<UserInfoEntity>(u);
+            Assert.Fail();
+        }
+
+
+    }
+    [Table(TableName = "userinfo")]
+    class UserInfoEntity
+    {
+        [Column(isprimary:true)]
+        public int UserID { get; set; }
+        [Column]
+        public string UserName { get; set; }
     }
 }

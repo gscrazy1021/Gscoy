@@ -46,3 +46,5 @@ D:\own\Gscoy\Gscoy.Data\bin\Debug\log4net.xml
 D:\own\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.csprojResolveAssemblyReference.cache
 D:\own\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.dll
 D:\own\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.pdb
+E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\Gscoy.Dapper.dll
+E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\Gscoy.Dapper.pdb

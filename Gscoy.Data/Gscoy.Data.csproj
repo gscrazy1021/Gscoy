@@ -43,6 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DapperEx.cs" />
+    <Compile Include="DapperExtension\Attributes\BaseAttribute.cs" />
+    <Compile Include="DapperExtension\Attributes\ColumnAttribute.cs" />
+    <Compile Include="DapperExtension\Attributes\IdAttribute.cs" />
+    <Compile Include="DapperExtension\Attributes\IgnoreAttribute.cs" />
+    <Compile Include="DapperExtension\Attributes\TableAttribute.cs" />
+    <Compile Include="DapperExtension\CustomDynamicBuilder.cs" />
+    <Compile Include="DapperExtension\DataBaseDapperHelper.cs" />
+    <Compile Include="DapperExtension\DynamicParam.cs" />
+    <Compile Include="DapperExtension\MergeHelper.cs" />
+    <Compile Include="DapperExtension\ModelDes.cs" />
+    <Compile Include="DapperExtension\OperationMethod.cs" />
+    <Compile Include="DapperExtension\QueryOrder.cs" />
+    <Compile Include="DapperExtension\SqlMerge.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="DataBaseFactory.cs" />
     <Compile Include="DataProvider.cs" />
@@ -61,6 +75,10 @@
     <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
       <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
       <Name>Gscoy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.Dapper\Gscoy.Dapper.csproj">
+      <Project>{5f604c31-e82b-4db2-9702-b63254289cb7}</Project>
+      <Name>Gscoy.Dapper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
