@@ -1,0 +1,9 @@
+
+***********************TRACE_MEMO 2014-07-17-星期四 21:54:34***********************
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014-07-17-星期四 21:56:03***********************
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014-07-17-星期四 21:59:50***********************
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
