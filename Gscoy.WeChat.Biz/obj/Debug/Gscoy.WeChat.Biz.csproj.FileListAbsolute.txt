@@ -50,3 +50,7 @@ E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x64\SQLite.Interop.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x86\SQLite.Interop.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Dapper.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Dapper.pdb
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x64\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\x86\SQLite.Interop.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Dapper.dll
+D:\own\Gscoy\Gscoy.WeChat.Biz\bin\Debug\Gscoy.Dapper.pdb

@@ -48,6 +48,7 @@
     <Compile Include="DapperExtension\Attributes\ColumnAttribute.cs" />
     <Compile Include="DapperExtension\Attributes\IdAttribute.cs" />
     <Compile Include="DapperExtension\Attributes\IgnoreAttribute.cs" />
+    <Compile Include="DapperExtension\Attributes\PKAttribute.cs" />
     <Compile Include="DapperExtension\Attributes\TableAttribute.cs" />
     <Compile Include="DapperExtension\CustomDynamicBuilder.cs" />
     <Compile Include="DapperExtension\DataBaseDapperHelper.cs" />

@@ -64,6 +64,12 @@ namespace Gscoy.Data.Tests
             Assert.Fail();
         }
 
+        [TestMethod()]
+        public void GetInsertSqlTest1()
+        {
+            Assert.Fail();
+        }
+
 
     }
     [Table(TableName = "userinfo")]

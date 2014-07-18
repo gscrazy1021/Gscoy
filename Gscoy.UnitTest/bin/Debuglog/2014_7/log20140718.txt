@@ -1,0 +1,21 @@
+
+***********************TRACE_MEMO 2014/7/18 11:09:57***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/18 11:12:51***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/18 11:15:53***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/18 11:18:38***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/18 11:20:01***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/18 11:20:48***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
+
+***********************TRACE_MEMO 2014/7/18 11:22:17***********************
+D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\DataBase.xml
