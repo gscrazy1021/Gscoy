@@ -11,3 +11,4 @@ E:\CodeSpace\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.pdb
 E:\CodeSpace\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.csprojResolveAssemblyReference.cache
 D:\own\Gscoy\Gscoy.DataModel\bin\Debug\Newtonsoft.Json.dll
 D:\own\Gscoy\Gscoy.DataModel\bin\Debug\Newtonsoft.Json.xml
+D:\own\Gscoy\Gscoy.DataModel\obj\Debug\Gscoy.DataModel.csprojResolveAssemblyReference.cache
