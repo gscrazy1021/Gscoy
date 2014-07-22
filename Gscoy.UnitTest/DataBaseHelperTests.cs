@@ -60,7 +60,7 @@ namespace Gscoy.Data.Tests
         {
             var u = new UserInfoEntity() { UserID = 1, UserName = "s" };
             var db = DataBaseHelper.GetInstance(Common.Enums.DBUserType.User_R);
-            db.GetInsertSql<UserInfoEntity>(u);
+            //db.GetInsertSql<UserInfoEntity>(u);
             Assert.Fail();
         }
 

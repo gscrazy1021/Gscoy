@@ -71,8 +71,6 @@ D:\own\Gscoy\Gscoy.WebUI\bin\System.Data.SQLite.xml
 D:\own\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.csprojResolveAssemblyReference.cache
 D:\own\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.dll
 D:\own\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.pdb
-E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\x64\SQLite.Interop.dll
-E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\x86\SQLite.Interop.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.Dapper.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.Dapper.pdb
 D:\own\Gscoy\Gscoy.WebUI\bin\x64\SQLite.Interop.dll

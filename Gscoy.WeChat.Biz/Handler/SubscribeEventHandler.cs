@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Gscoy.WeChat.Model.RequestModel;
+using Gscoy.WeChat.Model.ResponseModel;
 
 namespace Gscoy.WeChat.Biz.Handler
 {
@@ -10,7 +12,7 @@ namespace Gscoy.WeChat.Biz.Handler
     /// 关注事件
     /// </summary>
     public class SubscribeEventHandler : IHandler
-    { 
+    {
         /// <summary>
         /// 请求的XML
         /// </summary>
@@ -26,7 +28,13 @@ namespace Gscoy.WeChat.Biz.Handler
         }
         public string HandleRequest()
         {
-            throw new NotImplementedException();
+            var entity = RequestEventSubscribe.LoadFromXml(RequestXml);
+            var txt = new ResponseText();
+            txt.ToUserName = entity.FromUserName;
+            txt.FromUserName = entity.ToUserName;
+            txt.Content = entity.Event+"hello!";
+            var result = txt.ToXML();
+            return result;
         }
     }
 }

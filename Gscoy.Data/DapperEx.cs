@@ -214,7 +214,7 @@ namespace Gscoy.Data
         /// <param name="t"></param>
         /// <param name="tableName"></param>
         /// <returns></returns>
-        public DapperCommand GetInsertSql<T>(T t, string tableName = null) where T : new()
+        private DapperCommand GetInsertSql<T>(T t, string tableName = null) where T : new()
         {
             bool isand = true;//控制语句拼接的and条件
             //根据列名生成SQL语句

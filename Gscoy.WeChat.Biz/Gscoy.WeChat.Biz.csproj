@@ -58,6 +58,7 @@
     <Compile Include="Handler\ViewEventHandler.cs" />
     <Compile Include="Handler\VoiceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoBiz.cs" />
     <Compile Include="WeChat.cs" />
     <Compile Include="WeChatAPI.cs">
       <SubType>ASPXCodeBehind</SubType>

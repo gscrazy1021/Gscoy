@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Gscoy.WeChat.Model.RequestModel;
+using Gscoy.WeChat.Model.ResponseModel;
 
 namespace Gscoy.WeChat.Biz.Handler
 {
@@ -11,7 +13,7 @@ namespace Gscoy.WeChat.Biz.Handler
     /// </summary>
     public class VoiceHandler : IHandler
     {
-         /// <summary>
+        /// <summary>
         /// 请求的XML
         /// </summary>
         private string RequestXml { get; set; }
@@ -26,7 +28,13 @@ namespace Gscoy.WeChat.Biz.Handler
         }
         public string HandleRequest()
         {
-            throw new NotImplementedException();
+            var entity = RequestVoice.LoadFromXml(RequestXml);
+            var voice = new ResponseText();
+            voice.FromUserName = entity.ToUserName;
+            voice.ToUserName = entity.FromUserName;
+            voice.Content = entity.Recognition + "" + entity.MediaId;
+            var result = voice.ToXML();
+            return result;
         }
     }
 }

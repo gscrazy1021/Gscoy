@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RequestModel\BaseRequestEvent.cs" />
     <Compile Include="RequestModel\BaseRequestMsg.cs" />
     <Compile Include="RequestModel\RequestEventLoacion.cs" />
+    <Compile Include="RequestModel\RequestEventSubscribe.cs" />
     <Compile Include="RequestModel\RequestImage.cs" />
     <Compile Include="RequestModel\RequestLink.cs" />
     <Compile Include="RequestModel\RequestLocation.cs" />
@@ -60,6 +62,11 @@
     <Compile Include="ResponseModel\ResponseVideo.cs" />
     <Compile Include="ResponseModel\ResponseVoice.cs" />
     <Compile Include="ResultModel\AccessTokenEntity.cs" />
+    <Compile Include="UserInfo\CreateGroupInfo.cs" />
+    <Compile Include="UserInfo\ResopneseErrorMsg.cs" />
+    <Compile Include="UserInfo\SearchGroup.cs" />
+    <Compile Include="UserInfo\SearchGroupInfo.cs" />
+    <Compile Include="UserInfo\UserOpenID.cs" />
     <Compile Include="WeChatRetInfo.cs" />
     <Compile Include="WeChatUserInfoModel.cs" />
   </ItemGroup>

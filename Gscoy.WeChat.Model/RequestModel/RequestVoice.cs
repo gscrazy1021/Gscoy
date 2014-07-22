@@ -20,6 +20,10 @@ namespace Gscoy.WeChat.Model.RequestModel
         /// 语音格式，如amr，speex等 
         /// </summary>
         public string Format { get; set; }
+        /// <summary>
+        /// 语音识别结果，UTF8编码 
+        /// </summary>
+        public string Recognition { get; set; }
 
         public static RequestVoice LoadFromXml(string requestXml)
         {
@@ -32,6 +36,7 @@ namespace Gscoy.WeChat.Model.RequestModel
             voice.Format = xml.Element("Format").Value;
             voice.MediaId = xml.Element("MediaId").Value;
             voice.MsgId = xml.Element("MsgId").Value;
+            voice.Recognition = xml.Element("Recognition") == null ? string.Empty : xml.Element("Recognition").Value;
             return voice;
         }
     }

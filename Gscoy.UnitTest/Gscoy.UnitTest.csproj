@@ -66,10 +66,12 @@
     <Compile Include="JsonHelperTests.cs" />
     <Compile Include="LogNetHelperTests.cs" />
     <Compile Include="MailHelperTests.cs" />
+    <Compile Include="RequestModel\RequestVoiceTests.cs" />
     <Compile Include="SFBTests.cs" />
     <Compile Include="StringExtensionTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoBizTests.cs" />
     <Compile Include="WeatherHelperTests.cs" />
     <Compile Include="WebService\WebServiceHelperTests.cs" />
     <Compile Include="WeChatAPITests.cs" />
@@ -100,6 +102,10 @@
     <ProjectReference Include="..\Gscoy.WeChat.Biz\Gscoy.WeChat.Biz.csproj">
       <Project>{B14FC6D8-8263-42EB-A282-AFF728318081}</Project>
       <Name>Gscoy.WeChat.Biz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.WeChat.Model\Gscoy.WeChat.Model.csproj">
+      <Project>{844EF35E-2E68-4B2D-B4C3-DC47159CCBEA}</Project>
+      <Name>Gscoy.WeChat.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
