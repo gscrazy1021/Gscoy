@@ -11,8 +11,7 @@ namespace Gscoy.WebUI.Wap
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write("Hello Wap.Wechat!");
-            Response.End();
+
         }
     }
 }
