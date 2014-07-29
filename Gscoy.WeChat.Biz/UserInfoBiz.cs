@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Gscoy.WeChat.Model.UserInfo;
 using Gscoy.Common;
+using Gscoy.WeChat.Model;
 
 namespace Gscoy.WeChat.Biz
 {
@@ -61,8 +62,17 @@ namespace Gscoy.WeChat.Biz
             var token = api.GetAccessToken();
             var url = string.Format(@"https://api.weixin.qq.com/cgi-bin/groups/update?access_token={0}", token);
             var json = HttpHelper.GetHtml(url, requestJson, true);
-            var entity = json.FromJson<ResopnseErrorMsg>();
+            var entity = json.FromJson<ErrorMsg>();
             return entity.errmsg == "ok";
+        }
+
+        public UserInfoEntity GetUserInfo(UserOpenID openid = null)
+        {
+            var token = api.GetAccessToken();
+            var url = string.Format("https://api.weixin.qq.com/cgi-bin/user/info?access_token={0}&openid={1}&lang=zh_CN", token, openid == null ? "" : openid.openid);
+            var json = HttpHelper.GetHtml(url);
+            var entity = json.FromJson<UserInfoEntity>();
+            return entity;
         }
     }
 }

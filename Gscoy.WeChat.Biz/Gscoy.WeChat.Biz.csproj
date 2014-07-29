@@ -57,6 +57,7 @@
     <Compile Include="Handler\VideoHandler.cs" />
     <Compile Include="Handler\ViewEventHandler.cs" />
     <Compile Include="Handler\VoiceHandler.cs" />
+    <Compile Include="MenuBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoBiz.cs" />
     <Compile Include="WeChat.cs" />

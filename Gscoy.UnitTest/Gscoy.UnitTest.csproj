@@ -66,6 +66,7 @@
     <Compile Include="JsonHelperTests.cs" />
     <Compile Include="LogNetHelperTests.cs" />
     <Compile Include="MailHelperTests.cs" />
+    <Compile Include="MenuBizTests.cs" />
     <Compile Include="RequestModel\RequestVoiceTests.cs" />
     <Compile Include="SFBTests.cs" />
     <Compile Include="StringExtensionTests.cs" />

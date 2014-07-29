@@ -36,5 +36,12 @@ namespace Gscoy.WeChat.Biz.Tests
             var e = user.ModifyUserGroup(openid);
             Assert.Fail();
         }
+
+        [TestMethod()]
+        public void GetUserInfoTest()
+        {
+            var entity = user.GetUserInfo();
+            Assert.Fail();
+        }
     }
 }

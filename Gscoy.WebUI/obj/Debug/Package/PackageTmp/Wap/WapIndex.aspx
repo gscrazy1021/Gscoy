@@ -1,17 +1,108 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WapIndex.aspx.cs" Inherits="Gscoy.WebUI.Wap.WapIndex" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WapIndex.aspx.cs" Inherits="Gscoy.WebUI.Wap.WapIndex" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<html>
+<head>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=gb2312">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    
+
+    <div data-role="page" id="Home">
+        <div data-role="header" data-position="fixed"  data-theme="d">
+            <a href="#Home" class="ui-btn-active ui-state-persist" data-role="button" data-icon="home">Ê×Ò³</a>
+            <h1>»¶Ó­·ÃÎÊÎÒµÄÖ÷Ò³</h1>
+            <a href="#Search" data-role="button" data-icon="search">ËÑË÷</a>
+        </div>
+
+        <div data-role="content">
+            <form method="post" action="wapindex.aspx">
+                <fieldset data-role="collapsible">
+                    <legend>µã»÷ÎÒ - ÎÒ¿ÉÒÔÕÛµþ£¡</legend>
+                    <label for="name">È«Ãû£º</label>
+                    <input type="text" name="text" id="name">
+                    <p>Ï²°®µÄÑÕÉ«£º</p>
+                    <div data-role="controlgroup">
+                        <label for="red">ºìÉ«</label>
+                        <input type="checkbox" name="favcolor" id="red" value="red">
+                        <label for="green">ÂÌÉ«</label>
+                        <input type="checkbox" name="favcolor" id="green" value="green">
+                        <label for="blue">À¶É«</label>
+                        <input type="checkbox" name="favcolor" id="blue" value="blue">
+                    </div>
+                    <input type="submit" data-inline="true" value="Ìá½»">
+                </fieldset>
+            </form>
+        </div>
+
+        <div data-role="footer" data-position="fixed"  data-theme="d">
+
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="#Weather" data-icon="info">ÐÅÏ¢</a></li>
+                    <li><a href="#" data-icon="grid">Íø¸ñ</a></li>
+                    <li><a href="#" data-icon="star">ÐÇ±ê</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    </form>
+    <div data-role="page" id="Search">
+        <div data-role="header" data-position="fixed"  data-theme="d">
+            <a href="#Home" data-role="button" data-icon="home">Ê×Ò³</a>
+            <h1>»¶Ó­·ÃÎÊÎÒµÄÖ÷Ò³</h1>
+            <a href="#Search" class="ui-btn-active ui-state-persist" data-role="button" data-icon="search">ËÑË÷</a>
+        </div>
+
+        <div data-role="content">
+            <p>ÕâÐ©°´Å¥½ö¹©ÑÝÊ¾£¬ÎÞÈÎºÎÐ§¹û¡£Search</p>
+        </div>
+
+        <div data-role="footer" data-position="fixed"  data-theme="d">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="#" data-icon="plus">¸ü¶à</a></li>
+                    <li><a href="#" data-icon="minus">¸üÉÙ</a></li>
+                    <li><a href="#" data-icon="delete">É¾³ý</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="Weather" data-role="page">
+        <div data-role="header" data-position="fixed"  data-theme="d">
+            <a href="#Home" data-role="button" data-icon="home">Ê×Ò³</a>
+            <h1>»¶Ó­·ÃÎÊÎÒµÄÖ÷Ò³</h1>
+            <a href="#Search" class="ui-btn-active ui-state-persist" data-role="button" data-icon="search">ËÑË÷</a>
+        </div>
+
+        <div data-role="content">
+            <div>
+                <label for="fname" class="ui-hidden-accessible">³ÇÊÐ£º</label>
+                <input type="text" placeholder="<% =weather_city %>" id="txtWeatherCity" name="txtWeatherCity">
+                <input type="button" value="Ìá½»" id="weaherSubmit">
+                <p id="weatherContent"></p>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#weaherSubmit").click(function () {
+                            $.ajax({
+                                type: "post",
+                                data: { "txtWeatherCity": $("#txtWeatherCity").val() },
+                                url: "wapindex.aspx?action=weather",
+                                success: function (data, status) {
+                                    data = $.trim(data);
+                                    $("#weatherContent").text(data);
+                                },
+                                error: function (data, status) {
+                                    alert();
+                                }
+                            });
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

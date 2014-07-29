@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuModel\ButtonType.cs" />
+    <Compile Include="MenuModel\CommandMenu.cs" />
+    <Compile Include="MenuModel\MenuBase.cs" />
+    <Compile Include="MenuModel\MenuInfo.cs" />
+    <Compile Include="MenuModel\MenuInfoEntity.cs" />
+    <Compile Include="MenuModel\ViewMenu.cs" />
     <Compile Include="RequestModel\BaseRequestEvent.cs" />
     <Compile Include="RequestModel\BaseRequestMsg.cs" />
     <Compile Include="RequestModel\RequestEventLoacion.cs" />
@@ -63,9 +69,10 @@
     <Compile Include="ResponseModel\ResponseVoice.cs" />
     <Compile Include="ResultModel\AccessTokenEntity.cs" />
     <Compile Include="UserInfo\CreateGroupInfo.cs" />
-    <Compile Include="UserInfo\ResopneseErrorMsg.cs" />
+    <Compile Include="ErrorMsg.cs" />
     <Compile Include="UserInfo\SearchGroup.cs" />
     <Compile Include="UserInfo\SearchGroupInfo.cs" />
+    <Compile Include="UserInfo\UserInfoEntity.cs" />
     <Compile Include="UserInfo\UserOpenID.cs" />
     <Compile Include="WeChatRetInfo.cs" />
     <Compile Include="WeChatUserInfoModel.cs" />

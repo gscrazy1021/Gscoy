@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gscoy.WeChat.Model.UserInfo
+namespace Gscoy.WeChat.Model
 {
-    public class ResopnseErrorMsg
+    public class ErrorMsg
     {
         /// <summary>
         /// 错误返回码

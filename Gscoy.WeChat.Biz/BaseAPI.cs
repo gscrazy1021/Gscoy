@@ -51,7 +51,7 @@ namespace Gscoy.WeChat.Biz
                 var html = HttpHelper.GetHtml(url);
                 var accessEntity = html.FromJson<AccessTokenEntity>();
                 var tempToken = accessEntity.AccessToken;
-                cache.Set(key, tempToken, DateTime.Now.AddMilliseconds(7200));
+                cache.Set(key, tempToken, DateTime.Now.AddMilliseconds(6000));
                 accessToken = tempToken;
             }
             return accessToken;
