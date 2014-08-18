@@ -167,6 +167,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WeChatController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +292,44 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gscoy.Biz\Gscoy.Biz.csproj">
+      <Project>{742cca35-2578-4dad-9eda-a275560973ff}</Project>
+      <Name>Gscoy.Biz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.Cache\Gscoy.Cache.csproj">
+      <Project>{c05b28ad-e83c-4213-9367-37fa0d0c0af9}</Project>
+      <Name>Gscoy.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.Common.Web\Gscoy.Common.Web.csproj">
+      <Project>{f144647b-9cc4-48b8-bd1f-09a99491da83}</Project>
+      <Name>Gscoy.Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
+      <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
+      <Name>Gscoy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.DataModel\Gscoy.DataModel.csproj">
+      <Project>{43b1fd6d-9d96-4f78-bb19-63bb9534df9b}</Project>
+      <Name>Gscoy.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.Service\Gscoy.Service.csproj">
+      <Project>{409cff35-7e3f-4d3e-8513-becaf284128c}</Project>
+      <Name>Gscoy.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.WebUI\Gscoy.WebUI.csproj">
+      <Project>{882b8b3d-3fca-46b8-b3b2-c73dd2911e3c}</Project>
+      <Name>Gscoy.WebUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.WeChat.Biz\Gscoy.WeChat.Biz.csproj">
+      <Project>{b14fc6d8-8263-42eb-a282-aff728318081}</Project>
+      <Name>Gscoy.WeChat.Biz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.WeChat.Model\Gscoy.WeChat.Model.csproj">
+      <Project>{844ef35e-2e68-4b2d-b4c3-dc47159ccbea}</Project>
+      <Name>Gscoy.WeChat.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

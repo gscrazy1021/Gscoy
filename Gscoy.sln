@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gscoy.Common", "Gscoy.Common", "{6FFE8977-CB9A-43B4-BA23-B29A3C456EB1}"
 EndProject
@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gscoy.DapperExtension", "Gs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gscoy.Dapper.Data", "Gscoy.Dapper.Data\Gscoy.Dapper.Data.csproj", "{E694A871-7E8A-4074-A725-FD35B6CFA8D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gscoy.ConsoleUI", "Gscoy.ConsoleUI\Gscoy.ConsoleUI.csproj", "{578A88E6-D04D-41A7-9DFA-8C773B113B37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{E694A871-7E8A-4074-A725-FD35B6CFA8D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E694A871-7E8A-4074-A725-FD35B6CFA8D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E694A871-7E8A-4074-A725-FD35B6CFA8D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578A88E6-D04D-41A7-9DFA-8C773B113B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578A88E6-D04D-41A7-9DFA-8C773B113B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578A88E6-D04D-41A7-9DFA-8C773B113B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578A88E6-D04D-41A7-9DFA-8C773B113B37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -188,5 +194,6 @@ Global
 		{5F604C31-E82B-4DB2-9702-B63254289CB7} = {CA03430E-D770-4FFE-9E4C-837EA9085769}
 		{6B920B40-14A1-4F97-A721-AB415159EE06} = {CA03430E-D770-4FFE-9E4C-837EA9085769}
 		{E694A871-7E8A-4074-A725-FD35B6CFA8D1} = {10BE5296-B0B3-41FD-9BB8-678275BC4953}
+		{578A88E6-D04D-41A7-9DFA-8C773B113B37} = {FC9C1097-25A6-4434-9114-FBD1F73D6BAB}
 	EndGlobalSection
 EndGlobal

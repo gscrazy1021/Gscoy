@@ -63,11 +63,12 @@ namespace Gscoy.Common
         /// </summary>
         /// <param name="filePath">文件名</param>
         /// <param name="content">文件内容</param>
-        public static void WriteFile(string filePath, string content)
+        public static void WriteFile(string filePath, string content, bool isAppend = false)
         {
             try
             {
-                var fs = new FileStream(filePath, FileMode.Create);
+                CreateFile(filePath);
+                var fs = new FileStream(filePath, isAppend ? FileMode.Append : FileMode.Create);
                 Encoding encode = Encoding;
                 //获得字节数组
                 byte[] data = encode.GetBytes(content);
@@ -215,6 +216,31 @@ namespace Gscoy.Common
                 return result;
             }
             return result;
+        }
+        /// <summary>
+        /// 判断文件路径是否存在
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        public static bool IsExist(string filepath)
+        {
+            bool isExist = File.Exists(filepath);
+            return isExist;
+        }
+        /// <summary>
+        /// 创建文件
+        /// </summary>
+        /// <param name="filepath"></param>
+        public static void CreateFile(string filepath)
+        {
+            if (!IsExist(filepath))
+            {
+                string dir = Path.GetDirectoryName(filepath);
+                DirectoryInfo di = Directory.CreateDirectory(dir);
+                FileStream fs = File.Create(filepath);
+                fs.Flush();
+                fs.Dispose();
+            }
         }
     }
 }
