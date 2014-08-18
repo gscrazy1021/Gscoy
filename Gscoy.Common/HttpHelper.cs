@@ -117,6 +117,7 @@ namespace Gscoy.Common
                 stream.Close();
 
                 httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                encoding = GetResponseEncoding(httpWebResponse);
                 Stream responseStream = httpWebResponse.GetResponseStream();
                 StreamReader streamReader = new StreamReader(responseStream, encoding);
                 string html = streamReader.ReadToEnd();
@@ -151,6 +152,26 @@ namespace Gscoy.Common
                 return string.Empty;
             }
         }
+        // <summary>
+        /// 根据响应流获取网页的响应编码
+        /// </summary>
+        /// <param name="httpWebResponse"></param>
+        /// <returns></returns>
+        private static System.Text.Encoding GetResponseEncoding(HttpWebResponse httpWebResponse)
+        {
+            var encodingStr = "gb2312";
+            if (!string.IsNullOrEmpty(httpWebResponse.ContentEncoding))
+            {
+                var temp = httpWebResponse.ContentType.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                if (temp.Length >= 2)
+                {
+                    var t = temp[1].Split(new[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (t.Length >= 2) encodingStr = t[1];
+                }
+            }
+            var e = Encoding.GetEncoding(encodingStr);
+            return e;
+        }
         /// <summary>
         /// 获取HTML
         /// </summary>
@@ -177,6 +198,7 @@ namespace Gscoy.Common
                 httpWebRequest.Method = "GET";
 
                 httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                encoding = GetResponseEncoding(httpWebResponse);
                 Stream responseStream = httpWebResponse.GetResponseStream();
                 StreamReader streamReader = new StreamReader(responseStream, encoding);
                 string html = streamReader.ReadToEnd();
