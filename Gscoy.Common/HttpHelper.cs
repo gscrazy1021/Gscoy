@@ -160,15 +160,13 @@ namespace Gscoy.Common
         private static System.Text.Encoding GetResponseEncoding(HttpWebResponse httpWebResponse)
         {
             var encodingStr = "gb2312";
-            if (!string.IsNullOrEmpty(httpWebResponse.ContentEncoding))
+            var temp = httpWebResponse.ContentType.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+            if (temp.Length >= 2)
             {
-                var temp = httpWebResponse.ContentType.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-                if (temp.Length >= 2)
-                {
-                    var t = temp[1].Split(new[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (t.Length >= 2) encodingStr = t[1];
-                }
+                var t = temp[1].Split(new[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
+                if (t.Length >= 2) encodingStr = t[1];
             }
+            if (string.IsNullOrEmpty(encodingStr)) encodingStr = "gb2312";//先取contenttype的编码，若为空，则默认gb2312
             var e = Encoding.GetEncoding(encodingStr);
             return e;
         }
