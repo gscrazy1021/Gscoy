@@ -37,27 +37,34 @@ namespace Gscoy.Biz
         static Dictionary<string, string> cityList = null;
         static WeatherHelper()
         {
-            cityList = new Dictionary<string, string>();
-            var weatherPath = AppDomain.CurrentDomain.BaseDirectory + ConfigHelper.GetConfig("weatherPath");
-            try
+            //取城市编号时加上缓存机制
+            AspnetCache cache = AspnetCache.Instance;
+            string key = string.Format("weather_city");
+            cityList = cache.Get<Dictionary<string, string>>(key);
+            if (cityList == null)
             {
-                var lineList = FileHelper.ReadFileLines(weatherPath);
-                foreach (var item in lineList)
+                cityList = new Dictionary<string, string>();
+                var weatherPath = AppDomain.CurrentDomain.BaseDirectory + ConfigHelper.GetConfig("weatherPath");
+                try
                 {
-                    if (!string.IsNullOrEmpty(item))
+                    var lineList = FileHelper.ReadFileLines(weatherPath);
+                    foreach (var item in lineList)
                     {
-                        var pars = item.Split('=');
-                        if (!cityList.ContainsKey(pars[1]))
-                            cityList.Add(pars[1], pars[0]);
+                        if (!string.IsNullOrEmpty(item))
+                        {
+                            var pars = item.Split('=');
+                            if (!cityList.ContainsKey(pars[1]))
+                                cityList.Add(pars[1], pars[0]);
+                        }
                     }
+                    cache.Set(key, cityList, DateTime.Now.AddHours(6));
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
                 }
             }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-
         }
 
         public static string GetWeatherInfoByCity(string city)

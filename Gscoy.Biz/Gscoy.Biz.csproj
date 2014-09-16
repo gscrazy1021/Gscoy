@@ -55,7 +55,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
       <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
-      <Name>Gscoy.Common %28Gscoy.Common\Gscoy.Common%29</Name>
+      <Name>Gscoy.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Dapper.Data\Gscoy.Dapper.Data.csproj">
       <Project>{e694a871-7e8a-4074-a725-fd35b6cfa8d1}</Project>
@@ -71,7 +71,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Data\Gscoy.Data.csproj">
       <Project>{ed66258c-9a53-4a31-bc6a-72d8a2b858b9}</Project>
-      <Name>Gscoy.Data %28Gscoy.Data\Gscoy.Data%29</Name>
+      <Name>Gscoy.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Service\Gscoy.Service.csproj">
       <Project>{409cff35-7e3f-4d3e-8513-becaf284128c}</Project>

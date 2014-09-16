@@ -22,5 +22,17 @@ namespace Gscoy.Biz.Tests
             var t = WeatherHelper.GetWeatherInfoByCity("蓟县");
             Assert.Fail();
         }
+
+        [TestMethod()]
+        public void GetWeatherInfoTest1()
+        {
+            Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void GetWeatherInfoByCityTest1()
+        {
+            Assert.Fail();
+        }
     }
 }

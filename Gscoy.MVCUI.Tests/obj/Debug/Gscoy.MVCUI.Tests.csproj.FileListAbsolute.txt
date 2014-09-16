@@ -130,3 +130,5 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\zh-Hans\Microsoft.Web.WebPages.OA
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\obj\Debug\Gscoy.MVCUI.Tests.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\obj\Debug\Gscoy.MVCUI.Tests.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\obj\Debug\Gscoy.MVCUI.Tests.pdb
+E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\x86\SQLite.Interop.dll

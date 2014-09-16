@@ -77,3 +77,5 @@ D:\own\Gscoy\Gscoy.WebUI\bin\x64\SQLite.Interop.dll
 D:\own\Gscoy\Gscoy.WebUI\bin\x86\SQLite.Interop.dll
 D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Dapper.dll
 D:\own\Gscoy\Gscoy.WebUI\bin\Gscoy.Dapper.pdb
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\x86\SQLite.Interop.dll

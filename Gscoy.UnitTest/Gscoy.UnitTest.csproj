@@ -94,7 +94,7 @@
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Data\Gscoy.Data.csproj">
       <Project>{ED66258C-9A53-4A31-BC6A-72D8A2B858B9}</Project>
-      <Name>Gscoy.Data %28Gscoy.Data\Gscoy.Data%29</Name>
+      <Name>Gscoy.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Service\Gscoy.Service.csproj">
       <Project>{409CFF35-7E3F-4D3E-8513-BECAF284128C}</Project>

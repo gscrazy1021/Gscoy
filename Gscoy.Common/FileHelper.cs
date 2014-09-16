@@ -102,9 +102,16 @@ namespace Gscoy.Common
         /// <returns></returns>
         public static string ReadFile(string filePath, Encoding encoding)
         {
-            using (var sr = new StreamReader(filePath, encoding))
+            if (IsExist(filePath))
             {
-                return sr.ReadToEnd();
+                using (var sr = new StreamReader(filePath, encoding))
+                {
+                    return sr.ReadToEnd();
+                }
+            }
+            else
+            {
+                return string.Empty;
             }
         }
 
@@ -116,12 +123,15 @@ namespace Gscoy.Common
         public static List<string> ReadFileLines(string filePath)
         {
             var str = new List<string>();
-            using (var sr = new StreamReader(filePath, Encoding))
+            if (IsExist(filePath))
             {
-                String input;
-                while ((input = sr.ReadLine()) != null)
+                using (var sr = new StreamReader(filePath, Encoding))
                 {
-                    str.Add(input);
+                    String input;
+                    while ((input = sr.ReadLine()) != null)
+                    {
+                        str.Add(input);
+                    }
                 }
             }
             return str;
