@@ -60,6 +60,7 @@
     <Compile Include="ConfigHelperTests.cs" />
     <Compile Include="ConventJineTests.cs" />
     <Compile Include="DataBaseHelperTests.cs" />
+    <Compile Include="ExecetionExtensionTests.cs" />
     <Compile Include="Handler\LocationHandlerTests.cs" />
     <Compile Include="Handler\TextHandlerTests.cs" />
     <Compile Include="Hanzi2PinyinTests.cs" />

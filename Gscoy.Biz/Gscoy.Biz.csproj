@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Baidu\LBSHelper.cs" />
+    <Compile Include="IBaseBiz.cs" />
+    <Compile Include="Blog\ActicleBiz.cs" />
     <Compile Include="SFB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeatherHelper.cs" />

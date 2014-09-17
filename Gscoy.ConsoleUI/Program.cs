@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Gscoy.Biz;
 using Gscoy.Common;
+using Gscoy.DataModel.Blog;
 
 namespace Gscoy.ConsoleUI
 {
@@ -19,8 +20,28 @@ namespace Gscoy.ConsoleUI
             //    Console.WriteLine(i);
             //}
             ////FileHelper.WriteFile(@"f:\1\2.txt", "123abc");
-
-            var result = WeatherHelper.GetWeatherInfo("101010100");
+            ArticleEntity ae = new ArticleEntity();
+            ae.ArticleID = 10001;
+            ae.Title = "文章标题";
+            ae.Content = "内容";
+            ae.ArticleTag = "测试";
+            ae.ArticleType = "随笔";
+            ae.CreateTime = DateTime.Now;
+            ae.ModifyTime = DateTime.Now;
+            string json = ae.ToJson();
+            Console.WriteLine(json);
+            ArticleEntity entity = new ArticleEntity();
+            entity.ArticleID = 10002;
+            entity.Title = "{标题}";
+            entity.Content = "\"{内。容;}\"";
+            entity.ArticleTag = "测试";
+            entity.ArticleType = "随笔";
+            entity.CreateTime = DateTime.Now;
+            entity.ModifyTime = DateTime.Now;
+            json = entity.ToJson();
+            Console.WriteLine(json);
+            var r = json.FromJson<ArticleEntity>();
+            Console.WriteLine(r.Content);
             Console.ReadKey();
         }
     }

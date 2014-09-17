@@ -43,18 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog\ArticleEntity.cs" />
     <Compile Include="Baidu\LBS\BaiduHotMovieEntity.cs" />
     <Compile Include="Baidu\LBS\BaiduLoactionEntity.cs" />
     <Compile Include="Baidu\LBS\BaiduWeatherEntity.cs" />
     <Compile Include="Baidu\LBS\EnGeocodingEntity.cs" />
     <Compile Include="Baidu\TokenEntity.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Blog\ArticleLogEntity.cs" />
+    <Compile Include="BaseEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Weather\WeatherInfoEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

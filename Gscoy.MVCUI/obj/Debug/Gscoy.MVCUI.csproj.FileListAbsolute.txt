@@ -137,8 +137,6 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\zh-Hans\WebMatrix.WebData.resources.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\obj\Debug\Gscoy.MVCUI.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\obj\Debug\Gscoy.MVCUI.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\obj\Debug\Gscoy.MVCUI.pdb
-E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\x64\SQLite.Interop.dll
-E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\x86\SQLite.Interop.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.Biz.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.Cache.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.Common.dll
@@ -172,3 +170,5 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.Data.pdb
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\log4net.xml
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.Dapper.pdb
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\System.Data.SQLite.xml
+E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\x86\SQLite.Interop.dll

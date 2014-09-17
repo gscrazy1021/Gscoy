@@ -61,6 +61,7 @@
     <Compile Include="DataTableHelper.cs" />
     <Compile Include="Enums\DataBaseType.cs" />
     <Compile Include="Enums\DBUserType.cs" />
+    <Compile Include="ExecetionExtension.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="Hanzi2Pinyin.cs" />
     <Compile Include="Html2Article.cs" />

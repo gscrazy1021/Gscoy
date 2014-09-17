@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blog\ArticleDao.cs" />
     <Compile Include="DapperEx.cs" />
     <Compile Include="DapperExtension\Attributes\BaseAttribute.cs" />
     <Compile Include="DapperExtension\Attributes\ColumnAttribute.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="DataProvider.cs" />
     <Compile Include="DataBaseHelper.cs" />
     <Compile Include="DataProviderHelper.cs" />
+    <Compile Include="IBaseDao.cs" />
     <Compile Include="IDataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLite.cs" />
@@ -80,6 +82,14 @@
     <ProjectReference Include="..\Gscoy.Dapper\Gscoy.Dapper.csproj">
       <Project>{5f604c31-e82b-4db2-9702-b63254289cb7}</Project>
       <Name>Gscoy.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.DataModel\Gscoy.DataModel.csproj">
+      <Project>{43b1fd6d-9d96-4f78-bb19-63bb9534df9b}</Project>
+      <Name>Gscoy.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.WeChat.Model\Gscoy.WeChat.Model.csproj">
+      <Project>{844ef35e-2e68-4b2d-b4c3-dc47159ccbea}</Project>
+      <Name>Gscoy.WeChat.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

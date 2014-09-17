@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Gscoy.DataModel
 {
-    public class Class1
+    public class BaseEntity
     {
     }
 }
