@@ -1,23 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DBConnection>
-  <MSSQL>
-    <User_R>R</User_R>
-    <User_W>W</User_W>
-  </MSSQL>
-  <MYSQL>
-    <User_R>R</User_R>
-    <User_W>W</User_W>
-  </MYSQL>
-  <SQLITE>
-    <User_R>R</User_R>
-    <User_W>W</User_W>
-  </SQLITE>
+  <SQL>
+    <User_R>Data Source=hds-084.hichina.com;Initial Catalog=hds0840494_db;User ID=hds0840494;Password=lengshou01</User_R>
+    <User_W>Data Source=.\SQL2014;Integrated Security=True</User_W>
+  </SQL>
   <ACCESS>
     <User_R>R</User_R>
     <User_W>W</User_W>
-  </ACCESS>
-  <ORCALE>
-    <User_R>R</User_R>
+ </ACCESS>
+  <SQLITE>
+    <User_R>Data Source=E:\CodeSpace\Gscoy\Gscoy.Document\test.db</User_R>
     <User_W>W</User_W>
-  </ORCALE>
+  </SQLITE>
 </DBConnection>

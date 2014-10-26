@@ -326,10 +326,6 @@
       <Project>{b14fc6d8-8263-42eb-a282-aff728318081}</Project>
       <Name>Gscoy.WeChat.Biz</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gscoy.WeChat.Model\Gscoy.WeChat.Model.csproj">
-      <Project>{844ef35e-2e68-4b2d-b4c3-dc47159ccbea}</Project>
-      <Name>Gscoy.WeChat.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

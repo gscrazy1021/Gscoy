@@ -9,7 +9,7 @@
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAd1KYNPgAPki/6GIa1f6P1QAAAAACAAAAAAAQZgAAAAEAACAAAACvpMR3LHXWIN29w+d6oku5sN8qdr8nEcU7kow1hAbylAAAAAAOgAAAAAIAACAAAACGhSUwRepe/EsW+ZsO4euBrNO4EWDgb8lqcY7s2xANAyAAAAA39XU/RxYUCxCJmrnlvE4bsE+YhY8n8pLhvWdV3A39NEAAAABxlOsQlWgEDIDYJ2pyWG7T/4tOZSrolAAIMBOUYeNS8T2MMIVxLaSAXrXaCxzqzQ/MlNH78LvC5jNmNzGyrB2I</EncryptedPassword>
-    <_PublishTargetUrl>E:\WebSite\WebForm</_PublishTargetUrl>
+    <_PublishTargetUrl>ftp://112.124.182.184</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Baidu/oauth_redirect.aspx">
@@ -19,70 +19,70 @@
       <publishTime>07/09/2014 21:08:37</publishTime>
     </File>
     <File Include="bin/Gscoy.Biz.dll">
-      <publishTime>08/31/2014 21:06:09</publishTime>
+      <publishTime>10/25/2014 22:33:55</publishTime>
     </File>
     <File Include="bin/Gscoy.Biz.pdb">
-      <publishTime>07/19/2014 15:33:30</publishTime>
+      <publishTime>10/25/2014 22:33:55</publishTime>
     </File>
     <File Include="bin/Gscoy.Cache.dll">
-      <publishTime>07/26/2014 16:27:42</publishTime>
+      <publishTime>10/25/2014 22:33:53</publishTime>
     </File>
     <File Include="bin/Gscoy.Cache.pdb">
-      <publishTime>07/11/2014 22:13:55</publishTime>
+      <publishTime>10/25/2014 22:33:53</publishTime>
     </File>
     <File Include="bin/Gscoy.Common.dll">
-      <publishTime>08/31/2014 21:06:06</publishTime>
+      <publishTime>10/25/2014 22:33:51</publishTime>
     </File>
     <File Include="bin/Gscoy.Common.pdb">
-      <publishTime>07/19/2014 15:23:38</publishTime>
+      <publishTime>10/25/2014 22:33:51</publishTime>
     </File>
     <File Include="bin/Gscoy.Common.Web.dll">
-      <publishTime>08/31/2014 21:06:07</publishTime>
+      <publishTime>10/25/2014 22:33:52</publishTime>
     </File>
     <File Include="bin/Gscoy.Common.Web.pdb">
-      <publishTime>07/19/2014 15:32:37</publishTime>
+      <publishTime>10/25/2014 22:33:52</publishTime>
     </File>
     <File Include="bin/Gscoy.Dapper.dll">
-      <publishTime>07/26/2014 16:27:43</publishTime>
+      <publishTime>10/25/2014 22:33:53</publishTime>
     </File>
     <File Include="bin/Gscoy.Dapper.pdb">
-      <publishTime>07/11/2014 22:13:55</publishTime>
+      <publishTime>10/25/2014 22:33:53</publishTime>
     </File>
     <File Include="bin/Gscoy.Data.dll">
-      <publishTime>08/31/2014 21:06:08</publishTime>
+      <publishTime>10/25/2014 22:33:55</publishTime>
     </File>
     <File Include="bin/Gscoy.Data.pdb">
-      <publishTime>07/19/2014 15:33:29</publishTime>
+      <publishTime>10/25/2014 22:33:55</publishTime>
     </File>
     <File Include="bin/Gscoy.DataModel.dll">
-      <publishTime>07/26/2014 16:27:43</publishTime>
+      <publishTime>10/25/2014 22:33:53</publishTime>
     </File>
     <File Include="bin/Gscoy.DataModel.pdb">
-      <publishTime>07/19/2014 15:23:38</publishTime>
+      <publishTime>10/25/2014 22:33:53</publishTime>
     </File>
     <File Include="bin/Gscoy.Service.dll">
-      <publishTime>07/26/2014 16:27:41</publishTime>
+      <publishTime>10/25/2014 22:33:51</publishTime>
     </File>
     <File Include="bin/Gscoy.Service.pdb">
-      <publishTime>07/11/2014 22:13:55</publishTime>
+      <publishTime>10/25/2014 22:33:51</publishTime>
     </File>
     <File Include="bin/Gscoy.WebUI.dll">
-      <publishTime>08/31/2014 21:06:10</publishTime>
+      <publishTime>10/25/2014 22:35:33</publishTime>
     </File>
     <File Include="bin/Gscoy.WebUI.pdb">
-      <publishTime>07/24/2014 20:52:58</publishTime>
+      <publishTime>10/25/2014 22:35:33</publishTime>
     </File>
     <File Include="bin/Gscoy.WeChat.Biz.dll">
-      <publishTime>08/31/2014 21:06:09</publishTime>
+      <publishTime>10/25/2014 22:35:32</publishTime>
     </File>
     <File Include="bin/Gscoy.WeChat.Biz.pdb">
-      <publishTime>07/20/2014 18:22:18</publishTime>
+      <publishTime>10/25/2014 22:35:32</publishTime>
     </File>
     <File Include="bin/Gscoy.WeChat.Model.dll">
-      <publishTime>08/31/2014 21:06:07</publishTime>
+      <publishTime>10/25/2014 22:33:51</publishTime>
     </File>
     <File Include="bin/Gscoy.WeChat.Model.pdb">
-      <publishTime>07/20/2014 18:22:01</publishTime>
+      <publishTime>10/25/2014 22:33:51</publishTime>
     </File>
     <File Include="bin/HtmlSanitizationLibrary.dll">
       <publishTime>06/29/2014 14:41:26</publishTime>
@@ -1015,7 +1015,7 @@
       <publishTime>07/26/2014 17:01:48</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/31/2014 21:09:06</publishTime>
+      <publishTime>10/25/2014 22:34:05</publishTime>
     </File>
     <File Include="WebForm1.aspx">
       <publishTime>07/01/2014 19:48:21</publishTime>

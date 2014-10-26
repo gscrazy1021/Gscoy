@@ -135,5 +135,57 @@ namespace Gscoy.Common
             return result;
         }
         #endregion
+
+        /// <summary>
+        /// 获取Json string某节点的值。
+        /// </summary>
+        /// <param name="json"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string GetJosnValue(string jsonStr, string key)
+        {
+            string result = string.Empty;
+            if (!string.IsNullOrWhiteSpace(jsonStr))
+            {
+                key = "\"" + key.Trim('"') + "\"";
+                int index = jsonStr.IndexOf(key) + key.Length + 1;
+                if (index > key.Length + 1)
+                {
+                    //先截逗号，若是最后一个，截“｝”号，取最小值
+
+                    int end = jsonStr.IndexOf(',', index);
+                    if (end == -1)
+                    {
+                        end = jsonStr.IndexOf('}', index);
+                    }
+                    //index = json.IndexOf('"', index + key.Length + 1) + 1;
+                    result = jsonStr.Substring(index, end - index);
+                    //过滤引号或空格
+                    result = result.Trim(new char[] { '"', ' ', '\'' });
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Json序列化对象
+        /// </summary>
+        /// <typeparam name="ObjType"></typeparam>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static string ToJsonString<ObjType>(ObjType obj) where ObjType : class
+        {
+            try
+            {
+                if (null == obj) return null;
+
+                return JsonConvert.SerializeObject(obj, Formatting.None, _jsonSettings);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Trace(ex);
+            }
+            return null;
+        }
     }
 }

@@ -149,13 +149,19 @@ namespace Gscoy.Common
                 StrategyLog();
 
                 //输出日志头
-                //System.Diagnostics.Trace.WriteLine(string.Format(trace_exception, DateTime.Now));
                 WriteLog(string.Format(trace_exception, DateTime.Now));
+                StringBuilder builder = new StringBuilder();
                 while (null != ex)
                 {
-                    //System.Diagnostics.Trace.WriteLine(string.Format("{0} {1}\r\n{2}\r\nSource:{3}", DateTime.Now.ToString(), ex.GetType().Name, ex.Message, ex.StackTrace, ex.Source));
-                    WriteLog(string.Format("{0} {1}\r\n{2}\r\nSource:{3}", DateTime.Now.ToString(), ex.GetType().Name, ex.Message, ex.StackTrace, ex.Source));
+                    builder.Append(string.Format("{0} type:{1}\r\nmessage:{2}\r\nStackTrace:{3}nSource:{4}", DateTime.Now.ToString(), ex.GetType().Name, ex.Message, ex.StackTrace, ex.Source));
                     ex = ex.InnerException;
+                }
+                string msg = builder.ToString();
+                if (!string.IsNullOrEmpty(msg))
+                {
+                    MailHelper mail = new MailHelper() { MailName = "18610110218@126.com", MailPassword = "lengshou01-=", MailTo = "315455372@qq.com", Body = msg, Subject = "Gscoy.com异常报错", MailRealName = "主账号", Priority = MailHelper.PriorityEnum.High };
+                    mail.SendMail();
+                    WriteLog(msg);
                 }
             }
         }

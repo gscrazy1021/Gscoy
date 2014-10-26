@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Gscoy.Biz.Baidu;
 using Gscoy.Common;
 using Gscoy.WeChat.Biz;
-using Gscoy.WeChat.Model.UserInfo;
+
 
 namespace Gscoy.WebUI.Wap
 {
@@ -16,7 +16,7 @@ namespace Gscoy.WebUI.Wap
         protected string PageResult = string.Empty;
         protected string weather_city = "请输入要查询的城市天气...";
 
-        private UserInfoBiz userBiz = new UserInfoBiz();
+        //private UserInfoBiz userBiz = new UserInfoBiz();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,8 +30,8 @@ namespace Gscoy.WebUI.Wap
                     Response.End();
                     break;
                 case "usermanager":
-                    var entity = userBiz.SearchAllGroup();
-                    PageResult = GetAllGroupDiv(entity);
+                    //  var entity = userBiz.SearchAllGroup();
+                    // PageResult = GetAllGroupDiv(entity);
                     Response.Write(PageResult);
                     Response.End();
                     break;
@@ -39,19 +39,19 @@ namespace Gscoy.WebUI.Wap
                     break;
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        private string GetAllGroupDiv(SearchGroupList entity)
-        {
-            var div = string.Empty;
-            foreach (var item in entity.groups)
-            {
-                div += string.Format("<div data-role=\"collapsible\"><h3>{0}-({1})</h3><p>我是可折叠的内容。</p></div>", item.name, item.count);
-            }
-            return div;
-        }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        ///// <param name="entity"></param>
+        ///// <returns></returns>
+        //private string GetAllGroupDiv(SearchGroupList entity)
+        //{
+        //    var div = string.Empty;
+        //    foreach (var item in entity.groups)
+        //    {
+        //        div += string.Format("<div data-role=\"collapsible\"><h3>{0}-({1})</h3><p>我是可折叠的内容。</p></div>", item.name, item.count);
+        //    }
+        //    return div;
+        //}
     }
 }

@@ -45,6 +45,7 @@ namespace Gscoy.WebUI
             {
                 //写入错误日志
                 LogNetHelper.Write("[Exception]:", LogNetHelper.LogMessageType.Error, ex);
+                LogHelper.Trace(ex);
                 throw ex;
             }
         }

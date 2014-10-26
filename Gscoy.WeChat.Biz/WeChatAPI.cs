@@ -1,70 +1,75 @@
 ﻿using Gscoy.Common;
+using Gscoy.WeChat.Biz.Request;
+using Gscoy.WeChat.Biz.Response;
+using Gscoy.WeChat.Model;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web;
-using System.Xml.Linq;
 
 namespace Gscoy.WeChat.Biz
 {
-    /// <summary>
-    /// 微信api
-    /// </summary>
-    public class WeChatAPI : BasePage, IHttpHandler
+    public class WechatAPI
     {
-        BaseAPI baseApi = new BaseAPI();
-
-        public void ProcessRequest(HttpContext context)
+        string token = ConfigHelper.GetConfig("WeChatToken", "");
+        public void GetReciveMsg()
         {
-            string postString = string.Empty;
-            if (HttpContext.Current.Request.HttpMethod.ToUpper() == "POST")
+            ReceiveMessageBase msg = MessageHandler.ConvertMsgToObject(token);
+            if (msg is TextReceiveMessage)
             {
-                using (Stream stream = HttpContext.Current.Request.InputStream)
-                {
-                    Byte[] postBytes = new Byte[stream.Length];
-                    stream.Read(postBytes, 0, (Int32)stream.Length);
-                    postString = Encoding.UTF8.GetString(postBytes);
-                }
+                MessageHandler.SendTextReplyMessage(msg.ToUserName, msg.FromUserName, "text");
+            }
+            if (msg is ImageReceiveMessage)
+            {
+                MessageHandler.SendImageReplyMessage(token, msg.ToUserName, msg.FromUserName, "img");
+            }
+            if (msg is VideoReceiveMessage)
+            {
+                MessageHandler.SendVideoReplyMessage(token, msg.ToUserName, msg.FromUserName, "videotitle", "videodescription", "videopath");
+            }
+            if (msg is VideoReceiveMessage)
+            {
+                MessageHandler.SendVoiceReplyMessage(token, msg.ToUserName, msg.FromUserName, "voicepath");
+            }
+            if (msg is LocationReceiveMessage)
+            {
+                var entity = msg as LocationReceiveMessage;
+                MessageHandler.SendTextReplyMessage(msg.ToUserName, msg.FromUserName, string.Format("{0}--{1}--{2}--{3}", entity.Location_X, entity.Location_Y, entity.MessageBody, entity.Scale));
+            }
+            if (msg is MenuEventMessage)
+            {
+                List<NewsReplyMessageItem> list = new List<NewsReplyMessageItem>() { 
+                new NewsReplyMessageItem(){Description="法国葡萄酒产区介绍",PicUrl="http://api.hongjiubaike.com/userfiles/b_large_GHlG_4deb000001631263.jpg",Title="法国葡萄酒产区介绍",Url="http://api.hongjiubaike.com/2013/437.html"},new NewsReplyMessageItem(){Description="法国葡萄酒产区介绍",PicUrl="http://api.hongjiubaike.com/userfiles/b_large_GHlG_4deb000001631263.jpg",Title="法国葡萄酒产区介绍",Url="http://api.hongjiubaike.com/2013/437.html"},new NewsReplyMessageItem(){Description="法国葡萄酒产区介绍",PicUrl="http://api.hongjiubaike.com/userfiles/b_large_GHlG_4deb000001631263.jpg",Title="法国葡萄酒产区介绍",Url="http://api.hongjiubaike.com/2013/437.html"},new NewsReplyMessageItem(){Description="法国葡萄酒产区介绍",PicUrl="http://api.hongjiubaike.com/userfiles/b_large_GHlG_4deb000001631263.jpg",Title="法国葡萄酒产区介绍",Url="http://api.hongjiubaike.com/2013/437.html"},new NewsReplyMessageItem(){Description="法国葡萄酒产区介绍",PicUrl="http://api.hongjiubaike.com/userfiles/b_large_GHlG_4deb000001631263.jpg",Title="法国葡萄酒产区介绍",Url="http://api.hongjiubaike.com/2013/437.html"},new NewsReplyMessageItem(){Description="法国葡萄酒产区介绍",PicUrl="http://api.hongjiubaike.com/userfiles/b_large_GHlG_4deb000001631263.jpg",Title="法国葡萄酒产区介绍",Url="http://api.hongjiubaike.com/2013/437.html"},new NewsReplyMessageItem(){Description="法国葡萄酒产区介绍",PicUrl="http://api.hongjiubaike.com/userfiles/b_large_GHlG_4deb000001631263.jpg",Title="法国葡萄酒产区介绍",Url="http://api.hongjiubaike.com/2013/437.html"}
+                };
+                MessageHandler.SendNewsReplyMessage(token, msg.ToUserName, msg.FromUserName, list);
+            }
+        }
 
-                if (!string.IsNullOrEmpty(postString))
-                {
-                    var handler = Handler.HandlerFactory.CreateHandler(postString);
-                    var response = handler.HandleRequest();
-                    HttpContext.Current.Response.Write(response);
-                }
+        public void Valid()
+        {
+            MessageHandler.Valid(token);
+        }
+
+        private string GetAccessToken()
+        {
+            string appId = ConfigHelper.GetConfig("WechatAppID", "");
+            string appSecret = ConfigHelper.GetConfig("WechatAppSecret", "");
+            IMpClient mpClient = new MpClient();
+            AccessTokenGetRequest request = new AccessTokenGetRequest()
+            {
+                AppIdInfo = new AppIdInfo() { AppID = appId, AppSecret = appSecret }
+            };
+            AccessTokenGetResponse response = mpClient.Execute(request);
+            if (response.IsError)
+            {
+                Console.WriteLine("获取AccessToken发生错误，错误编码为：{0}，错误消息为：{1}", response.ErrInfo.ErrCode, response.ErrInfo.ErrMsg);
+                return string.Empty;
             }
             else
             {
-                Auth(); //微信接入的测试
+                Console.WriteLine("获取到AccessToken，值为：{0}，有效期：{1}秒", response.AccessToken.AccessToken, response.AccessToken.ExpiresIn);
+                return response.AccessToken.AccessToken;
             }
-        }
-
-        /// <summary>
-        /// 验证微信接口有效性
-        /// </summary>
-        private void Auth()
-        {
-            var token = ConfigHelper.GetConfig("WeChatToken");
-            var echoString = GetRequestString("echoStr");
-            var signature = GetRequestString("signature");
-            var timestamp = GetRequestString("timestamp");
-            var nonce = GetRequestString("nonce");
-
-            if (baseApi.CheckSignture(token, signature, timestamp, nonce))
-            {
-                if (!string.IsNullOrEmpty(echoString))
-                {
-                    HttpContext.Current.Response.Write(echoString);
-                    HttpContext.Current.Response.End();
-                }
-            }
-        }
-
-        public bool IsReusable
-        {
-            get { return true; }
         }
     }
 }

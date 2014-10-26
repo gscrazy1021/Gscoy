@@ -42,7 +42,6 @@
     <Compile Include="Baidu\LBSHelper.cs" />
     <Compile Include="IBaseBiz.cs" />
     <Compile Include="Blog\ActicleBiz.cs" />
-    <Compile Include="SFB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeatherHelper.cs" />
   </ItemGroup>
@@ -59,10 +58,6 @@
       <Project>{267b9f2e-4510-4f62-9291-7173d1ed62ca}</Project>
       <Name>Gscoy.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Gscoy.Dapper.Data\Gscoy.Dapper.Data.csproj">
-      <Project>{e694a871-7e8a-4074-a725-fd35b6cfa8d1}</Project>
-      <Name>Gscoy.Dapper.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Gscoy.Dapper\Gscoy.Dapper.csproj">
       <Project>{5f604c31-e82b-4db2-9702-b63254289cb7}</Project>
       <Name>Gscoy.Dapper</Name>
@@ -72,7 +67,7 @@
       <Name>Gscoy.DataModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Data\Gscoy.Data.csproj">
-      <Project>{ed66258c-9a53-4a31-bc6a-72d8a2b858b9}</Project>
+      <Project>{e59bbbe3-bf1e-4bb1-b495-991627fc642a}</Project>
       <Name>Gscoy.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Service\Gscoy.Service.csproj">

@@ -13,9 +13,10 @@ namespace Gscoy.WebUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Write("ok");
+            Response.End();
             var msg = "message";
-            SFB s = new SFB();
-           msg+="               "+ s.GetHouse();
+            //msg += "               " + s.GetHouse();
             LogNetHelper.Write(msg, LogNetHelper.LogMessageType.Warn);
             LogHelper.Trace(msg);
             Response.Write(msg);

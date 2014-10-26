@@ -89,6 +89,27 @@ namespace Gscoy.Common
             }
             return xmlAttribute;
         }
+        /// <summary>
+        /// 获取某个节点下的值
+        /// </summary>
+        /// <param name="xmlFileName"></param>
+        /// <param name="xmlElementName"></param>
+        /// <returns></returns>
+        public static string GetXmlValue(string xmlFileName, string dbtypeString, string optypeString)
+        {
+            string content = string.Empty;
+            try
+            {
+                XElement ele = XElement.Load(xmlFileName);
+                // xmlDoc.Load(xmlFileName); //加载XML文档
+                content = ele.Element(dbtypeString).Element(optypeString).Value;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return content;
+        }
         #endregion
 
         #region XML文档创建和节点或属性的添加、修改#region XML文档创建和节点或属性的添加、修改

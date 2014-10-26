@@ -12,7 +12,7 @@
 <body>
 
     <div data-role="page" id="Home">
-        <div data-role="header" data-position="fixed"  data-theme="d">
+        <div data-role="header" data-position="fixed" data-theme="d">
             <a href="#Home" class="ui-btn-active ui-state-persist" data-role="button" data-icon="home">首页</a>
             <h1>欢迎访问我的主页</h1>
             <a href="#Search" data-role="button" data-icon="search">搜索</a>
@@ -38,19 +38,20 @@
             </form>
         </div>
 
-        <div data-role="footer" data-position="fixed"  data-theme="d">
+        <div data-role="footer" data-position="fixed" data-theme="d">
 
             <div data-role="navbar" data-iconpos="left">
                 <ul>
-                    <li><a href="#Weather" data-icon="info">信息</a></li>
-                    <li><a href="#" data-icon="grid">网格</a></li>
+                    <li><a href="#Weather" data-icon="info">天气预报</a></li>
+                    <li><a href="#WechatUserManager" data-icon="grid">微信用户管理</a></li>
                     <li><a href="#" data-icon="star">星标</a></li>
                 </ul>
             </div>
         </div>
     </div>
+
     <div data-role="page" id="Search">
-        <div data-role="header" data-position="fixed"  data-theme="d">
+        <div data-role="header" data-position="fixed" data-theme="d">
             <a href="#Home" data-role="button" data-icon="home">首页</a>
             <h1>欢迎访问我的主页</h1>
             <a href="#Search" class="ui-btn-active ui-state-persist" data-role="button" data-icon="search">搜索</a>
@@ -60,7 +61,7 @@
             <p>这些按钮仅供演示，无任何效果。Search</p>
         </div>
 
-        <div data-role="footer" data-position="fixed"  data-theme="d">
+        <div data-role="footer" data-position="fixed" data-theme="d">
             <div data-role="navbar" data-iconpos="left">
                 <ul>
                     <li><a href="#" data-icon="plus">更多</a></li>
@@ -70,8 +71,9 @@
             </div>
         </div>
     </div>
+
     <div id="Weather" data-role="page">
-        <div data-role="header" data-position="fixed"  data-theme="d">
+        <div data-role="header" data-position="fixed" data-theme="d">
             <a href="#Home" data-role="button" data-icon="home">首页</a>
             <h1>欢迎访问我的主页</h1>
             <a href="#Search" class="ui-btn-active ui-state-persist" data-role="button" data-icon="search">搜索</a>
@@ -103,6 +105,55 @@
                 </script>
             </div>
         </div>
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="#Weather" data-icon="info">天气预报</a></li>
+                    <li><a href="#WechatUserManager" data-icon="grid">微信用户管理</a></li>
+                    <li><a href="#" data-icon="star">星标</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <div id="WechatUserManager" data-role="page">
+        <div data-role="header" data-position="fixed" data-theme="d">
+            <a href="#Home" data-role="button" data-icon="home">首页</a>
+            <h1>欢迎访问我的主页</h1>
+            <a href="#Search" class="ui-btn-active ui-state-persist" data-role="button" data-icon="search">搜索</a>
+        </div>
+
+        <div data-role="content">
+            <div data-role="collapsible-set" id="groupinfo">
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "post",
+                        url: "wapindex.aspx?action=usermanager",
+                        success: function (data, status) {
+                            data = $.trim(data);
+                            $("#groupinfo").append(data);
+                        },
+                        error: function (data, status) {
+                            alert();
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="d">
+
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="#Weather" data-icon="info">天气预报</a></li>
+                    <li><a href="#WechatUserManager" data-icon="grid">微信用户管理</a></li>
+                    <li><a href="#" data-icon="star">星标</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

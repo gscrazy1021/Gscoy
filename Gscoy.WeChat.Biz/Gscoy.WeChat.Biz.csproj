@@ -43,29 +43,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseAPI.cs" />
-    <Compile Include="Handler\ClickEventHandler.cs" />
-    <Compile Include="Handler\HandlerFactory.cs" />
-    <Compile Include="Handler\IHandler.cs" />
-    <Compile Include="Handler\ImageHandler.cs" />
-    <Compile Include="Handler\LinkHandler.cs" />
-    <Compile Include="Handler\LocationEventHandler.cs" />
-    <Compile Include="Handler\LocationHandler.cs" />
-    <Compile Include="Handler\ScanEventHandler.cs" />
-    <Compile Include="Handler\SubscribeEventHandler.cs" />
-    <Compile Include="Handler\TextHandler.cs" />
-    <Compile Include="Handler\VideoHandler.cs" />
-    <Compile Include="Handler\ViewEventHandler.cs" />
-    <Compile Include="Handler\VoiceHandler.cs" />
-    <Compile Include="MenuBiz.cs" />
+    <Compile Include="IMessageProcessor.cs" />
+    <Compile Include="IMpClient.cs" />
+    <Compile Include="IMpRequest.cs" />
+    <Compile Include="MessageHandler.cs" />
+    <Compile Include="MpClient.cs" />
+    <Compile Include="MpResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInfoBiz.cs" />
-    <Compile Include="WeChat.cs" />
-    <Compile Include="WeChatAPI.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WeChatLogin.cs" />
-    <Compile Include="WeChatTool.cs" />
+    <Compile Include="Request\AccessTokenGetRequest.cs" />
+    <Compile Include="Request\CreateGroupRequest.cs" />
+    <Compile Include="Request\CreateMenuRequest.cs" />
+    <Compile Include="Request\DeleteMenuRequest.cs" />
+    <Compile Include="Request\DownloadMediaRequest.cs" />
+    <Compile Include="Request\GetAttentionsRequest.cs" />
+    <Compile Include="Request\GetGroupsRequest.cs" />
+    <Compile Include="Request\GetMenuRequest.cs" />
+    <Compile Include="Request\GetUserGroupRequest.cs" />
+    <Compile Include="Request\GetUserInfoRequest.cs" />
+    <Compile Include="Request\ModifyGroupRequest.cs" />
+    <Compile Include="Request\QrCodeCreateRequest.cs" />
+    <Compile Include="Request\RequestBase.cs" />
+    <Compile Include="Request\SendCustomMessageRequest.cs" />
+    <Compile Include="Request\SetUserGroupRequest.cs" />
+    <Compile Include="Request\UploadMediaRequest.cs" />
+    <Compile Include="Response\AccessTokenGetResponse.cs" />
+    <Compile Include="Response\CreateGroupResponse.cs" />
+    <Compile Include="Response\CreateMenuResponse.cs" />
+    <Compile Include="Response\DeleteMenuResponse.cs" />
+    <Compile Include="Response\DownloadMediaResponse.cs" />
+    <Compile Include="Response\GetAttentionsResponse.cs" />
+    <Compile Include="Response\GetGroupsResponse.cs" />
+    <Compile Include="Response\GetMenuResponse.cs" />
+    <Compile Include="Response\GetUserGroupResponse.cs" />
+    <Compile Include="Response\GetUserInfoResponse.cs" />
+    <Compile Include="Response\ModifyGroupResponse.cs" />
+    <Compile Include="Response\QrCodeCreateResponse.cs" />
+    <Compile Include="Response\SendCustomMessageResponse.cs" />
+    <Compile Include="Response\SetUserGroupResponse.cs" />
+    <Compile Include="Response\UploadMediaResponse.cs" />
+    <Compile Include="WechatAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gscoy.Biz\Gscoy.Biz.csproj">
@@ -85,13 +101,11 @@
       <Name>Gscoy.DataModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.WeChat.Model\Gscoy.WeChat.Model.csproj">
-      <Project>{844ef35e-2e68-4b2d-b4c3-dc47159ccbea}</Project>
+      <Project>{e4f32a20-815d-449c-adbc-51d9fcdd2157}</Project>
       <Name>Gscoy.WeChat.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
