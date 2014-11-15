@@ -1,4 +1,5 @@
 ﻿using Gscoy.Common;
+using Gscoy.WeChat.Biz.Handlers;
 using Gscoy.WeChat.Biz.Request;
 using Gscoy.WeChat.Biz.Response;
 using Gscoy.WeChat.Model;
@@ -17,7 +18,19 @@ namespace Gscoy.WeChat.Biz
             ReceiveMessageBase msg = MessageHandler.ConvertMsgToObject(token);
             if (msg is TextReceiveMessage)
             {
-                MessageHandler.SendTextReplyMessage(msg.ToUserName, msg.FromUserName, "text");
+                TextReceiveMessage txt = msg as TextReceiveMessage;
+                Handlers.DealTextHandler txtHandler = new Handlers.DealTextHandler();
+                ReplyContent content = txtHandler.GetContent(txt);
+                switch (content.MsgType)
+                {
+                    case ReplyMsgType.News:
+                        MessageHandler.SendNewsReplyMessage(token, msg.ToUserName, msg.FromUserName, content.NewsItems);
+                        break;
+                    case ReplyMsgType.Text:
+                    default:
+                        MessageHandler.SendTextReplyMessage(msg.ToUserName, msg.FromUserName, content.Content);
+                        break;
+                }
             }
             if (msg is ImageReceiveMessage)
             {
@@ -34,7 +47,10 @@ namespace Gscoy.WeChat.Biz
             if (msg is LocationReceiveMessage)
             {
                 var entity = msg as LocationReceiveMessage;
-                MessageHandler.SendTextReplyMessage(msg.ToUserName, msg.FromUserName, string.Format("{0}--{1}--{2}--{3}", entity.Location_X, entity.Location_Y, entity.MessageBody, entity.Scale));
+                AspnetCache cache = AspnetCache.Instance;
+                cache.Set(msg.FromUserName + "location", entity);
+                string menu = string.Format("您好，请问有什么能帮到你的哦？输入相应的数据即可使用下面的功能：\n1   天气预报    \n2   当地影讯    \n3   旅游线路");
+                MessageHandler.SendTextReplyMessage(msg.ToUserName, msg.FromUserName, menu);
             }
             if (msg is MenuEventMessage)
             {

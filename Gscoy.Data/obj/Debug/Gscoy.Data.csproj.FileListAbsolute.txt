@@ -37,7 +37,6 @@ E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\NPOI.HSSF.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\NPOI.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\Newtonsoft.Json.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\log4net.dll
-E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\HtmlSanitizationLibrary.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\NPOI.DDF.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\NPOI.Util.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\NPOI.POIFS.dll

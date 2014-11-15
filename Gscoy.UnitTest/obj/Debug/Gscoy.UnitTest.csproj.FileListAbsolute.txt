@@ -35,8 +35,6 @@ D:\own\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Cache.pdb
 D:\own\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.csprojResolveAssemblyReference.cache
 D:\own\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.dll
 D:\own\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.pdb
-E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\x64\SQLite.Interop.dll
-E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\x86\SQLite.Interop.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.UnitTest.dll.config
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.UnitTest.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.UnitTest.pdb
@@ -50,7 +48,6 @@ E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Data.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Cache.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Newtonsoft.Json.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\log4net.dll
-E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\HtmlSanitizationLibrary.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\System.Data.SQLite.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.Dapper.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.WeChat.Model.dll
@@ -70,3 +67,5 @@ E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.WeChat.Model.pdb
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.pdb
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\x86\SQLite.Interop.dll

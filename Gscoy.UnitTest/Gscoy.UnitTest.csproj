@@ -56,7 +56,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Baidu\LBSHelperTests.cs" />
     <Compile Include="ConfigHelperTests.cs" />
     <Compile Include="ConventJineTests.cs" />
     <Compile Include="ExecetionExtensionTests.cs" />
@@ -104,6 +103,7 @@
     <Content Include="bin\Debug\DataBase.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Baidu\" />
     <Folder Include="Handler\" />
     <Folder Include="RequestModel\" />
   </ItemGroup>

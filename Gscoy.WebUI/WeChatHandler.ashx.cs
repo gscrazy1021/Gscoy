@@ -9,7 +9,7 @@ namespace Gscoy.WebUI
     /// <summary>
     /// WeChatHandler 的摘要说明
     ///// </summary>
-    public class WeChatHandler
+    public class WeChatHandler:IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)

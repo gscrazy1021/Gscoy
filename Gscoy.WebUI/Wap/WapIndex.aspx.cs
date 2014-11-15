@@ -24,10 +24,10 @@ namespace Gscoy.WebUI.Wap
             switch (action.ToLower())
             {
                 case "weather":
-                    weather_city = GetRequestString("txtWeatherCity");
-                    PageResult = LBSHelper.GetWeather(weather_city);
-                    Response.Write(PageResult);
-                    Response.End();
+                    //weather_city = GetRequestString("txtWeatherCity");
+                    //PageResult = LBSHelper.GetWeather(weather_city);
+                    //Response.Write(PageResult);
+                    //Response.End();
                     break;
                 case "usermanager":
                     //  var entity = userBiz.SearchAllGroup();

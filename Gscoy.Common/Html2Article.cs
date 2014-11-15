@@ -235,7 +235,7 @@ namespace Gscoy.Common
                         }
                         dateStr = sb.ToString();
                     }
-                    result = Convert.ToDateTime(dateStr);
+                    DateTime.TryParse(dateStr, out result);
                 }
                 catch (Exception ex)
                 {

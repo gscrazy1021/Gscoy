@@ -43,10 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baidu\LBS\SearchMovieEntity.cs" />
+    <Compile Include="Baidu\LBS\TravelCityEntity.cs" />
     <Compile Include="Blog\ArticleEntity.cs" />
-    <Compile Include="Baidu\LBS\BaiduHotMovieEntity.cs" />
-    <Compile Include="Baidu\LBS\BaiduLoactionEntity.cs" />
-    <Compile Include="Baidu\LBS\BaiduWeatherEntity.cs" />
+    <Compile Include="Baidu\LBS\HotMovieEntity.cs" />
+    <Compile Include="Baidu\LBS\WeatherInfoEntity.cs" />
     <Compile Include="Baidu\LBS\EnGeocodingEntity.cs" />
     <Compile Include="Baidu\TokenEntity.cs" />
     <Compile Include="Blog\ArticleLogEntity.cs" />

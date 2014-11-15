@@ -238,7 +238,7 @@ namespace Gscoy.Common
             {
                 if (antiXssMode == AntiXSSMode.Default)
                 {
-                    strVal = HtmlHelper.FilterXSS(strVal);
+                   // strVal = HtmlHelper.FilterXSS(strVal);
                     if (strVal.Contains("&#"))
                     {
                         //还原+号，防止有类似1+1这样的公司名称等

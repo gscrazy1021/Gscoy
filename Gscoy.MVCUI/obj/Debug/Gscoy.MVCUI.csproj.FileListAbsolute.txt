@@ -105,7 +105,6 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.Data.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\NPOI.HSSF.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\NPOI.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\log4net.dll
-E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\HtmlSanitizationLibrary.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.WeChat.Model.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\Gscoy.Dapper.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\System.Data.SQLite.dll
@@ -161,3 +160,5 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\zh-Hans\WebMatrix.WebData.resources.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\obj\Debug\Gscoy.MVCUI.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\obj\Debug\Gscoy.MVCUI.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI\obj\Debug\Gscoy.MVCUI.pdb
+E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.MVCUI\bin\x86\SQLite.Interop.dll

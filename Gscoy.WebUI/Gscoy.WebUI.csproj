@@ -325,9 +325,16 @@
     <Content Include="DataBase.xml" />
     <Content Include="Global.asax" />
     <Content Include="ErrorPage.html" />
+    <Content Include="Images\head1.jpg" />
+    <Content Include="Images\head2.jpg" />
+    <Content Include="Images\head3.jpg" />
+    <Content Include="Images\head4.jpg" />
+    <Content Include="Images\test.png" />
+    <Content Include="Images\title.jpg" />
     <Content Include="packages.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\easyloader.js" />
+    <Content Include="Scripts\iscroll4.1.9.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.easyui-1.3.6.js" />
@@ -354,8 +361,11 @@
     <Content Include="Scripts\locale\easyui-lang-tr.js" />
     <Content Include="Scripts\locale\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Style\news.css" />
+    <Content Include="Style\plugmenu.css" />
     <Content Include="UserControl\PageControl.ascx" />
     <Content Include="Wap\WapIndex.aspx" />
+    <Content Include="Wap\XiYiDian\Default.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -387,6 +397,13 @@
     </Compile>
     <Compile Include="Wap\WapIndex.aspx.designer.cs">
       <DependentUpon>WapIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wap\XiYiDian\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wap\XiYiDian\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

@@ -2,7 +2,7 @@
 <DBConnection>
   <SQL>
     <User_R>Data Source=hds-084.hichina.com;Initial Catalog=hds0840494_db;User ID=hds0840494;Password=lengshou01</User_R>
-    <User_W>Data Source=.\SQL2014;Integrated Security=True</User_W>
+    <User_W>Data Source=CRAZYFORYOU\sql2014;Initial Catalog=TestCollection;Integrated Security=True</User_W>
   </SQL>
   <ACCESS>
     <User_R>R</User_R>
@@ -10,6 +10,6 @@
  </ACCESS>
   <SQLITE>
     <User_R>Data Source=E:\CodeSpace\Gscoy\Gscoy.Document\test.db</User_R>
-    <User_W>W</User_W>
+    <User_W>Data Source=E:\CodeSpace\Gscoy\Gscoy.Document\test.db</User_W>
   </SQLITE>
 </DBConnection>

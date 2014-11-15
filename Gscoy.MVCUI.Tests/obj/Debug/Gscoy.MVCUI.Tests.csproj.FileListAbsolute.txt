@@ -88,7 +88,6 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\System.Web.Optimization.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\DotNetOpenAuth.AspNet.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\log4net.dll
-E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\HtmlSanitizationLibrary.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\WebGrease.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\DotNetOpenAuth.Core.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\DotNetOpenAuth.OAuth.Consumer.dll
@@ -107,6 +106,7 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\System.Web.Razor.xml
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\System.Web.WebPages.xml
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\System.Data.SQLite.xml
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\Gscoy.Cache.pdb
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\Gscoy.Common.pdb
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\Gscoy.Dapper.pdb
@@ -133,3 +133,5 @@ E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\zh-Hans\Microsoft.Web.WebPages.OA
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\obj\Debug\Gscoy.MVCUI.Tests.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\obj\Debug\Gscoy.MVCUI.Tests.dll
 E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\obj\Debug\Gscoy.MVCUI.Tests.pdb
+E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.MVCUI.Tests\bin\Debug\x86\SQLite.Interop.dll

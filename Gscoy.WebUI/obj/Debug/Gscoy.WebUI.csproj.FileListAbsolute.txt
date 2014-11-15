@@ -53,7 +53,6 @@ E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\NPOI.HSSF.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\NPOI.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Newtonsoft.Json.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\log4net.dll
-E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\HtmlSanitizationLibrary.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.WeChat.Model.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\Gscoy.Dapper.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\System.Data.SQLite.dll
@@ -77,3 +76,5 @@ E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\System.Data.SQLite.xml
 E:\CodeSpace\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.dll
 E:\CodeSpace\Gscoy\Gscoy.WebUI\obj\Debug\Gscoy.WebUI.pdb
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\x64\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.WebUI\bin\x86\SQLite.Interop.dll

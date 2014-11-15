@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handlers\DealTextHandler.cs" />
     <Compile Include="IMessageProcessor.cs" />
     <Compile Include="IMpClient.cs" />
     <Compile Include="IMpRequest.cs" />

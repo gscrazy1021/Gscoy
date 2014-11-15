@@ -1,383 +1,714 @@
-﻿using Microsoft.Security.Application;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.IO.Compression;
+using System.Linq;
 using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
 
 namespace Gscoy.Common
 {
+    #region 发送方式
+    public enum Method
+    {
+        GET, POST
+    }
+    #endregion
+
+    #region 返回内容
+    /// <summary>
+    /// 返回内容
+    /// </summary>
+    public class Response
+    {
+        #region 远程服务器时间
+        DateTime _RemoteDateTime = Convert.ToDateTime("1900-01-01 00:00:00.000");
+        /// <summary>
+        /// 远程服务器时间
+        /// </summary>
+        public DateTime RemoteDateTime
+        {
+            get { return _RemoteDateTime; }
+            set { _RemoteDateTime = value; }
+        }
+        #endregion
+
+        #region 返回内容
+        string html = string.Empty;
+        /// <summary>
+        /// 返回内容
+        /// </summary>
+        public string Html
+        {
+            get { return html; }
+            set { html = value; }
+        }
+        #endregion
+
+        #region 返回的Cookies
+        CookieContainer _Cookies = new CookieContainer();
+        /// <summary>
+        /// 返回的Cookies
+        /// </summary>
+        public CookieContainer Cookies
+        {
+            get { return _Cookies; }
+            set { _Cookies = value; }
+        }
+        #endregion
+
+        #region HTTP状态代码
+        /// <summary>
+        /// HTTP状态代码
+        /// </summary>
+        public HttpStatusCode StatusCode { get; set; }
+        #endregion
+
+        #region 返回的图片内容
+        Image _Image = null;
+        /// <summary>
+        /// 返回的图片内容
+        /// </summary>
+        public Image Image
+        {
+            get { return _Image; }
+            set { _Image = value; }
+        }
+        #endregion
+
+        #region 当前URL
+        string _Url = string.Empty;
+        /// <summary>
+        /// 当前URL
+        /// </summary>
+        public string Url
+        {
+            get { return _Url; }
+            set { _Url = value; }
+        }
+        #endregion
+    }
+    #endregion
+
+    #region 发送数据
+    /// <summary>
+    /// 发送数据
+    /// </summary>
+    [Serializable]
+    public class Request
+    {
+        List<KeyValuePair<string, string>> sList = new List<KeyValuePair<string, string>>();
+        Method _sendMethod = Method.GET;
+        public Method Method
+        {
+            get { return _sendMethod; }
+            set { _sendMethod = value; }
+        }
+
+        private CookieContainer _Cookies = new CookieContainer();
+        public CookieContainer Cookies
+        {
+            get { return this._Cookies; }
+            set { this._Cookies = value; }
+        }
+        public void Clear()
+        {
+            this.sList.Clear();
+        }
+        public void Add(string key, string value)
+        {
+            this.sList.Add(new KeyValuePair<string, string>(key, value));
+        }
+        public void Update(string key, string value)
+        {
+            int index = -1;
+            for (int i = 0; i < this.List.Count; i++)
+            {
+                if (this.List[i].Key.Equals(key))
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index > 0) this.List.RemoveAt(index);
+
+            this.List.Add(new KeyValuePair<string, string>(key, value));
+        }
+        public override string ToString()
+        {
+            string sRet = string.Empty;
+
+            foreach (KeyValuePair<string, string> val in this.sList)
+            {
+                if (sRet.Length == 0)
+                    sRet = string.Format("{0}={1}", val.Key, val.Value);
+                else
+                    sRet = string.Format("{0}&{1}={2}", sRet, val.Key, val.Value);
+            }
+
+            return sRet;
+        }
+
+        public byte[] ToBytes()
+        {
+            return Encoding.ASCII.GetBytes(this.ToString());
+        }
+
+        public List<KeyValuePair<string, string>> List
+        {
+            set
+            {
+                this.sList = value;
+            }
+            get
+            {
+                return this.sList;
+            }
+        }
+
+        public string Find(string key)
+        {
+            string sRet = string.Empty;
+
+            KeyValuePair<string, string> val = this.List.Find(delegate(KeyValuePair<string, string> k) { return k.Key.Equals(key); });
+
+            sRet = val.Value;
+
+            return sRet;
+        }
+
+    }
+    #endregion
+
     public class HtmlHelper
     {
-        /// <summary>
-        /// 过滤跨站脚本
-        /// 注意：该方法会清除掉style 所有事件、及img标签等
-        /// </summary>
-        /// <param name="str">待的字符串</param>
-        /// <returns>过滤后的字符串</returns>
-        public static string FilterXSS(string str)
+        public static HtmlHelper Init()
         {
-            return Sanitizer.GetSafeHtmlFragment(str);
-            //return Sanitizer.GetSafeHtml(str);
+            return new HtmlHelper();
         }
 
-        public static string RemoveScriptTags(string input)
-        {
-            return RemoveHtmlTags(input, true);
-        }
 
+
+        #region Cookies
+        CookieContainer _Cookies = new CookieContainer();
         /// <summary>
-        /// 删除style标签内容
+        /// Cookies
         /// </summary>
-        /// <param name="input"></param>
+        public CookieContainer Cookies
+        {
+            get { return _Cookies; }
+            set { _Cookies = value; }
+        }
+        #endregion
+
+        #region 连接远程服务器超时触发事件
+        public delegate void Connection_TimeOut_Handle(string sUrl, Request request, Exception ex);
+        /// <summary>
+        /// 连接远程服务器超时触发事件
+        /// </summary>
+        public event Connection_TimeOut_Handle Connection_TimeOut;
+        #endregion
+
+        #region 获取数据完毕触发事件
+        public delegate void Connection_Complete_Handle(Response response);
+        /// <summary>
+        ///  获取数据完毕触发事件
+        /// </summary>
+        public event Connection_Complete_Handle Connection_Complete;
+        #endregion
+
+        #region 设置发送头信息
+        /// <summary>
+        /// 设置发送头信息
+        /// </summary>
+        /// <param name="request"></param>
+        private void SetRequestHeader(ref HttpWebRequest request, string referer)
+        {
+            request.Timeout = 5000;
+            request.Accept = "*/*";
+            request.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 2.0.50727;)";
+            request.Headers["Accept-Encoding"] = "gzip, deflate";
+            request.Headers["Accept-Language"] = "zh-cn";
+            request.Headers["Accept-Charset"] = "utf-8;q=0.7,*;q=0.7";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.Referer = referer;
+            request.KeepAlive = true;
+        }
+        #endregion
+
+        #region 解压经过Gzip压缩的流
+        /// <summary>
+        /// 解压经过Gzip压缩的流
+        /// </summary>
+        /// <param name="contentEncoding">流编码</param>
+        /// <param name="resonseStream">网页返回的流内容</param>
         /// <returns></returns>
-        public static string RemoveStyleTags(string input)
+        private string GzipStreame(string ecoding, Stream resonseStream)
         {
-            input = Regex.Replace(input, @"<style(.|\n)+</style>", "", RegexOptions.IgnoreCase);
-            return input;
+            return GzipStreame(ecoding, resonseStream, Encoding.UTF8);
         }
-
-        /// <summary>
-        /// 删除quote标签内容
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public static string RemoveQuoteTags(string input)
+        private string GzipStreame(string ecoding, Stream resonseStream, Encoding coding)
         {
-            input = Regex.Replace(input, @"\[quote\][^\[]+\[/quote\]", "", RegexOptions.IgnoreCase);
-            return input;
-        }
-
-        public static string RemoveScriptNameFromBookmarks(string input, string url)
-        {
-            input = input.Replace("href=\"" + url, "href=\"");
-            input = input.Replace("href=" + url, "href=");
-            return input;
-        }
-
-        /// <summary>
-        /// 删除各种html标签
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="removescript"></param>
-        /// <returns></returns>
-        public static string RemoveHtmlTags(string input, bool removescript)
-        {
-            //remove <html>
-            input = Regex.Replace(input, @"<HTML>", "", RegexOptions.IgnoreCase);
-            //remove <HEAD>
-            input = Regex.Replace(input, @"<HEAD>(.|\n)>+</HEAD>", "", RegexOptions.IgnoreCase);
-            //remove <META>
-            input = Regex.Replace(input, @"<META[^>]+>", "", RegexOptions.IgnoreCase);
-            //remove <title>
-            input = Regex.Replace(input, @"<title(.|\n)>+</title>", "", RegexOptions.IgnoreCase);
-            //remove <body>
-            input = Regex.Replace(input, @"<body>", "", RegexOptions.IgnoreCase);
-            //remove </body>
-            input = Regex.Replace(input, @"</body>", "", RegexOptions.IgnoreCase);
-            //remove </HTML>
-            input = Regex.Replace(input, @"</HTML>", "", RegexOptions.IgnoreCase);
-            //remove <frameset>
-            input = Regex.Replace(input, @"<frameset(.|\n)+</frameset>", "", RegexOptions.IgnoreCase);
-            //remove <frame>
-            input = Regex.Replace(input, @"<frame[^>]+>", "", RegexOptions.IgnoreCase);
-            if (removescript)
+            string html = string.Empty;
+            if (ecoding.ToLower().IndexOf("gzip") != -1)
             {
-                input = Regex.Replace(input, @"<script(.|\n)+</script>", "", RegexOptions.IgnoreCase);
+                html = new StreamReader(new GZipStream(resonseStream, CompressionMode.Decompress), coding).ReadToEnd();
+            }
+            else if (ecoding.ToLower().IndexOf("deflate") >= 0)
+            {
+                html = new StreamReader(new DeflateStream(resonseStream, CompressionMode.Decompress), coding).ReadToEnd();
             }
             else
             {
-                //remove  window.location.href
-                input = Regex.Replace(input, @"window.location.href", "", RegexOptions.IgnoreCase);
-                //remove  window.location.href
-                input = Regex.Replace(input, @"location.href", "", RegexOptions.IgnoreCase);
+                html = new StreamReader(resonseStream, coding).ReadToEnd();
             }
-            return input;
+            return html;
         }
 
-        /// <summary>
-        /// 删除各种html和script标签
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public static string RemoveHtmlAndScriptTags(string input)
-        {
-            //remove <script>...</ script>
-            input = Regex.Replace(input, "<script[^>]+>[\\s\\S]*?/script>", "", RegexOptions.IgnoreCase | RegexOptions.Multiline);
-            //remove <...>
-            input = Regex.Replace(input, "<[^>]+>", "", RegexOptions.IgnoreCase | RegexOptions.Multiline);
+        #endregion
 
-            return input.Trim();
+        #region 获取远程HTML
+        /// <summary>
+        /// 获取远程HTML
+        /// </summary>
+        /// <param name="url">地址</param>
+        /// <returns></returns>
+        public Response GetHTML(string url)
+        {
+            return GetHTML(url, false, new Request(), new Uri(url).Host, Encoding.UTF8, null);
         }
-
-        /// <summary>
-        /// 删除各种事件标签
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public static string RemoveClickTags(string input)
+        public Response GetHTML(string url, WebProxy proxy)
         {
-            //remove onclick
-            input = Regex.Replace(input, @"onclick\s*=(.*)\)", "", RegexOptions.IgnoreCase);
-            //remove onkeydown
-            input = Regex.Replace(input, @"onkeydown\s*=(.*)\)", "", RegexOptions.IgnoreCase);
-            //remove onmousedown
-            input = Regex.Replace(input, @"onmousedown\s*=(.*)\)", "", RegexOptions.IgnoreCase);
-            //remove onmousemove
-            input = Regex.Replace(input, @"onmousemove\s*=(.*)\)", "", RegexOptions.IgnoreCase);
-            //remove onmouseover
-            input = Regex.Replace(input, @"onmouseover\s*=(.*)\)", "", RegexOptions.IgnoreCase);
-            return input;
+            return GetHTML(url, false, new Request(), new Uri(url).Host, Encoding.UTF8, proxy);
         }
-
-        /// <summary>
-        /// 删除style、html、事件标签
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public static string RemoveCode(string input)
+        public Response GetHTML(string url, Encoding coding)
         {
-            //input = cls_common.RemoveScriptTags(input); 合并成一个方法
-            input = RemoveStyleTags(input);
-            input = RemoveHtmlTags(input, true);
-            input = RemoveClickTags(input);
-            return input;
+            return GetHTML(url, false, new Request(), new Uri(url).Host, coding, null);
         }
-
-        /// <summary>
-        /// 删除一些截断HTML后无效的代码，例如<table></table>
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        public static string ShouldCutHtml(string str)
+        public Response GetHTML(string url, Encoding coding, WebProxy proxy)
         {
-            string lastHtml = "";
-            int index = str.LastIndexOf("</");
-            if (index >= 0)
-            {
-                return str;
-            }
-            if (str.LastIndexOf(">") != str.Length - 1)
-            {
-                return str;
-            }
-            index = str.LastIndexOf("<");
-            if (index >= 0)
-            {
-                string efficiencySign = str.Substring(index + 1);
-                int spacing = efficiencySign.IndexOf(" ");
-                int length = efficiencySign.Length;
-                if (spacing > 0)
-                {
-                    lastHtml = efficiencySign.Substring(0, spacing);
-                }
-                else
-                {
-                    lastHtml = efficiencySign.Substring(0, length - 1);
-                    //lastHtml=str.Remove(lastHtml.Length-1,1);
-                }
-            }
-
-            switch (lastHtml.ToLower())
-            {
-                case "table"://暂时只有table,tr
-                    str = str.Remove(index, str.Length - index);
-                    break;
-                case "tr":
-                    str = str.Remove(index, str.Length - index);
-                    str = ShouldCutHtml(str);
-                    break;
-            }
-            return str;
+            return GetHTML(url, false, new Request(), new Uri(url).Host, coding, proxy);
         }
-
         /// <summary>
-        /// 修复html代码
+        /// 获取远程HTML
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="url">地址</param>
+        /// <param name="send">是否自动重定向URL</param>
         /// <returns></returns>
-        public static string RepairHTML(string str)
+        public Response GetHTML(string url, bool bAllowAutoRedirect)
         {
-            int idx2 = str.LastIndexOf('>');
-            int idx1 = str.LastIndexOf('<');
-            string lose = "";
-            if (idx1 > idx2 && idx1 > -1)
-            {
-                lose = str.Substring(str.Length - 1) + ">";
-                str = str + lose;
-                idx2 = str.LastIndexOf('>');
-            }
-            int result = 0;
-            int len = str.Length;
-            string add = "";
-            if (idx1 == -1)
-            {
-                return "";
-            }
-            int idx3 = -1;
-            string ct = str.Substring(idx1 + 1, idx2 - idx1 - 1);
-            string ctlast;
-            if (ct.IndexOf("/") == 0)
-            {
-                string tag = "<" + str.Substring(idx1 + 2, idx2 - idx1 - 2);
-                string tt = str;//中间变量
-                while (true)
-                {
-                    idx3 = tt.LastIndexOf(tag);
-                    ctlast = tt.Substring(idx3);
-
-                    result = IsTure(ctlast, ct);
-                    if (result <= 0 || result == ctlast.LastIndexOf(ct))
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        tt = tt.Remove(idx3, result + 6);
-                    }
-                }
-            }
-            else if (ct.IndexOf("/") != 0)
-            {
-                int space = ct.IndexOf(' ');
-                string repairdata = ct;
-                if (space > 0)
-                {
-                    repairdata = ct.Substring(0, space);
-                }
-                if (ct.Trim() != "br" && ct.Trim() != "hr" && repairdata.Trim() != "img" && repairdata.Trim() != "param" && ct.Substring(ct.Length - 1) != "/")
-                {
-                    add += lose + "</" + repairdata + ">";
-                }
-            }
-
-            if (idx3 == -1)
-            {
-                idx3 = idx1;
-            }
-            string strnew = str.Substring(0, idx3);
-
-            add += RepairHTML(strnew);
-            return add;
-
+            return GetHTML(url, bAllowAutoRedirect, new Request() { }, new Uri(url).Host, Encoding.UTF8, null);
         }
-
-        /// <summary>
-        /// 获取目标字符串第一次出现的位置
-        /// </summary>
-        /// <param name="str"></param>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        public static int IsTure(string str, string key)
+        public Response GetHTML(string url, bool bAllowAutoRedirect, WebProxy porxy)
         {
-            return str.IndexOf(key);
+            return GetHTML(url, bAllowAutoRedirect, new Request() { }, new Uri(url).Host, Encoding.UTF8, porxy);
         }
-
         /// <summary>
-        /// 将换行符等替换为空格
+        /// 获取远程HTML
         /// </summary>
-        /// <param name="input"></param>
+        /// <param name="sUrl">地址</param>
+        /// <param name="send">发送内容</param>
         /// <returns></returns>
-        public static string RemoveWhiteSpace(string input)
+        public Response GetHTML(string url, Request request)
         {
-            input = input.Replace("\n", "  ");
-            input = input.Replace("\r", "  ");
-            input = input.Replace("\t", "  ");
-            while (input.IndexOf("    ") != -1)
+            return GetHTML(url, request, Encoding.UTF8);
+        }
+        public Response GetHTML(string url, Request request, WebProxy porxy)
+        {
+            return GetHTML(url, false, request, new Uri(url).Host, Encoding.UTF8, porxy);
+        }
+        public Response GetHTML(string url, bool bAllowAutoRedirect, Request request)
+        {
+            return GetHTML(url, bAllowAutoRedirect, request, new Uri(url).Host, Encoding.UTF8, null);
+        }
+        public Response GetHTML(string url, bool bAllowAutoRedirect, Request request, WebProxy proxy)
+        {
+            return GetHTML(url, bAllowAutoRedirect, request, new Uri(url).Host, Encoding.UTF8, proxy);
+        }
+        public Response GetHTML(string url, Request request, Encoding coding)
+        {
+            return GetHTML(url, false, request, new Uri(url).Host, coding, null);
+        }
+        public Response GetHTML(string url, Request request, Encoding coding, WebProxy proxy)
+        {
+            return GetHTML(url, false, request, new Uri(url).Host, coding, proxy);
+        }
+        /// <summary>
+        /// 获取远程HTML
+        /// </summary>
+        /// <param name="sUrl">地址</param>
+        /// <param name="bAllowAutoRedirect">是否自动跳转</param>
+        /// <param name="send">发送内容</param>
+        /// <returns></returns>
+        public Response GetHTML(string sUrl, bool bAllowAutoRedirect, Request request, string referer)
+        {
+            return GetHTML(sUrl, bAllowAutoRedirect, request, referer, Encoding.UTF8, null);
+        }
+        public Response GetHTML(string sUrl, bool bAllowAutoRedirect, Request request, string referer, WebProxy proxy)
+        {
+            return GetHTML(sUrl, bAllowAutoRedirect, request, referer, Encoding.UTF8, proxy);
+        }
+        /// <summary>
+        /// 获取HTML页面内容
+        /// </summary>
+        /// <param name="url">地址</param>
+        /// <param name="bAllowAutoRedirect">是否自动跳转</param>
+        /// <param name="request">查询信息</param>
+        /// <param name="referer">引用页</param>
+        /// <param name="coding">编码格式</param>
+        /// <returns></returns>
+        public Response GetHTML(string url, bool bAllowAutoRedirect, Request request, string referer, Encoding coding, WebProxy proxy)
+        {
+            Response result = new Response();
+
+            if (request.Method == Method.GET)
             {
-                input = input.Replace("    ", "  ");
+                string sData = request.ToString();
+                if (sData.Length > 0) url = string.Format("{0}?{1}", url, sData);
             }
-            return input;
-        }
 
-        /// <summary>
-        /// POST请求传递页面数据
-        /// </summary>
-        /// <param name="posturl"></param>
-        /// <param name="postData"></param>
-        /// <returns></returns>
-        public static string PostPageData(string posturl, string postData)
-        {
-            Stream outstream = null;
-            Stream instream = null;
-            StreamReader sr = null;
-            HttpWebResponse response = null;
-            HttpWebRequest request = null;
-            Encoding encoding = Encoding.UTF8;
-            byte[] data = encoding.GetBytes(postData);
-            // 准备请求...
+            HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            if (proxy != null) httpRequest.Proxy = proxy;
+
+            #region SSL方式
+            if (url.Contains("https://"))
+            {
+                //这一句一定要写在创建连接的前面。使用回调的方法进行证书验证。
+                ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);
+                //创建证书文件
+                X509Certificate objx509 = new X509Certificate();
+
+                //添加到请求里
+                httpRequest.ClientCertificates.Add(objx509);
+            }
+            #endregion
+
+            // 设置发送头信息
+            if (referer.Length == 0)
+                SetRequestHeader(ref httpRequest, new Uri(url).Host);
+            else
+                SetRequestHeader(ref httpRequest, referer);
+            // 自动重定向
+            httpRequest.AllowAutoRedirect = bAllowAutoRedirect;
+            httpRequest.Timeout = 60 * 1000;
+            // 关联Cookies
+            //if (httpRequest.CookieContainer == null)
+            //    httpRequest.CookieContainer = new CookieContainer();
+            httpRequest.CookieContainer = this.Cookies;
+
             try
             {
-                // 设置参数
-                request = WebRequest.Create(posturl) as HttpWebRequest;
-                CookieContainer cookieContainer = new CookieContainer();
-                request.CookieContainer = cookieContainer;
-                request.AllowAutoRedirect = true;
-                request.Method = "POST";
-                request.ContentType = "application/x-www-form-urlencoded";
-                request.ContentLength = data.Length;
-                outstream = request.GetRequestStream();
-                outstream.Write(data, 0, data.Length);
-                outstream.Close();
-                //发送请求并获取相应回应数据
-                response = request.GetResponse() as HttpWebResponse;
-                //直到request.GetResponse()程序才开始向目标网页发送Post请求
-                instream = response.GetResponseStream();
-                sr = new StreamReader(instream, encoding);
-                //返回结果网页（html）代码
-                string content = sr.ReadToEnd();
-                string err = string.Empty;
-                //Response.Write(content);
-                HttpContext.Current.Response.Write(content);
-                return content;
+
+                if (request.Method == Method.POST)
+                {
+                    // 设置发送方式
+                    httpRequest.Method = request.Method.ToString();
+                    // 获取发送数据流
+                    //HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse;
+
+                    Stream strem = httpRequest.GetRequestStream();
+
+                    // 写入发送数据
+                    byte[] bs = request.ToBytes();
+                    strem.Write(bs, 0, bs.Length);
+                    strem.Close();
+                }
+
+                HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse;
+
+                Stream responseStream = httpResponse.GetResponseStream();
+
+                StreamReader sr = new StreamReader(responseStream, coding);
+
+                //result.Html = sr.ReadToEnd();
+                result.Html = System.Web.HttpUtility.HtmlDecode(GzipStreame(httpResponse.ContentEncoding, responseStream, coding));
+                result.RemoteDateTime = Convert.ToDateTime(httpResponse.GetResponseHeader("Date"));
+
+                result.Url = httpResponse.ResponseUri.OriginalString;
+
+                this.Cookies.Add(httpResponse.Cookies);
+
+                result.Cookies = this.Cookies;
+
+                result.StatusCode = httpResponse.StatusCode;
+
+                responseStream.Dispose();
+
+                if (this.Connection_Complete != null)
+                    this.Connection_Complete.Invoke(result);
             }
             catch (Exception ex)
             {
-                string err = ex.Message;
-                return string.Empty;
+                if (this.Connection_TimeOut != null)
+                    this.Connection_TimeOut.Invoke(url, request, ex);
             }
+            return result;
         }
 
-        /// <summary>
-        /// GET请求传递页面数据
-        /// </summary>
-        /// <param name="posturl"></param>
-        /// <returns></returns>
-        public static string GetPageData(string posturl)
+        private bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
         {
-            Stream instream = null;
-            StreamReader sr = null;
-            HttpWebResponse response = null;
-            HttpWebRequest request = null;
-            Encoding encoding = Encoding.UTF8;
-            // 准备请求...
+            return true;
+        }
+
+        #endregion
+
+        #region 获取远程图片
+        public Response GetImage(string sUrl)
+        {
+            return GetImage(sUrl, false, new Request());
+        }
+        public Response GetImage(string sUrl, WebProxy proxy)
+        {
+            return GetImage(sUrl, false, new Request(), proxy);
+        }
+        public Response GetImage(string sUrl, string referer)
+        {
+            return GetImage(sUrl, false, referer, null);
+        }
+        public Response GetImage(string sUrl, string referer, WebProxy proxy)
+        {
+            return GetImage(sUrl, false, referer, proxy);
+        }
+        public Response GetImage(string sUrl, bool bAllowAutoRedirect, string referer)
+        {
+            return GetImage(sUrl, bAllowAutoRedirect, new Request(), referer, null);
+        }
+        public Response GetImage(string sUrl, bool bAllowAutoRedirect, string referer, WebProxy proxy)
+        {
+            return GetImage(sUrl, bAllowAutoRedirect, new Request(), referer, null);
+        }
+        //public Image GetImage(string sUrl, bool bAllowAutoRedirect, Request request)
+        //{
+        //    return GetImage(sUrl, bAllowAutoRedirect, request, new CookieContainer(), "");
+        ////}
+        //public Image GetImage(string sUrl, bool bAllowAutoRedirect, Request request, string referer)
+        //{
+        //    return GetImage(sUrl, bAllowAutoRedirect, request,referer);
+        //}
+        /// <summary>
+        /// 获取远程图片
+        /// </summary>
+        /// <param name="sUrl">图片地址</param>
+        /// <param name="bAllowAutoRedirect">是否自动跳转</param>
+        /// <param name="send">发送内容</param>
+        /// <returns></returns>
+        public Response GetImage(string sUrl, bool bAllowAutoRedirect, Request request)
+        {
+            return GetImage(sUrl, bAllowAutoRedirect, request, "", null);
+        }
+        public Response GetImage(string sUrl, bool bAllowAutoRedirect, Request request, string referer)
+        {
+            return GetImage(sUrl, bAllowAutoRedirect, request, referer, null);
+        }
+        public Response GetImage(string sUrl, bool bAllowAutoRedirect, Request request, WebProxy proxy)
+        {
+            return GetImage(sUrl, bAllowAutoRedirect, request, "", proxy);
+        }
+        /// <summary>
+        /// 获取远程图片
+        /// </summary>
+        /// <param name="sUrl">图片地址</param>
+        /// <param name="bAllowAutoRedirect">是否自动跳转</param>
+        /// <param name="send">发送内容</param>
+        /// <returns></returns>
+        public Response GetImage(string url, bool bAllowAutoRedirect, Request request, string referer, WebProxy proxy)
+        {
+            Response response = new Response();
+
+            if (request.Method == Method.GET)
+            {
+                string sData = request.ToString();
+                if (sData.Length > 0) url = string.Format("{0}?{1}", url, sData);
+            }
+
+            HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            if (proxy != null) httpRequest.Proxy = proxy;
+
+            #region SSL方式
+            if (url.Contains("https://"))
+            {
+                //这一句一定要写在创建连接的前面。使用回调的方法进行证书验证。
+                ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);
+                //创建证书文件
+                X509Certificate objx509 = new X509Certificate();
+
+                //添加到请求里
+                httpRequest.ClientCertificates.Add(objx509);
+            }
+            #endregion
+
+            // 设置发送头信息
+            if (referer.Length == 0)
+                SetRequestHeader(ref httpRequest, new Uri(url).Host);
+            else
+                SetRequestHeader(ref httpRequest, referer);
+
+            // 自动重定向
+            httpRequest.AllowAutoRedirect = bAllowAutoRedirect;
+            // 关联Cookies
+            httpRequest.CookieContainer = this.Cookies;
+
             try
             {
-                // 设置参数
-                request = WebRequest.Create(posturl) as HttpWebRequest;
-                CookieContainer cookieContainer = new CookieContainer();
-                request.CookieContainer = cookieContainer;
-                request.AllowAutoRedirect = true;
-                request.Method = "GET";
-                request.ContentType = "application/x-www-form-urlencoded";
-                //发送请求并获取相应回应数据
-                response = request.GetResponse() as HttpWebResponse;
-                //直到request.GetResponse()程序才开始向目标网页发送Post请求
-                instream = response.GetResponseStream();
-                sr = new StreamReader(instream, encoding);
-                //返回结果网页（html）代码
-                string content = sr.ReadToEnd();
-                string err = string.Empty;
-                //Response.Write(content);
-                HttpContext.Current.Response.Write(content);
-                return content;
+
+                if (request.Method == Method.POST)
+                {
+                    // 设置发送方式
+                    httpRequest.Method = request.Method.ToString();
+                    // 获取发送数据流
+                    //HttpWebResponse response = httpRequest.GetResponse() as HttpWebResponse;
+
+                    Stream strem = httpRequest.GetRequestStream();
+
+                    // 写入发送数据
+                    byte[] bs = request.ToBytes();
+                    strem.Write(bs, 0, bs.Length);
+                    strem.Close();
+                }
+
+                HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse;
+
+                Stream responseStream = httpResponse.GetResponseStream();
+
+                //if (responseStream.CanSeek)
+                //{
+                response.Image = Image.FromStream(responseStream);
+                //}
+                //else
+                //{
+                //   response.Image = null;
+                //}
+                response.RemoteDateTime = Convert.ToDateTime(httpResponse.GetResponseHeader("Date"));
+
+                this.Cookies.Add(httpResponse.Cookies);
+                response.Cookies = this.Cookies;
+                response.StatusCode = httpResponse.StatusCode;
+                responseStream.Dispose();
+                responseStream.Close();
             }
             catch (Exception ex)
             {
-                string err = ex.Message;
-                return string.Empty;
+                if (this.Connection_TimeOut != null)
+                    this.Connection_TimeOut.Invoke(url, request, ex);
+            }
+
+            return response;
+        }
+        #endregion
+
+        #region 异步获取远程HTML
+        /// <summary>
+        /// 异步获取远程HTML
+        /// </summary>
+        /// <param name="sUrl">地址</param>
+        /// <returns></returns>
+        public void BeginGetHTML(string sUrl)
+        {
+            BeginGetHTML(sUrl, false, new Request() { });
+        }
+        /// <summary>
+        /// 异步获取远程HTML
+        /// </summary>
+        /// <param name="sUrl">地址</param>
+        /// <param name="send">是否自动重定向URL</param>
+        /// <returns></returns>
+        public void BeginGetHTML(string sUrl, bool bAllowAutoRedirect)
+        {
+            BeginGetHTML(sUrl, bAllowAutoRedirect, new Request() { });
+        }
+        /// <summary>
+        /// 异步获取远程HTML
+        /// </summary>
+        /// <param name="sUrl">地址</param>
+        /// <param name="send">发送内容</param>
+        /// <returns></returns>
+        public void BeginGetHTML(string sUrl, Request request)
+        {
+            BeginGetHTML(sUrl, false, request);
+        }
+        /// <summary>
+        /// 异步获取远程HTML
+        /// </summary>
+        /// <param name="sUrl">地址</param>
+        /// <param name="bAllowAutoRedirect">是否自动跳转</param>
+        /// <param name="send">发送内容</param>
+        /// <returns></returns>
+        public void BeginGetHTML(string sUrl, bool bAllowAutoRedirect, Request request)
+        {
+            Response result = new Response();
+
+            if (request.Method == Method.GET)
+            {
+                string sData = request.ToString();
+                if (sData.Length > 0) sUrl = string.Format("{0}?{1}", sUrl, sData);
+            }
+
+            HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(sUrl);
+            // 设置发送头信息
+            SetRequestHeader(ref httpRequest, new Uri(sUrl).Host);
+            // 自动重定向
+            httpRequest.AllowAutoRedirect = bAllowAutoRedirect;
+
+            if (request.Method == Method.POST)
+            {
+                // 设置发送方式
+                httpRequest.Method = request.Method.ToString();
+
+                // 获取发送数据流
+                Stream stream = httpRequest.GetRequestStream();
+
+                byte[] bs = request.ToBytes();
+                stream.Write(bs, 0, bs.Length);
+                stream.Close();
+                //httpRequest.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback),httpRequest);
+                // 写入发送数据
+
+            }
+
+            //HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse;
+
+            AsyncCallback callback = new AsyncCallback(GetResponseStreamCallback);
+            try
+            {
+                httpRequest.BeginGetResponse(callback, httpRequest);
+            }
+            catch (WebException ex)
+            {
+                if (this.Connection_TimeOut != null)
+                    this.Connection_TimeOut.Invoke(sUrl, request, ex);
             }
         }
+
+        private void GetRequestStreamCallback(IAsyncResult ar)
+        {
+            //Request request = ar.AsyncState as Request;
+            //Stream stream = async.EndGetRequestStream(ar);
+
+            //byte[] bs = request.ToBytes();
+            //stream.Write(bs, 0, bs.Length);
+            //stream.Close();
+        }
+
+        private void GetResponseStreamCallback(IAsyncResult ar)
+        {
+            HttpWebRequest httpRequest = ar.AsyncState as HttpWebRequest;
+            HttpWebResponse httpResponse = httpRequest.EndGetResponse(ar) as HttpWebResponse;
+
+            Stream responseStream = httpResponse.GetResponseStream();
+
+            Response response = new Response();
+
+            response.Html = GzipStreame(httpResponse.ContentEncoding, responseStream);
+            response.RemoteDateTime = Convert.ToDateTime(httpResponse.GetResponseHeader("Date"));
+            //response.Cookies = httpResponse.Cookies;
+
+            if (this.Connection_Complete != null)
+                this.Connection_Complete.Invoke(response);
+        }
+        #endregion
     }
 }
