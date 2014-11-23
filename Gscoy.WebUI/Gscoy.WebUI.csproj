@@ -57,8 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About\index.aspx" />
     <Content Include="Baidu\oauth_redirect.aspx" />
     <Content Include="bin\DataBase.xml" />
+    <Content Include="Blog\Index.aspx" />
     <Content Include="Content\themes\black\accordion.css" />
     <Content Include="Content\themes\black\calendar.css" />
     <Content Include="Content\themes\black\combo.css" />
@@ -323,15 +325,57 @@
     <Content Include="Content\themes\metro\validatebox.css" />
     <Content Include="Content\themes\metro\window.css" />
     <Content Include="DataBase.xml" />
+    <Content Include="Gallery\index.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ErrorPage.html" />
+    <Content Include="Images\button-search.png" />
+    <Content Include="Images\favicon.ico" />
     <Content Include="Images\head1.jpg" />
     <Content Include="Images\head2.jpg" />
     <Content Include="Images\head3.jpg" />
     <Content Include="Images\head4.jpg" />
+    <Content Include="Images\img1.jpg" />
+    <Content Include="Images\img2.jpg" />
+    <Content Include="Images\img3.jpg" />
+    <Content Include="Images\img4.jpg" />
+    <Content Include="Images\img5.jpg" />
+    <Content Include="Images\gscoy_top.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\pic06.jpg" />
+    <Content Include="Images\socials\aim-32x32.png" />
+    <Content Include="Images\socials\bebo-32x32.png" />
+    <Content Include="Images\socials\blogger-32x32.png" />
+    <Content Include="Images\socials\delicious-32x32.png" />
+    <Content Include="Images\socials\designfloat-32x32.png" />
+    <Content Include="Images\socials\digg-32x32.png" />
+    <Content Include="Images\socials\ebay-32x32.png" />
+    <Content Include="Images\socials\facebook-32x32.png" />
+    <Content Include="Images\socials\flickr-32x32.png" />
+    <Content Include="Images\socials\google-32x32.png" />
+    <Content Include="Images\socials\heart-32x32.png" />
+    <Content Include="Images\socials\hi5-32x32.png" />
+    <Content Include="Images\socials\lastfm-32x32.png" />
+    <Content Include="Images\socials\linkedin-32x32.png" />
+    <Content Include="Images\socials\live-32x32.png" />
+    <Content Include="Images\socials\myspace-32x32.png" />
+    <Content Include="Images\socials\ning-32x32.png" />
+    <Content Include="Images\socials\orkut-32x32.png" />
+    <Content Include="Images\socials\reddit-32x32.png" />
+    <Content Include="Images\socials\rss-32x32.png" />
+    <Content Include="Images\socials\stumbleupon-32x32.png" />
+    <Content Include="Images\socials\technorati-32x32.png" />
+    <Content Include="Images\socials\twitter-32x32.png" />
+    <Content Include="Images\socials\wordpress-32x32.png" />
+    <Content Include="Images\socials\yahoo-32x32.png" />
+    <Content Include="Images\socials\ymessenger-32x32.png" />
+    <Content Include="Images\socials\youtube-32x32.png" />
     <Content Include="Images\test.png" />
     <Content Include="Images\title.jpg" />
+    <Content Include="Images\zerotheme.jpg" />
+    <Content Include="Default.aspx" />
+    <Content Include="News\Index.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Images\socials\Thumbs.db" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\easyloader.js" />
     <Content Include="Scripts\iscroll4.1.9.js" />
@@ -361,6 +405,10 @@
     <Content Include="Scripts\locale\easyui-lang-tr.js" />
     <Content Include="Scripts\locale\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Scripts\scrolltop.js" />
+    <Content Include="Style\css\responsive.css" />
+    <Content Include="Style\css\style.css" />
+    <Content Include="Style\css\zerogrid.css" />
     <Content Include="Style\news.css" />
     <Content Include="Style\plugmenu.css" />
     <Content Include="UserControl\PageControl.ascx" />
@@ -373,6 +421,13 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Baidu\oauth_redirect.aspx.cs">
       <DependentUpon>oauth_redirect.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,10 +435,48 @@
     <Compile Include="Baidu\oauth_redirect.aspx.designer.cs">
       <DependentUpon>oauth_redirect.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Blog\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UIBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="UserControl\PageControl.ascx.cs">
       <DependentUpon>PageControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -427,6 +520,12 @@
     <Content Include="log4net.config" />
     <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Style\font\DroidSans.woff" />
+    <Content Include="Style\font\DroidSansBold.woff" />
+    <Content Include="Style\font\RobotoSlabBold.woff" />
+    <Content Include="Style\font\RobotoSlabLight.woff" />
+    <Content Include="Style\font\RobotoSlabRegular.woff" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -56,6 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Baidu\TranslateHelperTests.cs" />
     <Compile Include="ConfigHelperTests.cs" />
     <Compile Include="ConventJineTests.cs" />
     <Compile Include="ExecetionExtensionTests.cs" />
@@ -63,6 +64,8 @@
     <Compile Include="JsonHelperTests.cs" />
     <Compile Include="LogNetHelperTests.cs" />
     <Compile Include="MailHelperTests.cs" />
+    <Compile Include="Sina\DeramBizTests.cs" />
+    <Compile Include="Sina\DreamBizTests.cs" />
     <Compile Include="StringExtensionTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +82,10 @@
     <ProjectReference Include="..\Gscoy.Common\Gscoy.Common.csproj">
       <Project>{267B9F2E-4510-4F62-9291-7173D1ED62CA}</Project>
       <Name>Gscoy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.DataModel\Gscoy.DataModel.csproj">
+      <Project>{43b1fd6d-9d96-4f78-bb19-63bb9534df9b}</Project>
+      <Name>Gscoy.DataModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.DBase\Gscoy.DBase.csproj">
       <Project>{B3911023-A785-416F-B3DD-B294B3A5CDE1}</Project>
@@ -103,7 +110,6 @@
     <Content Include="bin\Debug\DataBase.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Baidu\" />
     <Folder Include="Handler\" />
     <Folder Include="RequestModel\" />
   </ItemGroup>

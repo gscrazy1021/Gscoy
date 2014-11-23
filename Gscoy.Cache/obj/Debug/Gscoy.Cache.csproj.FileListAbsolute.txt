@@ -6,4 +6,3 @@ E:\CodeSpace\Gscoy\Gscoy.Cache\bin\Debug\Gscoy.Cache.dll
 E:\CodeSpace\Gscoy\Gscoy.Cache\bin\Debug\Gscoy.Cache.pdb
 E:\CodeSpace\Gscoy\Gscoy.Cache\obj\Debug\Gscoy.Cache.dll
 E:\CodeSpace\Gscoy\Gscoy.Cache\obj\Debug\Gscoy.Cache.pdb
-E:\CodeSpace\Gscoy\Gscoy.Cache\obj\Debug\Gscoy.Cache.csprojResolveAssemblyReference.cache

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseBiz.cs" />
     <Compile Include="Baidu\LBSHelper.cs" />
+    <Compile Include="Baidu\TranslateHelper.cs" />
+    <Compile Include="CnBlogs\ReadNewsRssBiz.cs" />
     <Compile Include="IBaseBiz.cs" />
     <Compile Include="Blog\ActicleBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sina\DreamBiz.cs" />
     <Compile Include="WeatherHelper.cs" />
   </ItemGroup>
   <ItemGroup>

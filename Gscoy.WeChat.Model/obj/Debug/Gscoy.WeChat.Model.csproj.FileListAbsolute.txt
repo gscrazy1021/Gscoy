@@ -2,4 +2,3 @@ E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\bin\Debug\Gscoy.WeChat.Model.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\bin\Debug\Gscoy.WeChat.Model.pdb
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\obj\Debug\Gscoy.WeChat.Model.dll
 E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\obj\Debug\Gscoy.WeChat.Model.pdb
-E:\CodeSpace\Gscoy\Gscoy.WeChat.Model\obj\Debug\Gscoy.WeChat.Model.csprojResolveAssemblyReference.cache

@@ -7,9 +7,9 @@ using Gscoy.DataModel.Baidu.LBS;
 
 namespace Gscoy.Biz.Baidu
 {
-    public class LBSHelper
+    public class LBSHelper : BaseBiz
     {
-        static string baiduAK = ConfigHelper.GetConfig("BaiduAK");
+
 
         private static string GetCityInfo(string city = "", string loactionX = "", string loactionY = "")
         {

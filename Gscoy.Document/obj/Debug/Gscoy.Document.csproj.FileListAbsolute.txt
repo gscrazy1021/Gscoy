@@ -17,4 +17,3 @@ E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\NPOI.HPSF.dll
 E:\CodeSpace\Gscoy\Gscoy.Document\bin\Debug\NPOI.Util.dll
 E:\CodeSpace\Gscoy\Gscoy.Document\obj\Debug\Gscoy.Document.dll
 E:\CodeSpace\Gscoy\Gscoy.Document\obj\Debug\Gscoy.Document.pdb
-E:\CodeSpace\Gscoy\Gscoy.Document\obj\Debug\Gscoy.Document.csprojResolveAssemblyReference.cache

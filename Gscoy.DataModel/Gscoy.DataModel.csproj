@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Baidu\LBS\SearchMovieEntity.cs" />
     <Compile Include="Baidu\LBS\TravelCityEntity.cs" />
+    <Compile Include="Baidu\TranslateEntity.cs" />
     <Compile Include="Blog\ArticleEntity.cs" />
     <Compile Include="Baidu\LBS\HotMovieEntity.cs" />
     <Compile Include="Baidu\LBS\WeatherInfoEntity.cs" />
@@ -52,7 +53,9 @@
     <Compile Include="Baidu\TokenEntity.cs" />
     <Compile Include="Blog\ArticleLogEntity.cs" />
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="CnBlogs\NewsXmlEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sina\DreamEntity.cs" />
     <Compile Include="Weather\WeatherInfoEntity.cs" />
   </ItemGroup>
   <ItemGroup>

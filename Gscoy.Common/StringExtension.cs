@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 
 namespace Gscoy.Common
 {
@@ -238,7 +240,7 @@ namespace Gscoy.Common
             {
                 if (antiXssMode == AntiXSSMode.Default)
                 {
-                   // strVal = HtmlHelper.FilterXSS(strVal);
+                    // strVal = HtmlHelper.FilterXSS(strVal);
                     if (strVal.Contains("&#"))
                     {
                         //还原+号，防止有类似1+1这样的公司名称等
@@ -710,6 +712,166 @@ namespace Gscoy.Common
             char temp = new char();
             char.TryParse(value, out temp);
             return temp;
+        }
+        /// <summary>
+        /// 利用正则表达式进行字符串替换
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="pattern"></param>
+        /// <param name="replacement"></param>
+        /// <returns></returns>
+        public static string ReplaceRegex(this string value, string pattern, string replacement)
+        {
+            return Regex.Replace(value, pattern, replacement);
+        }
+        /// <summary>
+        /// url编码
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string UrlEncode(this string str, Encoding encodeing)
+        {
+            return HttpUtility.UrlEncode(str, encodeing);
+        }
+        /// <summary>
+        /// url解码
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string UrlDecode(this string str, Encoding encodeing)
+        {
+            return HttpUtility.UrlDecode(str, encodeing);
+        }
+        /// <summary>
+        /// html编码
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string HtmlEncode(this string str)
+        {
+            return HttpUtility.HtmlEncode(str);
+        }
+        /// <summary>
+        /// html解码
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string HtmlDecode(this string str)
+        {
+            return HttpUtility.HtmlDecode(str);
+        }
+        /// <summary>
+        /// 正则匹配
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="regexPattern"></param>
+        /// <returns></returns>
+        public static MatchCollection GetMatches(this string value, string regexPattern)
+        {
+            return GetMatches(value, regexPattern, RegexOptions.None);
+        }
+        /// <summary>
+        /// 正则匹配
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="regexPattern"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public static MatchCollection GetMatches(this string value, string regexPattern, RegexOptions options)
+        {
+            return Regex.Matches(value, regexPattern, options);
+        }
+        /// <summary>
+        /// 查找两个字符串中间的值
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="startString"></param>
+        /// <param name="endString"></param>
+        /// <returns></returns>
+        public static MatchCollection FindBetween(this string s, string startString, string endString)
+        {
+            return s.FindBetween(startString, endString, true);
+        }
+        /// <summary>
+        /// 查找两个字符串中间的值
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="startString"></param>
+        /// <param name="endString"></param>
+        /// <param name="recursive"></param>
+        /// <returns></returns>
+        public static MatchCollection FindBetween(this string s, string startString, string endString, bool recursive)
+        {
+            MatchCollection matches;
+
+            startString = Regex.Escape(startString);
+            endString = Regex.Escape(endString);
+
+            Regex regex = new Regex("(?<=" + startString + ").*(?=" + endString + ")");
+
+            matches = regex.Matches(s);
+
+            if (!recursive) return matches;
+
+            if (matches.Count > 0)
+            {
+                if (matches[0].ToString().IndexOf(Regex.Unescape(startString)) > -1)
+                {
+                    s = matches[0].ToString() + Regex.Unescape(endString);
+                    return s.FindBetween(Regex.Unescape(startString), Regex.Unescape(endString));
+                }
+                else
+                {
+                    return matches;
+                }
+            }
+            else
+            {
+                return matches;
+            }
+        }
+        /// <summary>
+        /// 获取匹配的值集合
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="regexPattern"></param>
+        /// <returns></returns>
+        public static IEnumerable<string> GetMatchingValues(this string value, string regexPattern)
+        {
+            return GetMatchingValues(value, regexPattern, RegexOptions.None);
+        }
+        /// <summary>
+        /// 获取匹配的值集合
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="regexPattern"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        public static IEnumerable<string> GetMatchingValues(this string value, string regexPattern, RegexOptions options)
+        {
+            foreach (Match match in GetMatches(value, regexPattern, options))
+            {
+                if (match.Success) yield return match.Value;
+            }
+        }
+        /// <summary>
+        /// 获取匹配的值集合
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="regexPattern"></param>
+        /// <param name="rep1"></param>
+        /// <param name="rep2"></param>
+        /// <returns></returns>
+        public static IList<string> GetMatchingValues(this string value, string regexPattern, string rep1, string rep2)
+        {
+            IList<string> txtTextArr = new List<string>();
+            string MatchVale = "";
+            foreach (Match m in Regex.Matches(value, regexPattern))
+            {
+                MatchVale = m.Value.Trim().Replace(rep1, "").Replace(rep2, "");
+                txtTextArr.Add(MatchVale);
+            }
+            return txtTextArr;
         }
     }
     public class TryParseException : Exception
