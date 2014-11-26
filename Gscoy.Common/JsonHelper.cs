@@ -46,6 +46,27 @@ namespace Gscoy.Common
             return null;
         }
 
+        /// <summary>
+        /// 将json数据反序列化为Dictionary
+        /// </summary>
+        /// <param name="jsonData">json数据</param>
+        /// <returns></returns>
+        public static Dictionary<string, string> ToDictionary(this object obj)
+        {
+            try
+            {
+                //先转换为json
+                var json = obj.ToJson();
+                if (!string.IsNullOrEmpty(json))
+                    //将指定的 JSON 字符串转换为 Dictionary<string, string> 类型的对象
+                    return JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Trace(ex);
+            }
+            return null;
+        }
         // <summary>
         /// 将指定的 JSON 数据反序列化成指定对象。
         /// </summary>
@@ -101,7 +122,7 @@ namespace Gscoy.Common
             DataTable result;
             try
             {
-                ArrayList arrayList = JsonConvert.DeserializeObject <ArrayList>(json);
+                ArrayList arrayList = JsonConvert.DeserializeObject<ArrayList>(json);
                 if (arrayList.Count > 0)
                 {
                     foreach (Dictionary<string, object> dictionary in arrayList)

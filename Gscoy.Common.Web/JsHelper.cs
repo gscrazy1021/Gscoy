@@ -93,7 +93,7 @@ namespace Gscoy.Common.Web
         public static void AlertAndClose(string message)
         {
             string js = "<script type='text/javascript'>alert('{0}');window.close();</script>";
-            HttpContext.Current.Response.Write(string.Format(js, message));            
+            HttpContext.Current.Response.Write(string.Format(js, message));
         }
 
         public static void ToRedirect(string toURL)
@@ -167,7 +167,6 @@ namespace Gscoy.Common.Web
             HttpContext.Current.Response.Write(js);
             #endregion
         }
-
 
         /// <summary>
         /// 打开指定大小的新窗体

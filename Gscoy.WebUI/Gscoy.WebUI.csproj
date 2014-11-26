@@ -376,6 +376,7 @@
     <Content Include="News\Index.aspx" />
     <Content Include="packages.config" />
     <Content Include="Images\socials\Thumbs.db" />
+    <Content Include="Handler\JsonHandler.ashx" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\easyloader.js" />
     <Content Include="Scripts\iscroll4.1.9.js" />
@@ -411,6 +412,7 @@
     <Content Include="Style\css\zerogrid.css" />
     <Content Include="Style\news.css" />
     <Content Include="Style\plugmenu.css" />
+    <Content Include="Tools\Index.aspx" />
     <Content Include="UserControl\PageControl.ascx" />
     <Content Include="Wap\WapIndex.aspx" />
     <Content Include="Wap\XiYiDian\Default.aspx" />
@@ -459,6 +461,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Handler\JsonHandler.ashx.cs">
+      <DependentUpon>JsonHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="News\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -473,6 +478,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tools\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="UIBase.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -512,7 +524,7 @@
     <Compile Include="WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WeChatHandler.ashx.cs">
+    <Compile Include="Handler\WeChatHandler.ashx.cs">
       <DependentUpon>WeChatHandler.ashx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -532,7 +544,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="WeChatHandler.ashx" />
+    <Content Include="Handler\WeChatHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gscoy.Biz\Gscoy.Biz.csproj">

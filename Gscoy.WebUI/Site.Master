@@ -99,6 +99,7 @@
                                 <li><a href="<%=webHost %>/Blog/Index.aspx">Blog</a></li>
                                 <li><a href="<%=webHost %>/Gallery/Index.aspx">Gallery</a></li>
                                 <li><a href="<%=webHost %>/News/Index.aspx">News</a></li>
+                                 <li><a href="<%=webHost %>/Tools/Index.aspx">Tools</a></li>
                                 <li><a href="<%=webHost %>/About/Index.aspx">About</a></li>
                             </ul>
                         </div>

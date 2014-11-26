@@ -51,3 +51,5 @@ E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\log4net.xml
 E:\CodeSpace\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.dll
 E:\CodeSpace\Gscoy\Gscoy.Data\obj\Debug\Gscoy.Data.pdb
+E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\Gscoy.Cache.dll
+E:\CodeSpace\Gscoy\Gscoy.Data\bin\Debug\Gscoy.Cache.pdb

@@ -317,6 +317,23 @@ namespace Gscoy.Common
         {
             return GetHTML(url, request, Encoding.UTF8);
         }
+        /// <summary>
+        /// Post到远程
+        ///  var entity = new { title = "标题：这是一个标题".UrlEncode(Encoding.UTF8), content = "内容：这是一段内容".UrlEncode(Encoding.UTF8) };
+        /// </summary>
+        /// <param name="url">地址</param>
+        /// <param name="dic">实体转换为dic</param>
+        /// <returns></returns>
+        public Response GetHTML(string url, Dictionary<string, string> dic)
+        {
+            Request req = new Request();
+            req.Method = Method.POST;
+            foreach (var item in dic)
+            {
+                req.List.Add(item);
+            }
+            return GetHTML(url, req);
+        }
         public Response GetHTML(string url, Request request, WebProxy porxy)
         {
             return GetHTML(url, false, request, new Uri(url).Host, Encoding.UTF8, porxy);

@@ -57,6 +57,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Baidu\TranslateHelperTests.cs" />
+    <Compile Include="BaseDaoTests.cs" />
     <Compile Include="ConfigHelperTests.cs" />
     <Compile Include="ConventJineTests.cs" />
     <Compile Include="ExecetionExtensionTests.cs" />
@@ -86,6 +87,10 @@
     <ProjectReference Include="..\Gscoy.DataModel\Gscoy.DataModel.csproj">
       <Project>{43b1fd6d-9d96-4f78-bb19-63bb9534df9b}</Project>
       <Name>Gscoy.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.Data\Gscoy.Data.csproj">
+      <Project>{E59BBBE3-BF1E-4BB1-B495-991627FC642A}</Project>
+      <Name>Gscoy.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.DBase\Gscoy.DBase.csproj">
       <Project>{B3911023-A785-416F-B3DD-B294B3A5CDE1}</Project>
