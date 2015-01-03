@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Gscoy.WebUI
+namespace Gscoy.WebUI.Handler
 {
     /// <summary>
     /// WeChatHandler 的摘要说明

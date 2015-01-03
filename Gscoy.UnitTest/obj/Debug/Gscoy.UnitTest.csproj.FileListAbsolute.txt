@@ -69,3 +69,8 @@ E:\CodeSpace\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\obj\Debug\Gscoy.UnitTest.pdb
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\x64\SQLite.Interop.dll
 E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\x86\SQLite.Interop.dll
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.ConsoleUI.exe
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\HtmlAgilityPack.dll
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.ConsoleUI.pdb
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.QiNiu.dll
+E:\CodeSpace\Gscoy\Gscoy.UnitTest\bin\Debug\Gscoy.QiNiu.pdb

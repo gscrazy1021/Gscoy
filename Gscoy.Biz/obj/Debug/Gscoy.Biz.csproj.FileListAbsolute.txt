@@ -69,3 +69,6 @@ E:\CodeSpace\Gscoy\Gscoy.Biz\bin\Debug\System.Data.SQLite.xml
 E:\CodeSpace\Gscoy\Gscoy.Biz\obj\Debug\Gscoy.Biz.csprojResolveAssemblyReference.cache
 E:\CodeSpace\Gscoy\Gscoy.Biz\obj\Debug\Gscoy.Biz.dll
 E:\CodeSpace\Gscoy\Gscoy.Biz\obj\Debug\Gscoy.Biz.pdb
+E:\CodeSpace\Gscoy\Gscoy.Biz\bin\Debug\Fizzler.dll
+E:\CodeSpace\Gscoy\Gscoy.Biz\bin\Debug\Fizzler.Systems.HtmlAgilityPack.dll
+E:\CodeSpace\Gscoy\Gscoy.Biz\bin\Debug\HtmlAgilityPack.dll

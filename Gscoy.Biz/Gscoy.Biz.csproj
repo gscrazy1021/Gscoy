@@ -30,6 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fizzler">
+      <HintPath>..\Gscoy.Document\DLLImport\Fizzler.dll</HintPath>
+    </Reference>
+    <Reference Include="Fizzler.Systems.HtmlAgilityPack">
+      <HintPath>..\Gscoy.Document\DLLImport\Fizzler.Systems.HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\Gscoy.Document\DLLImport\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -47,6 +56,7 @@
     <Compile Include="IBaseBiz.cs" />
     <Compile Include="Blog\ActicleBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QiuBaiHelper.cs" />
     <Compile Include="Sina\DreamBiz.cs" />
     <Compile Include="WeatherHelper.cs" />
   </ItemGroup>

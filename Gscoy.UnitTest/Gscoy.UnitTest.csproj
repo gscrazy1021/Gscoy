@@ -62,9 +62,11 @@
     <Compile Include="ConventJineTests.cs" />
     <Compile Include="ExecetionExtensionTests.cs" />
     <Compile Include="Hanzi2PinyinTests.cs" />
+    <Compile Include="HtmlAgilityPackHelperTests.cs" />
     <Compile Include="JsonHelperTests.cs" />
     <Compile Include="LogNetHelperTests.cs" />
     <Compile Include="MailHelperTests.cs" />
+    <Compile Include="QiNiuHelperTests.cs" />
     <Compile Include="Sina\DeramBizTests.cs" />
     <Compile Include="Sina\DreamBizTests.cs" />
     <Compile Include="StringExtensionTests.cs" />
@@ -84,6 +86,10 @@
       <Project>{267B9F2E-4510-4F62-9291-7173D1ED62CA}</Project>
       <Name>Gscoy.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Gscoy.ConsoleUI\Gscoy.ConsoleUI.csproj">
+      <Project>{578A88E6-D04D-41A7-9DFA-8C773B113B37}</Project>
+      <Name>Gscoy.ConsoleUI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gscoy.DataModel\Gscoy.DataModel.csproj">
       <Project>{43b1fd6d-9d96-4f78-bb19-63bb9534df9b}</Project>
       <Name>Gscoy.DataModel</Name>
@@ -95,6 +101,10 @@
     <ProjectReference Include="..\Gscoy.DBase\Gscoy.DBase.csproj">
       <Project>{B3911023-A785-416F-B3DD-B294B3A5CDE1}</Project>
       <Name>Gscoy.DBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gscoy.QiNiu\Gscoy.QiNiu.csproj">
+      <Project>{996493DC-D480-4BC8-9717-EEB1AA1B2451}</Project>
+      <Name>Gscoy.QiNiu</Name>
     </ProjectReference>
     <ProjectReference Include="..\Gscoy.Service\Gscoy.Service.csproj">
       <Project>{409CFF35-7E3F-4D3E-8513-BECAF284128C}</Project>

@@ -6,3 +6,4 @@ E:\CodeSpace\Gscoy\Gscoy.Dapper\bin\Debug\Gscoy.Dapper.dll
 E:\CodeSpace\Gscoy\Gscoy.Dapper\bin\Debug\Gscoy.Dapper.pdb
 E:\CodeSpace\Gscoy\Gscoy.Dapper\obj\Debug\Gscoy.Dapper.dll
 E:\CodeSpace\Gscoy\Gscoy.Dapper\obj\Debug\Gscoy.Dapper.pdb
+E:\CodeSpace\Gscoy\Gscoy.Dapper\obj\Debug\Gscoy.Dapper.csprojResolveAssemblyReference.cache

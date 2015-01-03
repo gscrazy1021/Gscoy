@@ -1,49 +1,48 @@
 ﻿<!DOCTYPE html>
-<html lang="zh">
-    <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - 我的 ASP.NET MVC 应用程序</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("将你的徽标放置在此处", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                            <li>@Html.ActionLink("关于", "About", "Home")</li>
-                            <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @Styles.Render("~/Content/mobileCss", "~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div data-role="page" data-theme="b">
+        <div data-role="header">
+            @if (IsSectionDefined("Header")) {
+                @RenderSection("Header")
+                } else {
+                <h1>@ViewBag.Title</h1>
+                @Html.Partial("_LoginPartial")
+                }
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - 我的 ASP.NET MVC 应用程序</p>
+        <div data-role="content">
+            @RenderBody()
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="d">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="~/Mobile/index" data-icon="info">个人记账</a></li>
+                        <li><a href="#" data-icon="grid">微信用户管理</a></li>
+                        <li><a href="#" data-icon="star">博客园</a></li>
+                        <li><a href="#" data-icon="star">糗事百科</a></li>
+                        <li><a href="#" data-icon="star">娱乐空间</a></li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+        </div>
 
         @Scripts.Render("~/bundles/jquery")
+        <script>
+            $(document).on("mobileinit", function () {
+                $.mobile.ajaxEnabled = false;
+            });
+        </script>
+        @Scripts.Render("~/bundles/jquerymobile")
         @RenderSection("scripts", required: false)
+
+
     </body>
 </html>

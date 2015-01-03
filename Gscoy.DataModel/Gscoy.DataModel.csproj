@@ -55,7 +55,9 @@
     <Compile Include="BaseEntity.cs" />
     <Compile Include="CnBlogs\NewsXmlEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QiuBai\QiuBaiEntity.cs" />
     <Compile Include="Sina\DreamEntity.cs" />
+    <Compile Include="StaticSourceEntity.cs" />
     <Compile Include="Weather\WeatherInfoEntity.cs" />
   </ItemGroup>
   <ItemGroup>

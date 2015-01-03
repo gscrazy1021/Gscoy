@@ -55,12 +55,16 @@ namespace Gscoy.Data.CnBlogs
                                 if (link != null)
                                     rssXml.Link = link.InnerText;
                                 if (pubdate != null)
-                                    rssXml.PubDate = pubdate.InnerText;
+                                {
+                                    DateTime time = new DateTime();
+                                    DateTime.TryParse(pubdate.InnerText, out time);
+                                    rssXml.PubDate = time.ToString("yyyy-MM-dd HH:mm:ss");
+                                }
                                 if (guid != null)
                                     rssXml.Guid = guid.InnerText;
                                 if (description != null)
                                 {
-                                    rssXml.Content = description.InnerText;
+                                    rssXml.Content = description.InnerText.Replace(string.Format("<p><a href=\"{0}\" target=\"_blank\">本文链接</a></p>", rssXml.Link), "");
                                     int start = rssXml.Content.IndexOf("<p>");
                                     int end = rssXml.Content.IndexOf("</p>");
                                     rssXml.ShotCut = rssXml.Content.Substring(start, end - start > 0 ? end - start : 0);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Gscoy.Common;
 
-namespace Gscoy.WebUI
+namespace Gscoy.WebUI.Handler
 {
     /// <summary>
     /// Summary description for JsonHandler

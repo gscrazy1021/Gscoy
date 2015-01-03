@@ -1,0 +1,11 @@
+﻿@model List<Gscoy.DataModel.CnBlogs.NewsXmlEntity>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@foreach (var entity in Model)
+{
+    @Html.Raw(entity.Content)
+}

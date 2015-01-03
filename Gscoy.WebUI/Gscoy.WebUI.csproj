@@ -382,6 +382,7 @@
     <Content Include="Scripts\iscroll4.1.9.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.js" />
     <Content Include="Scripts\jquery.easyui-1.3.6.js" />
     <Content Include="Scripts\jquery.easyui-1.3.6.min.js" />
     <Content Include="Scripts\locale\easyui-lang-af.js" />
@@ -406,13 +407,20 @@
     <Content Include="Scripts\locale\easyui-lang-tr.js" />
     <Content Include="Scripts\locale\easyui-lang-zh_CN.js" />
     <Content Include="Scripts\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\motor.js" />
     <Content Include="Scripts\scrolltop.js" />
+    <Content Include="Style\css\animation.css" />
+    <Content Include="Style\css\font-awesome.css" />
+    <Content Include="Style\css\live-preview.css" />
+    <Content Include="Style\css\reset.css" />
     <Content Include="Style\css\responsive.css" />
     <Content Include="Style\css\style.css" />
     <Content Include="Style\css\zerogrid.css" />
     <Content Include="Style\news.css" />
     <Content Include="Style\plugmenu.css" />
     <Content Include="Tools\Index.aspx" />
+    <Content Include="UserControl\Head.ascx" />
     <Content Include="UserControl\PageControl.ascx" />
     <Content Include="Wap\WapIndex.aspx" />
     <Content Include="Wap\XiYiDian\Default.aspx" />
@@ -488,6 +496,13 @@
     </Compile>
     <Compile Include="UIBase.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Head.ascx.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Head.ascx.designer.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControl\PageControl.ascx.cs">
       <DependentUpon>PageControl.ascx</DependentUpon>
